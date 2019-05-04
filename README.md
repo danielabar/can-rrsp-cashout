@@ -1,4 +1,13 @@
+# can-rrsp-cashout
+
+> Calculator for low income Canadians approaching retirment age
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Dev Notes
+
+- [Enhance](https://medium.com/quick-code/how-to-integrate-eslint-prettier-in-react-6efbd206d5c4) create-react-app with prettier and eslint
+- VS Code users - disable Beautify plugin for this project workspace
 
 ## Available Scripts
 

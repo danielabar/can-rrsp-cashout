@@ -12,6 +12,20 @@ function generateNumericOptions(from, to) {
   return result;
 }
 
-const ageOptions = generateNumericOptions(config.MIN_AGE, config.MAX_AGE);
+function generateStringOptions(configKey) {
+  const result = [];
+  configKey.forEach(ck => {
+    result.push({
+      key: ck.key,
+      value: ck.value,
+      // TODO i18n
+      label: ck.value,
+    });
+  });
+  return result;
+}
 
-export { ageOptions };
+const ageOptions = generateNumericOptions(config.MIN_AGE, config.MAX_AGE);
+const genderOptions = generateStringOptions(config.GENDER);
+
+export { ageOptions, genderOptions };

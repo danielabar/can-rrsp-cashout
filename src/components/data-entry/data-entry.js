@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-for */
 import React, { Component } from 'react';
 import config from '../../config';
-import { ageOptions } from '../../lib/options';
+import { ageOptions, genderOptions } from '../../lib/options';
 import './data-entry.css';
 
 function createAgeSelection() {
@@ -12,9 +12,18 @@ function createAgeSelection() {
   ));
 }
 
+function createGenderSelection() {
+  return genderOptions.map(opt => (
+    <option key={opt.key} value={opt.value}>
+      {opt.label}
+    </option>
+  ));
+}
+
 class DataEntry extends Component {
   state = {
     age: config.DEFAULT_AGE,
+    gender: config.DEFAULT_GENDER,
   };
 
   update = field => evt => {
@@ -25,14 +34,31 @@ class DataEntry extends Component {
   };
 
   render() {
-    const { age } = this.state;
+    const { age, gender } = this.state;
     return (
       <div className="data-entry">
         <form>
           <label htmlFor="selectAge">
             Age
-            <select id="selectAge" name="selectAge" value={age} onChange={this.update('age')}>
+            <select
+              id="selectAge"
+              name="selectAge"
+              value={age}
+              onChange={this.update('age')}
+            >
               {createAgeSelection()}
+            </select>
+          </label>
+
+          <label htmlFor="selectGender">
+            Gender
+            <select
+              id="selectGender"
+              name="selectGender"
+              value={gender}
+              onChange={this.update('gender')}
+            >
+              {createGenderSelection()}
             </select>
           </label>
           <button type="submit">Calculate</button>

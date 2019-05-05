@@ -1,3 +1,5 @@
+import config from '../config';
+
 function generateNumericOptions(from, to) {
   const result = [];
   for (let i = from; i <= to; i += 1) {
@@ -10,7 +12,6 @@ function generateNumericOptions(from, to) {
   return result;
 }
 
-// to/from values should come from config
-const ageOptions = generateNumericOptions(40, 70);
+const ageOptions = generateNumericOptions(config.MIN_AGE, config.MAX_AGE);
 
 export { ageOptions };

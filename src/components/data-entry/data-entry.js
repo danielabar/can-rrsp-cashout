@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-for */
 import React, { Component } from 'react';
+import config from '../../config';
 import { ageOptions } from '../../lib/options';
 import './data-entry.css';
 
@@ -12,9 +13,8 @@ function createAgeSelection() {
 }
 
 class DataEntry extends Component {
-  // default age should come from config
   state = {
-    age: 55,
+    age: config.DEFAULT_AGE,
   };
 
   update = field => evt => {

@@ -6,10 +6,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Dev Notes
 
-- [Enhance](https://medium.com/quick-code/how-to-integrate-eslint-prettier-in-react-6efbd206d5c4) create-react-app with prettier and eslint
+- [Enhanced](https://medium.com/quick-code/how-to-integrate-eslint-prettier-in-react-6efbd206d5c4) create-react-app with prettier and eslint
 - VS Code users - disable Beautify plugin for this project workspace
+
+### TODO
+- [Internationalization](https://medium.freecodecamp.org/setting-up-internationalization-in-react-from-start-to-finish-6cb94a7af725)
 - Consider adding postcss and [postcss-custom-properties](https://github.com/postcss/postcss-custom-properties) to use native css variables with fallback support for IE
 - Try [css form design](https://www.sanwebe.com/2014/08/css-html-forms-designs)
+- [Style select](https://css-tricks.com/styling-a-select-like-its-2019/)
 
 ## Available Scripts
 

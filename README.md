@@ -9,6 +9,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [Enhance](https://medium.com/quick-code/how-to-integrate-eslint-prettier-in-react-6efbd206d5c4) create-react-app with prettier and eslint
 - VS Code users - disable Beautify plugin for this project workspace
 - Consider adding postcss and [postcss-custom-properties](https://github.com/postcss/postcss-custom-properties) to use native css variables with fallback support for IE
+- Try [css form design](https://www.sanwebe.com/2014/08/css-html-forms-designs)
 
 ## Available Scripts
 

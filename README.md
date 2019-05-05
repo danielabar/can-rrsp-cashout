@@ -1,6 +1,6 @@
 # can-rrsp-cashout
 
-> Calculator for low income Canadians approaching retirment age
+> Calculator for low income Canadians approaching retirment age to help them determine if they should cash out their RRSP.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

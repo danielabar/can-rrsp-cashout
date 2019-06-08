@@ -19,7 +19,7 @@ function generateStringOptions(configKey) {
       key: ck.key,
       value: ck.value,
       // TODO i18n
-      label: ck.value,
+      label: ck.label || ck.value,
     });
   });
   return result;
@@ -27,5 +27,6 @@ function generateStringOptions(configKey) {
 
 const ageOptions = generateNumericOptions(config.MIN_AGE, config.MAX_AGE);
 const genderOptions = generateStringOptions(config.GENDER);
+const martialStatusOptions = generateStringOptions(config.MARITAL_STATUS);
 
-export { ageOptions, genderOptions };
+export { ageOptions, genderOptions, martialStatusOptions };

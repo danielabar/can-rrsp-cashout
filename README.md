@@ -14,6 +14,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Consider adding postcss and [postcss-custom-properties](https://github.com/postcss/postcss-custom-properties) to use native css variables with fallback support for IE
 - Try [css form design](https://www.sanwebe.com/2014/08/css-html-forms-designs)
 - [Style select](https://css-tricks.com/styling-a-select-like-its-2019/)
+- Validate inputs onblur
+- More specific validation: Retirement age must be > current age
+- [Format numeric input thousands separator](https://www.npmjs.com/package/react-number-format)
+- Info icons next to each field with explanatory text, [gov uk guidelines](https://ux.stackexchange.com/questions/111412/forms-use-visible-input-hint-next-to-field-or-hidden-hint-behind-info-icon)
 
 ## Available Scripts
 

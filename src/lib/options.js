@@ -1,3 +1,5 @@
+import config from '../config';
+
 function generateNumericOptions(from, to) {
   const result = [];
   for (let i = from; i <= to; i += 1) {
@@ -10,7 +12,30 @@ function generateNumericOptions(from, to) {
   return result;
 }
 
-// to/from values should come from config
-const ageOptions = generateNumericOptions(40, 70);
+function generateStringOptions(configKey) {
+  const result = [];
+  configKey.forEach(ck => {
+    result.push({
+      key: ck.key,
+      value: ck.value,
+      // TODO i18n
+      label: ck.label || ck.value,
+    });
+  });
+  return result;
+}
 
-export { ageOptions };
+const ageOptions = generateNumericOptions(config.MIN_AGE, config.MAX_AGE);
+const genderOptions = generateStringOptions(config.GENDER);
+const martialStatusOptions = generateStringOptions(config.MARITAL_STATUS);
+const retirementAgeOptions = generateNumericOptions(
+  config.MIN_RETIREMENT_AGE,
+  config.MAX_RETIREMENT_AGE
+);
+
+export {
+  ageOptions,
+  genderOptions,
+  martialStatusOptions,
+  retirementAgeOptions,
+};

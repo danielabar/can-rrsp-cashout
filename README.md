@@ -17,7 +17,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Validate inputs onblur
 - More specific validation: Retirement age must be > current age
 - [Format numeric input thousands separator](https://www.npmjs.com/package/react-number-format)
-- Info icons next to each field with explanatory text
+- Info icons next to each field with explanatory text, [gov uk guidelines](https://ux.stackexchange.com/questions/111412/forms-use-visible-input-hint-next-to-field-or-hidden-hint-behind-info-icon)
 
 ## Available Scripts
 

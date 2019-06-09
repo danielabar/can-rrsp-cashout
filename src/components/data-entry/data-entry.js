@@ -9,32 +9,8 @@ import {
 } from '../../lib/options';
 import './data-entry.css';
 
-function createAgeSelection() {
-  return ageOptions.map(opt => (
-    <option key={opt.key} value={opt.value}>
-      {opt.label}
-    </option>
-  ));
-}
-
-function createGenderSelection() {
-  return genderOptions.map(opt => (
-    <option key={opt.key} value={opt.value}>
-      {opt.label}
-    </option>
-  ));
-}
-
-function createMaritalStatusSelection() {
-  return martialStatusOptions.map(opt => (
-    <option key={opt.key} value={opt.value}>
-      {opt.label}
-    </option>
-  ));
-}
-
-function createRetirementAgeSelection() {
-  return retirementAgeOptions.map(opt => (
+function createSelection(opts) {
+  return opts.map(opt => (
     <option key={opt.key} value={opt.value}>
       {opt.label}
     </option>
@@ -82,7 +58,7 @@ class DataEntry extends Component {
               value={age}
               onChange={this.update('age')}
             >
-              {createAgeSelection()}
+              {createSelection(ageOptions)}
             </select>
           </label>
 
@@ -94,7 +70,7 @@ class DataEntry extends Component {
               value={gender}
               onChange={this.update('gender')}
             >
-              {createGenderSelection()}
+              {createSelection(genderOptions)}
             </select>
           </label>
 
@@ -106,7 +82,7 @@ class DataEntry extends Component {
               value={maritalStatus}
               onChange={this.update('maritalStatus')}
             >
-              {createMaritalStatusSelection()}
+              {createSelection(martialStatusOptions)}
             </select>
           </label>
 
@@ -170,7 +146,7 @@ class DataEntry extends Component {
               value={retirementAge}
               onChange={this.update('retirementAge')}
             >
-              {createRetirementAgeSelection()}
+              {createSelection(retirementAgeOptions)}
             </select>
           </label>
 

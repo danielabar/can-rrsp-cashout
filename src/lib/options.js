@@ -28,5 +28,14 @@ function generateStringOptions(configKey) {
 const ageOptions = generateNumericOptions(config.MIN_AGE, config.MAX_AGE);
 const genderOptions = generateStringOptions(config.GENDER);
 const martialStatusOptions = generateStringOptions(config.MARITAL_STATUS);
+const retirementAgeOptions = generateNumericOptions(
+  config.MIN_RETIREMENT_AGE,
+  config.MAX_RETIREMENT_AGE
+);
 
-export { ageOptions, genderOptions, martialStatusOptions };
+export {
+  ageOptions,
+  genderOptions,
+  martialStatusOptions,
+  retirementAgeOptions,
+};

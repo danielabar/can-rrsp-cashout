@@ -5,6 +5,7 @@ import {
   ageOptions,
   genderOptions,
   martialStatusOptions,
+  retirementAgeOptions,
 } from '../../lib/options';
 import './data-entry.css';
 
@@ -32,12 +33,24 @@ function createMaritalStatusSelection() {
   ));
 }
 
+function createRetirementAgeSelection() {
+  return retirementAgeOptions.map(opt => (
+    <option key={opt.key} value={opt.value}>
+      {opt.label}
+    </option>
+  ));
+}
+
 class DataEntry extends Component {
   state = {
     age: config.DEFAULT_AGE,
     gender: config.DEFAULT_GENDER,
     maritalStatus: config.DEFAULT_MARITAL_STATUS,
     income: config.DEFAULT_INCOME,
+    rrsp: config.DEFAULT_RRSP,
+    cpp: config.DEFAULT_ANNUAL_CPP,
+    pension: config.DEFAULT_ANNUAL_PENSION,
+    retirementAge: config.DEFAULT_RETIREMENT_AGE,
   };
 
   update = field => evt => {
@@ -48,7 +61,16 @@ class DataEntry extends Component {
   };
 
   render() {
-    const { age, gender, maritalStatus, income } = this.state;
+    const {
+      age,
+      gender,
+      maritalStatus,
+      income,
+      rrsp,
+      cpp,
+      pension,
+      retirementAge,
+    } = this.state;
     return (
       <div className="data-entry">
         <form>
@@ -100,6 +122,58 @@ class DataEntry extends Component {
               max={config.MAX_INCOME}
             />
           </label>
+
+          <label htmlFor="rrsp">
+            Annual RRSP
+            <input
+              id="rrsp"
+              type="number"
+              name="rrsp"
+              value={rrsp}
+              onChange={this.update('rrsp')}
+              min={config.MIN_RRSP}
+              max={config.MAX_RRSP}
+            />
+          </label>
+
+          <label htmlFor="cpp">
+            Annual CPP
+            <input
+              id="cpp"
+              type="number"
+              name="cpp"
+              value={cpp}
+              onChange={this.update('cpp')}
+              min={config.MIN_ANNUAL_CPP}
+              max={config.MAX_ANNUAL_CPP}
+            />
+          </label>
+
+          <label htmlFor="pension">
+            Annual Penison
+            <input
+              id="pension"
+              type="number"
+              name="pension"
+              value={pension}
+              onChange={this.update('pension')}
+              min={config.MIN_ANNUAL_PENSION}
+              max={config.MAX_ANNUAL_PENSION}
+            />
+          </label>
+
+          <label htmlFor="selectRetirementAge">
+            Retirement Age
+            <select
+              id="selectRetirementAge"
+              name="selectRetirementAge"
+              value={retirementAge}
+              onChange={this.update('retirementAge')}
+            >
+              {createRetirementAgeSelection()}
+            </select>
+          </label>
+
           <button type="submit">Calculate</button>
         </form>
       </div>

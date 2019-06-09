@@ -1,5 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-for */
 import React, { Component } from 'react';
+// import PropTypes from 'prop-types';
+
 import config from '../../config';
 import {
   ageOptions,
@@ -18,6 +20,10 @@ function createSelection(opts) {
 }
 
 class DataEntry extends Component {
+  // static propTypes = {
+  //   calculate: PropTypes.func,
+  // };
+
   state = {
     age: config.DEFAULT_AGE,
     gender: config.DEFAULT_GENDER,
@@ -36,6 +42,12 @@ class DataEntry extends Component {
     });
   };
 
+  submitInput = event => {
+    event.preventDefault();
+    const { calculate } = this.props;
+    calculate(this.state);
+  };
+
   render() {
     const {
       age,
@@ -49,7 +61,7 @@ class DataEntry extends Component {
     } = this.state;
     return (
       <div className="data-entry">
-        <form>
+        <form onSubmit={this.submitInput}>
           <label htmlFor="selectAge">
             Age
             <select

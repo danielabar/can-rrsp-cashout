@@ -1,4 +1,13 @@
-import { yearsBeforeRetirement, yearsInRetirement } from './calc-util';
+import {
+  yearsBeforeRetirement,
+  yearsInRetirement,
+  annualIncomeForGisEligibilityWithRrsp,
+  annualIncomeForGisEligibilityWithoutRrsp,
+} from './calc-util';
+
+// test('adding works sanely with simple decimals', () => {
+//   expect(0.2 + 0.1).toBeCloseTo(0.3, 5);
+// });
 
 describe('calc-util', () => {
   describe('yearsBeforeRetirement', () => {
@@ -38,6 +47,40 @@ describe('calc-util', () => {
       const result = yearsInRetirement(input);
       // Then
       expect(result).toEqual(14); // 81 - 67
+    });
+  });
+
+  describe('annualIncomeForGisEligibilityWithRrsp', () => {
+    it('Returns sum of cpp, pension and rrsp evenly divided over retirement years', () => {
+      // Given
+      const input = {
+        gender: 'female',
+        retirementAge: 65,
+        cpp: 9000,
+        pension: 0,
+        rrsp: 90000,
+      };
+      // When
+      const result = annualIncomeForGisEligibilityWithRrsp(input);
+      // Then
+      expect(result).toEqual(13500);
+    });
+  });
+
+  describe('annualIncomeForGisEligibilityWithoutRrsp', () => {
+    it('Returns sum of cpp and pension ', () => {
+      // Given
+      const input = {
+        gender: 'female',
+        retirementAge: 65,
+        cpp: 9000,
+        pension: 0,
+        rrsp: 90000,
+      };
+      // When
+      const result = annualIncomeForGisEligibilityWithoutRrsp(input);
+      // Then
+      expect(result).toEqual(9000);
     });
   });
 });

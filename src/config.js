@@ -26,6 +26,10 @@ const config = Object.freeze({
     //     'Spouse/common-law partner of someone who does not receive an OAS Pension',
     // },
   ],
+
+  DEFAULT_INCOME: 30000,
+  MIN_INCOME: 0,
+  MAX_INCOME: 100000,
 });
 
 export default config;

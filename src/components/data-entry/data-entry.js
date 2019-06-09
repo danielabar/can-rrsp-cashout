@@ -37,6 +37,7 @@ class DataEntry extends Component {
     age: config.DEFAULT_AGE,
     gender: config.DEFAULT_GENDER,
     maritalStatus: config.DEFAULT_MARITAL_STATUS,
+    income: config.DEFAULT_INCOME,
   };
 
   update = field => evt => {
@@ -47,7 +48,7 @@ class DataEntry extends Component {
   };
 
   render() {
-    const { age, gender, maritalStatus } = this.state;
+    const { age, gender, maritalStatus, income } = this.state;
     return (
       <div className="data-entry">
         <form>
@@ -85,6 +86,19 @@ class DataEntry extends Component {
             >
               {createMaritalStatusSelection()}
             </select>
+          </label>
+
+          <label htmlFor="income">
+            Annual Income
+            <input
+              id="income"
+              type="number"
+              name="income"
+              value={income}
+              onChange={this.update('income')}
+              min={config.MIN_INCOME}
+              max={config.MAX_INCOME}
+            />
           </label>
           <button type="submit">Calculate</button>
         </form>

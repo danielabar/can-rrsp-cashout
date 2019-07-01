@@ -1,3 +1,4 @@
+import gisLookup from 'gis-lookup';
 import config from '../config';
 
 function lifeExpectancy(gender) {
@@ -23,9 +24,29 @@ function annualIncomeForGisEligibilityWithoutRrsp(input) {
   return input.cpp + input.pension;
 }
 
+function convertMaritalStatus(maritalStatus) {
+  let result = gisLookup.STATUS.SINGLE;
+  if (maritalStatus === config.DEFAULT_MARITAL_STATUS) {
+    result = gisLookup.STATUS.SINGLE;
+  }
+  return result;
+}
+
+function monthlyGis(annualIncome, maritalStatus) {
+  const gisStatus = convertMaritalStatus(maritalStatus);
+  const gisResult = gisLookup.find(gisStatus, annualIncome);
+  return parseFloat(gisResult.output.gis);
+}
+
+function annualGIS(monthlyGisAmt) {
+  return monthlyGisAmt * 12;
+}
+
 export {
   yearsBeforeRetirement,
   yearsInRetirement,
   annualIncomeForGisEligibilityWithRrsp,
   annualIncomeForGisEligibilityWithoutRrsp,
+  monthlyGis,
+  annualGIS,
 };

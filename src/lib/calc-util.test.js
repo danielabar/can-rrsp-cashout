@@ -3,7 +3,9 @@ import {
   yearsInRetirement,
   annualIncomeForGisEligibilityWithRrsp,
   annualIncomeForGisEligibilityWithoutRrsp,
+  monthlyGis,
 } from './calc-util';
+import config from '../config';
 
 // test('adding works sanely with simple decimals', () => {
 //   expect(0.2 + 0.1).toBeCloseTo(0.3, 5);
@@ -81,6 +83,28 @@ describe('calc-util', () => {
       const result = annualIncomeForGisEligibilityWithoutRrsp(input);
       // Then
       expect(result).toEqual(9000);
+    });
+  });
+
+  describe('monthlyGis', () => {
+    it('Uses gis-lookup to find monthly GIS amount for single person with low-ish annual income', () => {
+      // Given
+      const annualIncome = 12000;
+      const maritalStatus = config.DEFAULT_MARITAL_STATUS;
+      // When
+      const result = monthlyGis(annualIncome, maritalStatus);
+      // Then
+      expect(result).toEqual(259.18);
+    });
+
+    it('Uses gis-lookup to find monthly GIS amount for single person with high-ish annual income', () => {
+      // Given
+      const annualIncome = 17300;
+      const maritalStatus = config.DEFAULT_MARITAL_STATUS;
+      // When
+      const result = monthlyGis(annualIncome, maritalStatus);
+      // Then
+      expect(result).toEqual(39.18);
     });
   });
 });

@@ -21,7 +21,7 @@ function createSelection(opts) {
 
 class DataEntry extends Component {
   // static propTypes = {
-  //   calculate: PropTypes.func,
+  //   runScenarios: PropTypes.func,
   // };
 
   state = {
@@ -44,8 +44,8 @@ class DataEntry extends Component {
 
   submitInput = event => {
     event.preventDefault();
-    const { calculate } = this.props;
-    calculate(this.state);
+    const { runScenarios } = this.props;
+    runScenarios(this.state);
   };
 
   render() {

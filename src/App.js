@@ -1,15 +1,18 @@
 import React from 'react';
 import './App.css';
 import DataEntry from './components/data-entry/data-entry';
+import { run } from './lib/scenario-runner';
 
 function App() {
-  const calculate = input => {
-    console.dir(input);
+  const runScenarios = input => {
+    console.log('Run scenarios for %o', input);
+    const result = run(input);
+    console.log('Result = %o', result);
   };
   return (
     <div className="app">
       <header className="app-header">Should I Cash out my RRSP?</header>
-      <DataEntry calculate={calculate} />
+      <DataEntry runScenarios={runScenarios} />
     </div>
   );
 }

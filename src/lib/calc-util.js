@@ -42,6 +42,10 @@ function annualGIS(monthlyGisAmt) {
   return monthlyGisAmt * 12;
 }
 
+function totalGisInRetirement(annualGISAmt, numYearsInRetirement) {
+  return annualGISAmt * numYearsInRetirement;
+}
+
 export {
   yearsBeforeRetirement,
   yearsInRetirement,
@@ -49,4 +53,5 @@ export {
   annualIncomeForGisEligibilityWithoutRrsp,
   monthlyGis,
   annualGIS,
+  totalGisInRetirement,
 };

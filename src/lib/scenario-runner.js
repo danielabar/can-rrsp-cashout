@@ -58,7 +58,7 @@ function calculateCashOutAfterRetirement(inp) {
 function run(input) {
   return {
     cashOutBefore: calculateCashOutBeforeRetirement(input),
-    cashoutAfter: calculateCashOutAfterRetirement(input),
+    cashOutAfter: calculateCashOutAfterRetirement(input),
   };
 }
 

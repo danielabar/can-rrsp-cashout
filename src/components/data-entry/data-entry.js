@@ -112,7 +112,7 @@ class DataEntry extends Component {
           </label>
 
           <label htmlFor="rrsp">
-            Annual RRSP
+            Total RRSP
             <input
               id="rrsp"
               type="number"
@@ -125,7 +125,7 @@ class DataEntry extends Component {
           </label>
 
           <label htmlFor="cpp">
-            Annual CPP
+            Annual CPP Entitlement
             <input
               id="cpp"
               type="number"
@@ -138,7 +138,7 @@ class DataEntry extends Component {
           </label>
 
           <label htmlFor="pension">
-            Annual Penison
+            Annual Pension
             <input
               id="pension"
               type="number"

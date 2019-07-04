@@ -11,13 +11,17 @@ function helper(props) {
           Expected years in retirement: {cashOutBefore.numYrsInRetirement}
         </div>
         <br />
-        <p>If you cash out your RRSP BEFORE retirement:</p>
+        <p className="scenarios-subheader">
+          If you cash out your RRSP BEFORE retirement:
+        </p>
         <p>Annual income for GIS eligibility: {cashOutBefore.annualIncome}</p>
         <p>Monthly GIS entitlement: {cashOutBefore.monthlyGis}</p>
         <p>Annual GIS entitlement: {cashOutBefore.annualGIS}</p>
         <p>Total GIS in retirement: {cashOutBefore.totalGisInRetirement}</p>
         <br />
-        <p>If you cash out your RRSP AFTER retirement:</p>
+        <p className="scenarios-subheader">
+          If you cash out your RRSP AFTER retirement:
+        </p>
         <p>Annual income for GIS eligibility: {cashOutAfter.annualIncome}</p>
         <p>Monthly GIS entitlement: {cashOutAfter.monthlyGis}</p>
         <p>Annual GIS entitlement: {cashOutAfter.annualGIS}</p>

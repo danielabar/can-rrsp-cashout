@@ -16,10 +16,10 @@ function App() {
 
   return (
     <div className="app">
-      <h1 className="app-prototype">Prototype</h1>
       <header className="app-header">
         Should I cash out my RRSP before or after retirement?
       </header>
+      <h1 className="app-prototype">(Prototype)</h1>
       <DataEntry runScenarios={runScenarios} />
       <Scenarios data={scenarios} />
     </div>

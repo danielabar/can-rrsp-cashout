@@ -1,11 +1,11 @@
 .app-prototype,
 .app-header {
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin-bottom: 10px;
 }
 
 .app-prototype {
-  color: #333;
   text-transform: uppercase;
+  font-size: 1.2rem;
 }

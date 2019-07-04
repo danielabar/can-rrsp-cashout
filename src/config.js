@@ -27,9 +27,10 @@ const config = Object.freeze({
     // },
   ],
 
-  DEFAULT_INCOME: 30000,
-  MIN_INCOME: 0,
-  MAX_INCOME: 100000,
+  // Only needed when factoring in income tax - future
+  // DEFAULT_INCOME: 30000,
+  // MIN_INCOME: 0,
+  // MAX_INCOME: 100000,
 
   DEFAULT_RRSP: 90000,
   MIN_RRSP: 0,

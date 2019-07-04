@@ -17,41 +17,39 @@ function convertToNumeric(input) {
 // TODO extract common calcs between scenarios
 function calculateCashOutBeforeRetirement(inp) {
   const input = convertToNumeric(inp);
-  const numYrsInRetirement = calcUtil.yearsInRetirement(input);
   const annualIncome = calcUtil.annualIncomeForGisEligibilityWithoutRrsp(input);
+  const numYrsInRetirement = calcUtil.yearsInRetirement(input);
   const monthlyGis = calcUtil.monthlyGis(annualIncome, input.maritalStatus);
   const annualGIS = calcUtil.annualGIS(monthlyGis);
+  const totalGisInRetirement = calcUtil.totalGisInRetirement(
+    annualGIS,
+    numYrsInRetirement
+  );
   return {
-    totalGisInRetirement: calcUtil.totalGisInRetirement(
-      annualGIS,
-      numYrsInRetirement
-    ),
-    intermediateCalculations: {
-      numYrsInRetirement,
-      annualIncome,
-      monthlyGis,
-      annualGIS,
-    },
+    totalGisInRetirement,
+    numYrsInRetirement,
+    annualIncome,
+    monthlyGis,
+    annualGIS,
   };
 }
 
 function calculateCashOutAfterRetirement(inp) {
   const input = convertToNumeric(inp);
-  const numYrsInRetirement = calcUtil.yearsInRetirement(input);
   const annualIncome = calcUtil.annualIncomeForGisEligibilityWithRrsp(input);
+  const numYrsInRetirement = calcUtil.yearsInRetirement(input);
   const monthlyGis = calcUtil.monthlyGis(annualIncome, input.maritalStatus);
   const annualGIS = calcUtil.annualGIS(monthlyGis);
+  const totalGisInRetirement = calcUtil.totalGisInRetirement(
+    annualGIS,
+    numYrsInRetirement
+  );
   return {
-    totalGisInRetirement: calcUtil.totalGisInRetirement(
-      annualGIS,
-      numYrsInRetirement
-    ),
-    intermediateCalculations: {
-      numYrsInRetirement,
-      annualIncome,
-      monthlyGis,
-      annualGIS,
-    },
+    totalGisInRetirement,
+    numYrsInRetirement,
+    annualIncome,
+    monthlyGis,
+    annualGIS,
   };
 }
 

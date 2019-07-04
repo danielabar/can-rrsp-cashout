@@ -62,56 +62,46 @@ class DataEntry extends Component {
     return (
       <div className="data-entry">
         <form onSubmit={this.submitInput}>
-          <label htmlFor="selectAge">
+          <label className="data-entry-label" htmlFor="selectAge">
             Age
             <select
               id="selectAge"
               name="selectAge"
               value={age}
               onChange={this.update('age')}
+              className="data-entry-input"
             >
               {createSelection(ageOptions)}
             </select>
           </label>
 
-          <label htmlFor="selectGender">
+          <label className="data-entry-label" htmlFor="selectGender">
             Gender
             <select
               id="selectGender"
               name="selectGender"
               value={gender}
               onChange={this.update('gender')}
+              className="data-entry-input"
             >
               {createSelection(genderOptions)}
             </select>
           </label>
 
-          <label htmlFor="selectMaritalStatus">
+          <label className="data-entry-label" htmlFor="selectMaritalStatus">
             Marital Status
             <select
               id="selectMaritalStatus"
               name="selectMaritalStatus"
               value={maritalStatus}
               onChange={this.update('maritalStatus')}
+              className="data-entry-input"
             >
               {createSelection(martialStatusOptions)}
             </select>
           </label>
 
-          <label htmlFor="income">
-            Annual Income
-            <input
-              id="income"
-              type="number"
-              name="income"
-              value={income}
-              onChange={this.update('income')}
-              min={config.MIN_INCOME}
-              max={config.MAX_INCOME}
-            />
-          </label>
-
-          <label htmlFor="rrsp">
+          <label className="data-entry-label" htmlFor="rrsp">
             Total RRSP
             <input
               id="rrsp"
@@ -121,10 +111,11 @@ class DataEntry extends Component {
               onChange={this.update('rrsp')}
               min={config.MIN_RRSP}
               max={config.MAX_RRSP}
+              className="data-entry-input"
             />
           </label>
 
-          <label htmlFor="cpp">
+          <label className="data-entry-label" htmlFor="cpp">
             Annual CPP Entitlement
             <input
               id="cpp"
@@ -134,10 +125,11 @@ class DataEntry extends Component {
               onChange={this.update('cpp')}
               min={config.MIN_ANNUAL_CPP}
               max={config.MAX_ANNUAL_CPP}
+              className="data-entry-input"
             />
           </label>
 
-          <label htmlFor="pension">
+          <label className="data-entry-label" htmlFor="pension">
             Annual Pension
             <input
               id="pension"
@@ -147,22 +139,26 @@ class DataEntry extends Component {
               onChange={this.update('pension')}
               min={config.MIN_ANNUAL_PENSION}
               max={config.MAX_ANNUAL_PENSION}
+              className="data-entry-input"
             />
           </label>
 
-          <label htmlFor="selectRetirementAge">
+          <label className="data-entry-label" htmlFor="selectRetirementAge">
             Retirement Age
             <select
               id="selectRetirementAge"
               name="selectRetirementAge"
               value={retirementAge}
               onChange={this.update('retirementAge')}
+              className="data-entry-input"
             >
               {createSelection(retirementAgeOptions)}
             </select>
           </label>
 
-          <button type="submit">Calculate</button>
+          <button type="submit" className="data-entry-submit">
+            Compare my options
+          </button>
         </form>
       </div>
     );

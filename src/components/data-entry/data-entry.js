@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 
 import config from '../../config';
 import {
-  ageOptions,
   genderOptions,
   martialStatusOptions,
   retirementAgeOptions,
@@ -25,7 +24,6 @@ class DataEntry extends Component {
   // };
 
   state = {
-    age: config.DEFAULT_AGE,
     gender: config.DEFAULT_GENDER,
     maritalStatus: config.DEFAULT_MARITAL_STATUS,
     rrsp: config.DEFAULT_RRSP,
@@ -49,7 +47,6 @@ class DataEntry extends Component {
 
   render() {
     const {
-      age,
       gender,
       maritalStatus,
       rrsp,
@@ -60,19 +57,6 @@ class DataEntry extends Component {
     return (
       <div className="data-entry">
         <form onSubmit={this.submitInput}>
-          <label className="data-entry-label" htmlFor="selectAge">
-            Age
-            <select
-              id="selectAge"
-              name="selectAge"
-              value={age}
-              onChange={this.update('age')}
-              className="data-entry-input"
-            >
-              {createSelection(ageOptions)}
-            </select>
-          </label>
-
           <label className="data-entry-label" htmlFor="selectGender">
             Gender
             <select

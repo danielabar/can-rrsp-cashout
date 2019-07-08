@@ -94,7 +94,7 @@ describe('calc-util', () => {
       // When
       const result = monthlyGis(annualIncome, maritalStatus);
       // Then
-      expect(result).toEqual(259.18);
+      expect(result).toEqual(266.77);
     });
 
     it('Uses gis-lookup to find monthly GIS amount for single person with high-ish annual income', () => {
@@ -104,7 +104,7 @@ describe('calc-util', () => {
       // When
       const result = monthlyGis(annualIncome, maritalStatus);
       // Then
-      expect(result).toEqual(39.18);
+      expect(result).toEqual(46.77);
     });
   });
 });

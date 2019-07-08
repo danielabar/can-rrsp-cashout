@@ -5,7 +5,7 @@
   "homepage": "https://danielabar.github.io/can-rrsp-cashout",
   "dependencies": {
     "gh-pages": "2.0.1",
-    "gis-lookup": "0.0.3",
+    "gis-lookup": "0.0.4",
     "react": "^16.8.6",
     "react-app-polyfill": "1.0.0",
     "react-dom": "^16.8.6",

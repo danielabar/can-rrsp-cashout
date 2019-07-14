@@ -1,0 +1,27 @@
+.bar-chart {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.bar-chart--bar-container {
+  align-items: center;
+  display: flex;
+}
+
+.bar-chart--bar {
+  border: 1px solid var(--black);
+  height: 30px;
+}
+
+.bar-chart--bar1 {
+  width: 60%;
+}
+
+.bar-chart--bar2 {
+  border-top: transparent;
+  width: 40%;
+}
+
+.bar-chart--bar-label {
+  margin-left: 5px;
+}

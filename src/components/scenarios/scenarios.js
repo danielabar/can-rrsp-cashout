@@ -1,5 +1,6 @@
 import React from 'react';
 import './scenarios.css';
+import BarChart from '../bar-chart/bar-chart';
 
 function helper(props) {
   const { data } = props;
@@ -11,6 +12,8 @@ function helper(props) {
           Expected years in retirement: {cashOutBefore.numYrsInRetirement}
         </div>
         <br />
+        <BarChart title="Annual Income for GIS Eligibility" />
+        <BarChart title="Monthly GIS Entitlement" />
         <p className="scenarios-subheader">
           If you cash out your RRSP BEFORE retirement:
         </p>

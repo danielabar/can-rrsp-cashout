@@ -56,7 +56,7 @@ class DataEntry extends Component {
     } = this.state;
     return (
       <div className="data-entry">
-        <form onSubmit={this.submitInput}>
+        <form onSubmit={this.submitInput} method="post">
           <label className="data-entry-label" htmlFor="selectGender">
             Gender
             <select

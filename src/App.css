@@ -1,2 +1,11 @@
-.app {
+.app-prototype,
+.app-header {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.app-prototype {
+  text-transform: uppercase;
+  font-size: 1.2rem;
 }

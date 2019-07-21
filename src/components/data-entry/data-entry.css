@@ -25,6 +25,6 @@
 }
 
 .data-entry-submit:hover {
-  background-color: var(--brand-light-10);
+  background-color: var(--brand-light-5);
   color: var(--white-darken-2);
 }

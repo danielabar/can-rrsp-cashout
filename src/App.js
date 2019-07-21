@@ -10,12 +10,11 @@ function App() {
   const runScenarios = input => {
     const scenarioResult = run(input);
     setScenarios(scenarioResult);
-    console.log('Run scenarios for %o', input);
-    console.log('Result = %o', scenarioResult);
+    // console.log('Run scenarios for %o', input);
+    // console.log('Result = %o', scenarioResult);
   };
 
   function scenariosHelper() {
-    // Object.keys(obj).length === 0 && obj.constructor === Object
     if (
       Object.keys(scenarios).length === 0 &&
       scenarios.constructor === Object
@@ -30,7 +29,6 @@ function App() {
       <header className="app-header">
         Should I cash out my RRSP before or after retirement?
       </header>
-      <h1 className="app-prototype">(Prototype)</h1>
       <DataEntry runScenarios={runScenarios} />
       {scenariosHelper()}
     </div>

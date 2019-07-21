@@ -3,9 +3,6 @@ import './bar-chart.css';
 
 function barStyle(valueA, valueB) {
   const percentage = valueA < valueB ? `${(valueA / valueB) * 100}%` : '100%';
-  // return percentage === '100%'
-  //   ? { width: percentage, 'border-top': 'transparent' }
-  //   : { width: percentage };
   return {
     width: percentage,
   };

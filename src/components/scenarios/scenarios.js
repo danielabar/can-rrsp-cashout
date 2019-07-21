@@ -9,11 +9,12 @@ import Legend from '../legend/legend';
 </div>
 */
 
-function helper(props) {
+function Scenarios(props) {
   const { data } = props;
   const { cashOutBefore, cashOutAfter } = data;
-  if (cashOutBefore && cashOutAfter) {
-    return (
+  return (
+    <div className="scenarios">
+      <Legend />
       <div className="scenarios-data">
         <BarChart
           title="Annual Income for GIS Eligibility"
@@ -35,32 +36,7 @@ function helper(props) {
           scenario1={cashOutBefore.totalGISInRetirement}
           scenario2={cashOutAfter.totalGISInRetirement}
         />
-        <p className="scenarios-subheader">
-          If you cash out your RRSP BEFORE retirement:
-        </p>
-        <p>Annual income for GIS eligibility: {cashOutBefore.annualIncome}</p>
-        <p>Monthly GIS entitlement: {cashOutBefore.monthlyGIS}</p>
-        <p>Annual GIS entitlement: {cashOutBefore.annualGIS}</p>
-        <p>Total GIS in retirement: {cashOutBefore.totalGISInRetirement}</p>
-        <br />
-        <p className="scenarios-subheader">
-          If you cash out your RRSP AFTER retirement:
-        </p>
-        <p>Annual income for GIS eligibility: {cashOutAfter.annualIncome}</p>
-        <p>Monthly GIS entitlement: {cashOutAfter.monthlyGIS}</p>
-        <p>Annual GIS entitlement: {cashOutAfter.annualGIS}</p>
-        <p>Total GIS in retirement: {cashOutAfter.totalGISInRetirement}</p>
       </div>
-    );
-  }
-  return <div className="empty" />;
-}
-
-function Scenarios(props) {
-  return (
-    <div className="scenarios">
-      <Legend />
-      {helper(props)}
     </div>
   );
 }

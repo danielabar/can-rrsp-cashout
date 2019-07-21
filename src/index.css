@@ -5,6 +5,8 @@
   --white-darken-2: #fafafa;
   --brand: #1c7dd5;
   --brand-light-10: #3e96e6;
+  --viz-cashout-before: #af8dc3;
+  --viz-cashout-after: #7fbf7b;
 }
 
 /* apply a natural box layout model to all elements, but allowing components to change */

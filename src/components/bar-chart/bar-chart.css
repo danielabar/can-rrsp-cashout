@@ -9,17 +9,15 @@
 }
 
 .bar-chart--bar {
-  border: 1px solid var(--black);
   height: 30px;
 }
 
 .bar-chart--bar1 {
-  width: 60%;
+  background-color: var(--viz-cashout-before);
 }
 
 .bar-chart--bar2 {
-  border-top: transparent;
-  width: 40%;
+  background-color: var(--viz-cashout-after);
 }
 
 .bar-chart--bar-label {

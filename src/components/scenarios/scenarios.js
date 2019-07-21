@@ -1,6 +1,7 @@
 import React from 'react';
 import './scenarios.css';
 import BarChart from '../bar-chart/bar-chart';
+import Legend from '../legend/legend';
 
 /*
 <div className="scenarios-data-common">
@@ -56,7 +57,12 @@ function helper(props) {
 }
 
 function Scenarios(props) {
-  return <div className="scenarios">{helper(props)}</div>;
+  return (
+    <div className="scenarios">
+      <Legend />
+      {helper(props)}
+    </div>
+  );
 }
 
 export default Scenarios;

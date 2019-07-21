@@ -1,0 +1,17 @@
+.legend {
+  display: flex;
+  align-content: center;
+}
+
+.legend--symbol {
+  width: 20px;
+  height: 20px;
+}
+
+.legend--symbol--before {
+  background-color: var(--viz-cashout-before);
+}
+
+.legend--symbol--after {
+  background-color: var(--viz-cashout-after);
+}

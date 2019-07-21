@@ -14,6 +14,17 @@ function App() {
     console.log('Result = %o', scenarioResult);
   };
 
+  function scenariosHelper() {
+    // Object.keys(obj).length === 0 && obj.constructor === Object
+    if (
+      Object.keys(scenarios).length === 0 &&
+      scenarios.constructor === Object
+    ) {
+      return <div className="empty" />;
+    }
+    return <Scenarios data={scenarios} />;
+  }
+
   return (
     <div className="app">
       <header className="app-header">
@@ -21,7 +32,7 @@ function App() {
       </header>
       <h1 className="app-prototype">(Prototype)</h1>
       <DataEntry runScenarios={runScenarios} />
-      <Scenarios data={scenarios} />
+      {scenariosHelper()}
     </div>
   );
 }

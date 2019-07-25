@@ -1,4 +1,5 @@
 import React from 'react';
+import { accounting } from 'accounting';
 import './bar-chart.css';
 
 function barStyle(valueA, valueB) {
@@ -6,6 +7,10 @@ function barStyle(valueA, valueB) {
   return {
     width: percentage,
   };
+}
+
+function format(value) {
+  return accounting.formatMoney(value);
 }
 
 function BarChart(props) {
@@ -18,14 +23,14 @@ function BarChart(props) {
           className="bar-chart--bar bar-chart--bar1"
           style={barStyle(scenario1, scenario2)}
         />
-        <div className="bar-chart--bar-label">{scenario1}</div>
+        <div className="bar-chart--bar-label">{format(scenario1)}</div>
       </div>
       <div className="bar-chart--bar-container">
         <div
           className="bar-chart--bar bar-chart--bar2"
           style={barStyle(scenario2, scenario1)}
         />
-        <div className="bar-chart--bar-label">{scenario2}</div>
+        <div className="bar-chart--bar-label">{format(scenario2)}</div>
       </div>
     </div>
   );

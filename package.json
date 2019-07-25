@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://danielabar.github.io/can-rrsp-cashout",
   "dependencies": {
+    "accounting": "0.4.1",
     "gh-pages": "2.0.1",
     "gis-lookup": "0.0.4",
     "react": "^16.8.6",

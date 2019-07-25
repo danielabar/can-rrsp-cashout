@@ -21,6 +21,9 @@ function App() {
     ) {
       return <div className="empty" />;
     }
+    if (scenarios.cashOutBefore.monthlyGIS === 0) {
+      return <div className="no-gis">You are not eligible for GIS.</div>;
+    }
     return <Scenarios data={scenarios} />;
   }
 

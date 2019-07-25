@@ -1,11 +1,17 @@
 .bar-chart {
+  margin-bottom: 25px;
   width: 100%;
-  margin-bottom: 20px;
 }
 
 .bar-chart--bar-container {
   align-items: center;
   display: flex;
+}
+
+.bar-chart--title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 10px;
 }
 
 .bar-chart--bar {

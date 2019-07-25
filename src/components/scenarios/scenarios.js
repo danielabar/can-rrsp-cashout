@@ -15,7 +15,7 @@ function Scenarios(props) {
   return (
     <div className="scenarios">
       <Legend />
-      <div className="scenarios-data">
+      <div className="scenarios--data">
         <BarChart
           title="Annual Income for GIS Eligibility"
           scenario1={cashOutBefore.annualIncome}

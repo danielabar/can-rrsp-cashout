@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/can-rrsp-cashout/precache-manifest.93346625993de43fcf4eccbfbcb07bd1.js"
+  "/can-rrsp-cashout/precache-manifest.31a93b36875c85d9a9f6a479eefea00b.js"
 );
 
 self.addEventListener('message', (event) => {

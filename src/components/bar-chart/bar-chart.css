@@ -7,15 +7,20 @@
   width: 100%;
 }
 
-.bar-chart--bar-container {
-  align-items: center;
-  display: flex;
-}
-
 .bar-chart--title {
   font-size: 1.2rem;
   font-weight: 500;
   margin-bottom: 15px;
+}
+
+.bar-chart--bar-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bar-chart--bar-outer {
+  flex: 0 0 85%;
 }
 
 .bar-chart--bar {
@@ -31,6 +36,18 @@
 }
 
 .bar-chart--bar-label {
-  flex: 0 0 100px;
+  flex: 0 0 10%;
+  font-weight: bold;
   margin-left: 5px;
+  text-align: right;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .bar-chart {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .bar-chart--bar-outer {
+    flex: 0 0 75%;
+  }
 }

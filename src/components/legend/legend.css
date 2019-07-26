@@ -23,3 +23,9 @@
 .legend--label {
   margin-right: 20px;
 }
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .legend {
+    margin-left: 20px;
+  }
+}

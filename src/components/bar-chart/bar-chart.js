@@ -8,17 +8,21 @@ function BarChart(props) {
     <div className="bar-chart">
       <h2 className="bar-chart--title">{title}</h2>
       <div className="bar-chart--bar-container">
-        <div
-          className="bar-chart--bar bar-chart--bar1"
-          style={barStyle(scenario1, scenario2)}
-        />
+        <div className="bar-chart--bar-outer">
+          <div
+            className="bar-chart--bar bar-chart--bar1"
+            style={barStyle(scenario1, scenario2)}
+          />
+        </div>
         <div className="bar-chart--bar-label">{formatMoney(scenario1)}</div>
       </div>
       <div className="bar-chart--bar-container">
-        <div
-          className="bar-chart--bar bar-chart--bar2"
-          style={barStyle(scenario2, scenario1)}
-        />
+        <div className="bar-chart--bar-outer">
+          <div
+            className="bar-chart--bar bar-chart--bar2"
+            style={barStyle(scenario2, scenario1)}
+          />
+        </div>
         <div className="bar-chart--bar-label">{formatMoney(scenario2)}</div>
       </div>
     </div>

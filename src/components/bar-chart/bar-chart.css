@@ -31,6 +31,6 @@
 }
 
 .bar-chart--bar-label {
-  flex: 100px 0 0;
+  flex: 0 0 100px;
   margin-left: 5px;
 }

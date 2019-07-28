@@ -38,6 +38,8 @@ const config = Object.freeze({
   DEFAULT_RETIREMENT_AGE: 65,
   MIN_RETIREMENT_AGE: 55,
   MAX_RETIREMENT_AGE: 70,
+
+  // https://www.canada.ca/en/services/benefits/publicpensions/cpp/old-age-security/guaranteed-income-supplement/eligibility.html
   GIS_ENTITLEMENT_AGE: 65,
 });
 

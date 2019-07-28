@@ -10,18 +10,30 @@ function App() {
   const runScenarios = input => {
     const scenarioResult = run(input);
     setScenarios(scenarioResult);
-    console.log('Run scenarios for %o', input);
-    console.log('Result = %o', scenarioResult);
+    // console.log('Run scenarios for %o', input);
+    // console.log('Result = %o', scenarioResult);
   };
+
+  function scenariosHelper() {
+    if (
+      Object.keys(scenarios).length === 0 &&
+      scenarios.constructor === Object
+    ) {
+      return <div className="empty" />;
+    }
+    if (scenarios.cashOutBefore.monthlyGIS === 0) {
+      return <div className="no-gis">You are not eligible for GIS.</div>;
+    }
+    return <Scenarios data={scenarios} />;
+  }
 
   return (
     <div className="app">
       <header className="app-header">
         Should I cash out my RRSP before or after retirement?
       </header>
-      <h1 className="app-prototype">(Prototype)</h1>
       <DataEntry runScenarios={runScenarios} />
-      <Scenarios data={scenarios} />
+      {scenariosHelper()}
     </div>
   );
 }

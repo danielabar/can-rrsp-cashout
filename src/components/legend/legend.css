@@ -1,0 +1,31 @@
+.legend {
+  align-items: center;
+  display: flex;
+  margin: 15px 30px;
+}
+
+.legend--symbol {
+  border-radius: 1px;
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.25);
+  height: 30px;
+  margin-right: 5px;
+  width: 30px;
+}
+
+.legend--symbol--before {
+  background-color: var(--viz-cashout-before);
+}
+
+.legend--symbol--after {
+  background-color: var(--viz-cashout-after);
+}
+
+.legend--label {
+  margin-right: 20px;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .legend {
+    margin-left: 20px;
+  }
+}

@@ -1,11 +1,15 @@
 # can-rrsp-cashout
 
-> Calculator for low income Canadians approaching retirment age to help them determine if they should cash out their RRSP.
+[![CircleCI](https://circleci.com/gh/danielabar/can-rrsp-cashout.svg?style=svg)](https://circleci.com/gh/danielabar/can-rrsp-cashout)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Calculator for low income Canadians approaching retirment age to understand whether (and by how much) they would be better off cashing out their RRSPs before 65 based on GIS eligibility and income.
+
+This project was inspired by an episode of the Mostly Money podcast on [The upside-down world of financial planning for low-income Canadians](https://www.stitcher.com/podcast/preet-banerjee/mostly-money-mostly-canadian/e/59296571).
+
 
 ## Dev Notes
 
+- Bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 - [Enhanced](https://medium.com/quick-code/how-to-integrate-eslint-prettier-in-react-6efbd206d5c4) create-react-app with prettier and eslint
 - VS Code users - disable Beautify plugin for this project workspace
 

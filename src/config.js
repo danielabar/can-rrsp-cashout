@@ -38,6 +38,7 @@ const config = Object.freeze({
   DEFAULT_RETIREMENT_AGE: 65,
   MIN_RETIREMENT_AGE: 55,
   MAX_RETIREMENT_AGE: 70,
+  GIS_ENTITLEMENT_AGE: 65,
 });
 
 export default config;

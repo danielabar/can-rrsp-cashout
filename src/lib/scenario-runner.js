@@ -23,7 +23,8 @@ function calculateCashOutBeforeRetirement(inp) {
   const annualGIS = calcUtil.annualGIS(monthlyGIS);
   const totalGISInRetirement = calcUtil.totalGisInRetirement(
     annualGIS,
-    numYrsInRetirement
+    numYrsInRetirement,
+    input.retirementAge
   );
   return {
     totalGISInRetirement,
@@ -42,7 +43,8 @@ function calculateCashOutAfterRetirement(inp) {
   const annualGIS = calcUtil.annualGIS(monthlyGIS);
   const totalGISInRetirement = calcUtil.totalGisInRetirement(
     annualGIS,
-    numYrsInRetirement
+    numYrsInRetirement,
+    input.retirementAge
   );
   return {
     totalGISInRetirement,

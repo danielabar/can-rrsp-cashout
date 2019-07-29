@@ -4,9 +4,6 @@ import config from '../config';
 function lifeExpectancy(gender) {
   return config.GENDER.find(el => el.key === gender).lifeExpectancy;
 }
-function yearsBeforeRetirement(input) {
-  return input.retirementAge - input.age;
-}
 
 function yearsInRetirement(input) {
   return lifeExpectancy(input.gender) - input.retirementAge;
@@ -42,12 +39,19 @@ function annualGIS(monthlyGisAmt) {
   return monthlyGisAmt * 12;
 }
 
-function totalGisInRetirement(annualGISAmt, numYearsInRetirement) {
-  return annualGISAmt * numYearsInRetirement;
+function totalGisInRetirement(
+  annualGISAmt,
+  numYearsInRetirement,
+  retirementAge
+) {
+  const numYrs =
+    retirementAge < config.GIS_ENTITLEMENT_AGE
+      ? numYearsInRetirement - (config.GIS_ENTITLEMENT_AGE - retirementAge)
+      : numYearsInRetirement;
+  return annualGISAmt * numYrs;
 }
 
 export {
-  yearsBeforeRetirement,
   yearsInRetirement,
   annualIncomeForGisEligibilityWithRrsp,
   annualIncomeForGisEligibilityWithoutRrsp,

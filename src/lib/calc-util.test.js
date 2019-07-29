@@ -1,9 +1,9 @@
 import {
-  yearsBeforeRetirement,
   yearsInRetirement,
   annualIncomeForGisEligibilityWithRrsp,
   annualIncomeForGisEligibilityWithoutRrsp,
   monthlyGis,
+  totalGisInRetirement,
 } from './calc-util';
 import config from '../config';
 
@@ -12,20 +12,6 @@ import config from '../config';
 // });
 
 describe('calc-util', () => {
-  describe('yearsBeforeRetirement', () => {
-    it('Retursn difference between retirement age and current age', () => {
-      // Given
-      const input = {
-        age: 55,
-        retirementAge: 65,
-      };
-      // When
-      const result = yearsBeforeRetirement(input);
-      // Then
-      expect(result).toEqual(10);
-    });
-  });
-
   describe('yearsInRetirement', () => {
     it('Returns difference between life expectancy for female and retirement age', () => {
       // Given
@@ -105,6 +91,53 @@ describe('calc-util', () => {
       const result = monthlyGis(annualIncome, maritalStatus);
       // Then
       expect(result).toEqual(46.77);
+    });
+  });
+
+  describe('totalGisInRetirement', () => {
+    it('Returns product of annual GIS amount and number of years in retirement', () => {
+      // Given
+      const annualGISAmt = 100;
+      const numYearsInRetirement = 20;
+      const retirementAge = 65;
+      // When
+      const result = totalGisInRetirement(
+        annualGISAmt,
+        numYearsInRetirement,
+        retirementAge
+      );
+      // Then
+      expect(result).toEqual(2000);
+    });
+
+    it('Returns product of annual GIS amount and number of years in retirement starting from age 65 when retirement age is before 65', () => {
+      // Given
+      const annualGISAmt = 100;
+      const numYearsInRetirement = 30;
+      const retirementAge = 55;
+      // When
+      const result = totalGisInRetirement(
+        annualGISAmt,
+        numYearsInRetirement,
+        retirementAge
+      );
+      // Then expect total GIS = annualGISAmt * 20, NOT * 30 because GIS can only be collected starting from age 65
+      expect(result).toEqual(2000);
+    });
+
+    it('Returns product of annual GIS amount and number of years in retirement when retirement age is after 65', () => {
+      // Given
+      const annualGISAmt = 100;
+      const numYearsInRetirement = 15;
+      const retirementAge = 70;
+      // When
+      const result = totalGisInRetirement(
+        annualGISAmt,
+        numYearsInRetirement,
+        retirementAge
+      );
+      // Then
+      expect(result).toEqual(1500);
     });
   });
 });

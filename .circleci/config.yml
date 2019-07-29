@@ -1,6 +1,9 @@
 version: 2 # use CircleCI 2.0, https://circleci.com/docs/2.0/language-javascript/
 jobs: # a collection of steps
   build: # runs not using Workflows must have a `build` job as entry point
+    branches: # do not run CI on these branches
+      ignore:
+        - gh-pages
     working_directory: ~/tidysum # directory where steps will run
     docker: # run the steps with Docker
       - image: circleci/node:lts # ...with this image as the primary container; this is where all `steps` will run

@@ -1,6 +1,5 @@
 import * as calcUtil from './calc-util';
 
-// should be a better way to get these as numeric from html form
 function convertToNumeric(input) {
   return {
     age: parseInt(input.age, 10),
@@ -14,10 +13,9 @@ function convertToNumeric(input) {
   };
 }
 
-// TODO extract common calcs between scenarios
-function calculateCashOutBeforeRetirement(inp) {
+function _calculate(inp, annualIncomeFunc) {
   const input = convertToNumeric(inp);
-  const annualIncome = calcUtil.annualIncomeForGisEligibilityWithoutRrsp(input);
+  const annualIncome = annualIncomeFunc(input);
   const numYrsInRetirement = calcUtil.yearsInRetirement(input);
   const monthlyGIS = calcUtil.monthlyGis(annualIncome, input.maritalStatus);
   const annualGIS = calcUtil.annualGIS(monthlyGIS);
@@ -35,24 +33,12 @@ function calculateCashOutBeforeRetirement(inp) {
   };
 }
 
+function calculateCashOutBeforeRetirement(inp) {
+  return _calculate(inp, calcUtil.annualIncomeForGisEligibilityWithoutRrsp);
+}
+
 function calculateCashOutAfterRetirement(inp) {
-  const input = convertToNumeric(inp);
-  const annualIncome = calcUtil.annualIncomeForGisEligibilityWithRrsp(input);
-  const numYrsInRetirement = calcUtil.yearsInRetirement(input);
-  const monthlyGIS = calcUtil.monthlyGis(annualIncome, input.maritalStatus);
-  const annualGIS = calcUtil.annualGIS(monthlyGIS);
-  const totalGISInRetirement = calcUtil.totalGisInRetirement(
-    annualGIS,
-    numYrsInRetirement,
-    input.retirementAge
-  );
-  return {
-    totalGISInRetirement,
-    numYrsInRetirement,
-    annualIncome,
-    monthlyGIS,
-    annualGIS,
-  };
+  return _calculate(inp, calcUtil.annualIncomeForGisEligibilityWithRrsp);
 }
 
 function run(input) {

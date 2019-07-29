@@ -26,4 +26,4 @@ jobs: # a collection of steps
           command: npm run lint
       - run: # run tests with coverage
           name: test
-          command: npm test -- --coverage --watchAll=false
+          command: npm test -- --coverage --watchAll=false --verbose

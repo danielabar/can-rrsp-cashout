@@ -11,7 +11,7 @@ import Legend from '../legend/legend';
 
 function Scenarios(props) {
   const { data } = props;
-  const { cashOutBefore, cashOutAfter } = data;
+  const { cashOutBefore, cashOutAfter, chartText } = data;
   return (
     <div className="scenarios">
       <Legend />
@@ -20,6 +20,7 @@ function Scenarios(props) {
           title="Annual Income for GIS Eligibility"
           scenario1={cashOutBefore.annualIncome}
           scenario2={cashOutAfter.annualIncome}
+          chartText={chartText.annualIncomeForGisEligibility}
         />
         <BarChart
           title="Monthly GIS Entitlement"

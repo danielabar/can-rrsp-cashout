@@ -1,4 +1,5 @@
 import * as calcUtil from './calc-util';
+import { generate } from './chart-text';
 
 function convertToNumeric(input) {
   return {
@@ -13,16 +14,18 @@ function convertToNumeric(input) {
   };
 }
 
-function _calculate(inp, annualIncomeFunc) {
-  const input = convertToNumeric(inp);
-  const annualIncome = annualIncomeFunc(input);
-  const numYrsInRetirement = calcUtil.yearsInRetirement(input);
-  const monthlyGIS = calcUtil.monthlyGis(annualIncome, input.maritalStatus);
+function _calculate(numericInput, annualIncomeFunc) {
+  const annualIncome = annualIncomeFunc(numericInput);
+  const numYrsInRetirement = calcUtil.yearsInRetirement(numericInput);
+  const monthlyGIS = calcUtil.monthlyGis(
+    annualIncome,
+    numericInput.maritalStatus
+  );
   const annualGIS = calcUtil.annualGIS(monthlyGIS);
   const totalGISInRetirement = calcUtil.totalGisInRetirement(
     annualGIS,
     numYrsInRetirement,
-    input.retirementAge
+    numericInput.retirementAge
   );
   return {
     totalGISInRetirement,
@@ -42,9 +45,14 @@ function calculateCashOutAfterRetirement(inp) {
 }
 
 function run(input) {
+  const numericInput = convertToNumeric(input);
+  const cashOutBefore = calculateCashOutBeforeRetirement(numericInput);
+  const cashOutAfter = calculateCashOutAfterRetirement(numericInput);
+  const chartText = generate(numericInput, cashOutBefore, cashOutAfter);
   return {
-    cashOutBefore: calculateCashOutBeforeRetirement(input),
-    cashOutAfter: calculateCashOutAfterRetirement(input),
+    cashOutBefore,
+    cashOutAfter,
+    chartText,
   };
 }
 

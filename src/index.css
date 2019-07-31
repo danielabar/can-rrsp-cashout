@@ -2,8 +2,6 @@
 /* https://www.sessions.edu/color-calculator/ */
 :root {
   --white: #fcfcfc;
-  /* --white-darken-2: hsl(0, 0%, 98%); */
-  --white-darken-2: #fafafa;
 
   --brand: #1c7dd5;
   --brand-lighten-51: #f7fbfe;

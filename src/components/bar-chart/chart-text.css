@@ -1,3 +1,4 @@
 .chart-text--number {
-  color: orange;
+  color: var(--brand-saturate-15);
+  font-weight: 700;
 }

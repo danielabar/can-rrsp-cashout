@@ -15,6 +15,7 @@
 
 .bar-chart--bar-container {
   align-items: center;
+  background-color: var(--brand-lighten-52);
   display: flex;
   justify-content: space-between;
 }

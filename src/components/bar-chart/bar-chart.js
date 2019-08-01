@@ -13,7 +13,10 @@ function BarChart(props) {
   return (
     <div className="bar-chart">
       <h2 className="bar-chart--title">{title}</h2>
-      <div dangerouslySetInnerHTML={createMarkup(chartText)} />
+      <div
+        className="chart-text"
+        dangerouslySetInnerHTML={createMarkup(chartText)}
+      />
       <div className="bar-chart--bar-container">
         <div className="bar-chart--bar-outer">
           <div

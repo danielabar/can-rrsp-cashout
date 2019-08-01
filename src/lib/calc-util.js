@@ -58,4 +58,5 @@ export {
   monthlyGis,
   annualGIS,
   totalGisInRetirement,
+  lifeExpectancy,
 };

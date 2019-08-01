@@ -1,4 +1,5 @@
 import { formatMoney } from './viz-util';
+import { lifeExpectancy } from './calc-util';
 
 // https://stackoverflow.com/questions/38000659/template-strings-es6-prevent-line-breaks
 
@@ -16,15 +17,26 @@ function annualIncomeForGisEligibility(
   scenarioBefore,
   scenarioAfter
 ) {
-  const testNum1 = 100;
-  const testNum2 = 200;
-  return `test some text <span class="chart-text--number">${formatMoney(
-    testNum1
+  return `If you cash out your RRSP <span class="chart-text--time">before</span> retiring,\
+  then your income used to determine how much GIS you're eligible for will be your CPP of\
+  <span class="chart-text--number">${formatMoney(numericInput.cpp)}</span>\
+  plus your pension of\
+  <span class="chart-text--number">${formatMoney(numericInput.pension)}</span>\
+  for a total of\
+  <span class="chart-text--number">${formatMoney(
+    numericInput.cpp + numericInput.pension
+  )}</span>.\
+  <span class="chart-text--separator">&nbsp;</span>\
+  If you withdraw from your RRSP <span class="chart-text--time">after</span> retiring,\
+  then the annual withdrawals get included in your annual income for GIS eligibility purposes.\
+  Given Canadian\
+  <span class="chart-text--number">${numericInput.gender}</span>\
+  life expectancy of\
+  <span class="chart-text--number">${lifeExpectancy(
+    numericInput.gender
   )}</span>\
-  followed by some more text <span class="chart-text--number">${formatMoney(
-    testNum2
-  )}</span>\
-  and some more text`;
+  rest of text wip...
+  `;
 }
 
 function monthlyGISEntitlement(numericInput, scenarios) {

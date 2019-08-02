@@ -52,6 +52,7 @@ function totalGisInRetirement(
 }
 
 export {
+  annualRrsp,
   yearsInRetirement,
   annualIncomeForGisEligibilityWithRrsp,
   annualIncomeForGisEligibilityWithoutRrsp,

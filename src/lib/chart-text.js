@@ -1,5 +1,5 @@
 import { formatMoney } from './viz-util';
-import { lifeExpectancy } from './calc-util';
+import { annualRrsp, lifeExpectancy } from './calc-util';
 
 // https://stackoverflow.com/questions/38000659/template-strings-es6-prevent-line-breaks
 
@@ -24,7 +24,7 @@ function annualIncomeForGisEligibility(
   <span class="chart-text--number">${formatMoney(numericInput.pension)}</span>\
   for a total of\
   <span class="chart-text--number">${formatMoney(
-    numericInput.cpp + numericInput.pension
+    scenarioBefore.annualIncome
   )}</span>.\
   <span class="chart-text--separator">&nbsp;</span>\
   If you withdraw from your RRSP <span class="chart-text--time">after</span> retiring,\
@@ -35,7 +35,17 @@ function annualIncomeForGisEligibility(
   <span class="chart-text--number">${lifeExpectancy(
     numericInput.gender
   )}</span>\
-  rest of text wip...
+  and your retirement age of\
+  <span class="chart-text--number">${numericInput.retirementAge}</span>,\
+  you will have an estimated\
+  <span class="chart-text--number">${scenarioBefore.numYrsInRetirement}</span>\
+  years in retirement. Assuming an even withdrawal rate from your\
+  <span class="chart-text--number">${numericInput.rrsp}</span>\
+  RRSP throughout retirement,\
+  this will add\
+  <span class="chart-text--number">${annualRrsp(numericInput)}</span>,\
+  to your income for a total of\
+  <span class="chart-text--number">${scenarioAfter.annualIncome}</span>.\
   `;
 }
 
@@ -43,13 +53,18 @@ function monthlyGISEntitlement(numericInput, scenarios) {
   // TBD...
 }
 
-function generate(numericInput, scenarios) {
+function generate(numericInput, scenarioBefore, scenarioAfter) {
   return {
     annualIncomeForGisEligibility: annualIncomeForGisEligibility(
       numericInput,
-      scenarios
+      scenarioBefore,
+      scenarioAfter
     ),
-    monthlyGISEntitlement: monthlyGISEntitlement(numericInput, scenarios),
+    monthlyGISEntitlement: monthlyGISEntitlement(
+      numericInput,
+      scenarioBefore,
+      scenarioAfter
+    ),
   };
 }
 

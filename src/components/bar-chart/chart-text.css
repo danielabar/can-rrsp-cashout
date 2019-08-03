@@ -1,7 +1,7 @@
 .chart-text {
   font-size: 1.05rem;
   font-weight: 300;
-  line-height: 1.15;
+  line-height: 1.4;
   margin-bottom: 10px;
 }
 
@@ -13,4 +13,18 @@
 .chart-text--separator {
   display: block;
   height: 10px;
+}
+
+.chart-text--time {
+  font-style: italic;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.chart-text--time-before {
+  color: var(--viz-cashout-before-darken-30);
+}
+
+.chart-text--time-after {
+  color: var(--viz-cashout-after-darken-30);
 }

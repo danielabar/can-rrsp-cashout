@@ -16,7 +16,9 @@
   --brand-opposite-lighten-52: #fffdfc;
 
   --viz-cashout-before: #af8dc3;
+  --viz-cashout-before-darken-30: #633f78;
   --viz-cashout-after: #7fbf7b;
+  --viz-cashout-after-darken-30: #417e3d;
 }
 
 /* apply a natural box layout model to all elements, but allowing components to change */

@@ -1,7 +1,6 @@
 import { formatMoney } from './viz-util';
 import { annualRrsp, lifeExpectancy } from './calc-util';
 
-// https://stackoverflow.com/questions/38000659/template-strings-es6-prevent-line-breaks
 function annualIncomeForGisEligibility(
   numericInput,
   scenarioBefore,
@@ -43,8 +42,41 @@ function annualIncomeForGisEligibility(
   `;
 }
 
-function monthlyGISEntitlement(numericInput, scenarios) {
-  // TBD...
+/*
+If you cash out your RRSP BEFORE retiring, then your income of TOTALVAL makes you eligible for a monthly GIS benefit of GISBEF.
+
+If you withdraw from your RRSP AFTER retiring, then the RRSPINC increase in your income reduces your GIS payment by
+(GISBEF - GISAFT) resulting in a lower monthly benefit of GISAFT.
+*/
+function monthlyGISEntitlement(numericInput, scenarioBefore, scenarioAfter) {
+  return ` If you cash out your RRSP <span class="chart-text--time chart-text--time-before">before</span> retiring,\
+  then your income of\
+  <span class="chart-text--number">${formatMoney(
+    scenarioBefore.annualIncome
+  )}</span>\
+  makes you eligible for a monthly GIS benefit of\
+  <span class="chart-text--number">${formatMoney(
+    scenarioBefore.monthlyGIS
+  )}</span>\
+  <span class="chart-text--separator">&nbsp;</span>\
+  If you withdraw from your RRSP <span class="chart-text--time chart-text--time-after">after</span> retiring,\
+  then the\
+  <span class="chart-text--number">${formatMoney(
+    scenarioAfter.annualIncome - scenarioBefore.annualIncome
+  )}</span>\
+  increase in your income reduces your GIS payment by
+  <span class="chart-text--number">${formatMoney(
+    scenarioBefore.monthlyGIS - scenarioAfter.monthlyGIS
+  )}</span>\
+  resulting in a lower monthly benefit of\
+  <span class="chart-text--number">${formatMoney(
+    scenarioAfter.monthlyGIS
+  )}</span>\
+  <span class="chart-text--separator">&nbsp;</span>\
+  Remember when cashing out your RRSP <span class="chart-text--time chart-text--time-before">before</span> retiring,
+  you still have the money (for example in a savings account), but it doesn't count as income for\
+  GIS eligibility purposes.
+  `;
 }
 
 function generate(numericInput, scenarioBefore, scenarioAfter) {

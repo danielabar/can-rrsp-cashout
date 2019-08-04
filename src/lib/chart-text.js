@@ -17,7 +17,7 @@ function annualIncomeForGisEligibility(
   )}</span>.\
   <span class="chart-text--separator">&nbsp;</span>\
   If you withdraw from your RRSP <span class="chart-text--time chart-text--time-after">after</span> retiring,\
-  then the annual withdrawals get included in your income for GIS eligibility purposes.\
+  then the withdrawals get included in your income for GIS eligibility purposes.\
   Given Canadian\
   <span class="chart-text--number">${numericInput.gender}</span>\
   life expectancy of\
@@ -81,7 +81,7 @@ function annualGISEntitlement(numericInput, scenarioBefore, scenarioAfter) {
     scenarioBefore.annualGIS
   )}</span>.\
   <span class="chart-text--separator">&nbsp;</span>\
-  On the other hand, cashing out your RRSP <span class="chart-text--time chart-text--time-before">after</span> retirement,\
+  Cashing out your RRSP <span class="chart-text--time chart-text--time-after">after</span> retirement,\
   would result in a lower annual GIS benefit of\
   <span class="chart-text--number">${formatMoney(
     scenarioAfter.annualGIS

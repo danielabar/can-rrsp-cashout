@@ -4,7 +4,6 @@
   --white: #fcfcfc;
 
   --brand: #1c7dd5;
-  --brand-lighten-51: #f7fbfe;
   --brand-lighten-52: #fcfdff;
 
   --brand-darken-3: #1a75c7;
@@ -13,7 +12,7 @@
   --brand-saturate-15: #0a7ee7;
 
   --brand-opposite: #d5601c;
-  --brand-opposite-lighten-52: #fffdfc;
+  --brand-opposite-lighten-50: #fdf7f3;
 
   --viz-cashout-before: #af8dc3;
   --viz-cashout-before-darken-30: #633f78;
@@ -33,7 +32,7 @@ html {
 }
 
 body {
-  background-color: var(--brand-opposite-lighten-52);
+  background-color: var(--brand-opposite-lighten-50);
   color: var(--brand-darken-41);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

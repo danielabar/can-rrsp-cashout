@@ -3,12 +3,6 @@ import './scenarios.css';
 import BarChart from '../bar-chart/bar-chart';
 import Legend from '../legend/legend';
 
-/*
-<div className="scenarios-data-common">
-  Expected years in retirement: {cashOutBefore.numYrsInRetirement}
-</div>
-*/
-
 function Scenarios(props) {
   const { data } = props;
   const { cashOutBefore, cashOutAfter, chartText } = data;
@@ -32,6 +26,7 @@ function Scenarios(props) {
           title="Annual GIS Entitlement"
           scenario1={cashOutBefore.annualGIS}
           scenario2={cashOutAfter.annualGIS}
+          chartText={chartText.annualGISEntitlement}
         />
         <BarChart
           title="Total GIS in Retirement"

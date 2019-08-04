@@ -42,14 +42,8 @@ function annualIncomeForGisEligibility(
   `;
 }
 
-/*
-If you cash out your RRSP BEFORE retiring, then your income of TOTALVAL makes you eligible for a monthly GIS benefit of GISBEF.
-
-If you withdraw from your RRSP AFTER retiring, then the RRSPINC increase in your income reduces your GIS payment by
-(GISBEF - GISAFT) resulting in a lower monthly benefit of GISAFT.
-*/
 function monthlyGISEntitlement(numericInput, scenarioBefore, scenarioAfter) {
-  return ` If you cash out your RRSP <span class="chart-text--time chart-text--time-before">before</span> retiring,\
+  return `If you cash out your RRSP <span class="chart-text--time chart-text--time-before">before</span> retiring,\
   then your income of\
   <span class="chart-text--number">${formatMoney(
     scenarioBefore.annualIncome
@@ -79,6 +73,21 @@ function monthlyGISEntitlement(numericInput, scenarioBefore, scenarioAfter) {
   `;
 }
 
+function annualGISEntitlement(numericInput, scenarioBefore, scenarioAfter) {
+  return `Translating the monthly GIS benefit to a yearly value,\
+  cashing out your RRSP <span class="chart-text--time chart-text--time-before">before</span> retiring,\
+  would result in an annual GIS benefit of\
+  <span class="chart-text--number">${formatMoney(
+    scenarioBefore.annualGIS
+  )}</span>.\
+  <span class="chart-text--separator">&nbsp;</span>\
+  On the other hand, cashing out your RRSP <span class="chart-text--time chart-text--time-before">after</span> retirement,\
+  would result in a lower annual GIS benefit of\
+  <span class="chart-text--number">${formatMoney(
+    scenarioAfter.annualGIS
+  )}</span>.`;
+}
+
 function generate(numericInput, scenarioBefore, scenarioAfter) {
   return {
     annualIncomeForGisEligibility: annualIncomeForGisEligibility(
@@ -87,6 +96,11 @@ function generate(numericInput, scenarioBefore, scenarioAfter) {
       scenarioAfter
     ),
     monthlyGISEntitlement: monthlyGISEntitlement(
+      numericInput,
+      scenarioBefore,
+      scenarioAfter
+    ),
+    annualGISEntitlement: annualGISEntitlement(
       numericInput,
       scenarioBefore,
       scenarioAfter

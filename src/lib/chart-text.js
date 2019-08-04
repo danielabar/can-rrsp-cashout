@@ -27,9 +27,7 @@ function annualIncomeForGisEligibility(
   Given Canadian\
   <span class="chart-text--number">${numericInput.gender}</span>\
   life expectancy of\
-  <span class="chart-text--number">${lifeExpectancy(
-    numericInput.gender
-  )}</span>\
+  <span class="chart-text--basic">${lifeExpectancy(numericInput.gender)}</span>\
   and your retirement age of\
   <span class="chart-text--number">${numericInput.retirementAge}</span>,\
   you will have an estimated\
@@ -80,7 +78,11 @@ function monthlyGISEntitlement(numericInput, scenarioBefore, scenarioAfter) {
 }
 
 function annualGISEntitlement(numericInput, scenarioBefore, scenarioAfter) {
-  return `Translating the monthly GIS benefit to a yearly value,\
+  return `Translating your monthly GIS benefit of\
+  <span class="chart-text--number">${formatMoney(
+    scenarioBefore.monthlyGIS
+  )}</span>\
+  to a yearly value,\
   cashing out your RRSP <span class="chart-text--time chart-text--time-before">before</span> retiring,\
   would result in an annual GIS benefit of\
   <span class="chart-text--number">${formatMoney(
@@ -98,13 +100,11 @@ function annualGISEntitlement(numericInput, scenarioBefore, scenarioAfter) {
 // TODO: If retiring before 65, explain why eg: 30 yrs in retirement vs only 20 yrs collecting GIS
 function totalGISEntitlement(numericInput, scenarioBefore, scenarioAfter) {
   return `You're eligible to start receiving GIS at age\
-  <span class="chart-text--number">${config.GIS_ENTITLEMENT_AGE}</span>.\
+  <span class="chart-text--basic">${config.GIS_ENTITLEMENT_AGE}</span>.\
   Given Canadian\
   <span class="chart-text--number">${numericInput.gender}</span>\
   life expectancy of\
-  <span class="chart-text--number">${lifeExpectancy(
-    numericInput.gender
-  )}</span>\
+  <span class="chart-text--basic">${lifeExpectancy(numericInput.gender)}</span>\
   and your retirement age of\
   <span class="chart-text--number">${numericInput.retirementAge}</span>,\
   you will have an estimated\
@@ -114,11 +114,16 @@ function totalGISEntitlement(numericInput, scenarioBefore, scenarioAfter) {
   )}</span>\
   years of collecting GIS during retirement.\
   <span class="chart-text--separator">&nbsp;</span>\
-  Multiplying your expected years of collecting GIS by your annual GIS benefit results in an estimated total GIS benefit of\
+  Multiplying your expected years of collecting GIS by your annual GIS benefit of\
+  <span class="chart-text--number">${formatMoney(
+    scenarioBefore.annualGIS
+  )}</span>\
+  results in an total GIS benefit of\
   <span class="chart-text--number">${formatMoney(
     scenarioBefore.totalGISInRetirement
-  )}</span>,\
-  when the RRSP is cashed out <span class="chart-text--time chart-text--time-before">before</span> retirement.\
+  )}</span>\
+  during retirement,\
+  when the RRSP is cashed out <span class="chart-text--time chart-text--time-before">before</span> beginning retirement.\
   <span class="chart-text--separator">&nbsp;</span>\
   If the RRSP is cashed out <span class="chart-text--time chart-text--time-after">after</span> retirement, total benefit would be\
   <span class="chart-text--number">${formatMoney(

@@ -5,6 +5,10 @@
   margin-bottom: 10px;
 }
 
+.chart-text--basic {
+  font-weight: 700;
+}
+
 .chart-text--number {
   color: var(--brand-saturate-15);
   font-weight: 700;

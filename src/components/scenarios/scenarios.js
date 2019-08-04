@@ -32,6 +32,7 @@ function Scenarios(props) {
           title="Total GIS in Retirement"
           scenario1={cashOutBefore.totalGISInRetirement}
           scenario2={cashOutAfter.totalGISInRetirement}
+          chartText={chartText.totalGISEntitlement}
         />
       </div>
     </div>

@@ -10,8 +10,6 @@ function App() {
   const runScenarios = input => {
     const scenarioResult = run(input);
     setScenarios(scenarioResult);
-    // console.log('Run scenarios for %o', input);
-    // console.log('Result = %o', scenarioResult);
   };
 
   function scenariosHelper() {

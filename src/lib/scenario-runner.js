@@ -4,7 +4,6 @@ import { generate } from './chart-text';
 function convertToNumeric(input) {
   return {
     cpp: parseInt(input.cpp, 10),
-    income: parseInt(input.income, 10),
     pension: parseInt(input.pension, 10),
     retirementAge: parseInt(input.retirementAge, 10),
     rrsp: parseInt(input.rrsp, 10),

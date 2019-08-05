@@ -96,8 +96,6 @@ function annualGISEntitlement(numericInput, scenarioBefore, scenarioAfter) {
   )}</span>.`;
 }
 
-// TODO: Re-iterate annual GIS benefit: Multiplying your expected years of collectnig GIS by your annual GIS benefit of AMT...
-// TODO: If retiring before 65, explain why eg: 30 yrs in retirement vs only 20 yrs collecting GIS
 function totalGISEntitlement(numericInput, scenarioBefore, scenarioAfter) {
   return `You're eligible to start receiving GIS at age\
   <span class="chart-text--basic">${config.GIS_ENTITLEMENT_AGE}</span>.\

@@ -1,12 +1,22 @@
+/* eslint-disable react/no-danger */
 import React from 'react';
 import { barStyle, formatMoney } from '../../lib/viz-util';
 import './bar-chart.css';
+import './chart-text.css';
+
+function createMarkup(text) {
+  return { __html: text };
+}
 
 function BarChart(props) {
-  const { title, scenario1, scenario2 } = props;
+  const { title, scenario1, scenario2, chartText } = props;
   return (
     <div className="bar-chart">
       <h2 className="bar-chart--title">{title}</h2>
+      <div
+        className="chart-text"
+        dangerouslySetInnerHTML={createMarkup(chartText)}
+      />
       <div className="bar-chart--bar-container">
         <div className="bar-chart--bar-outer">
           <div

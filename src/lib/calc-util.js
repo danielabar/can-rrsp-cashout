@@ -39,23 +39,29 @@ function annualGIS(monthlyGisAmt) {
   return monthlyGisAmt * 12;
 }
 
+function numYearsCollectingGIS(retirementAge, numYearsInRetirement) {
+  return retirementAge < config.GIS_ENTITLEMENT_AGE
+    ? numYearsInRetirement - (config.GIS_ENTITLEMENT_AGE - retirementAge)
+    : numYearsInRetirement;
+}
+
 function totalGisInRetirement(
   annualGISAmt,
   numYearsInRetirement,
   retirementAge
 ) {
-  const numYrs =
-    retirementAge < config.GIS_ENTITLEMENT_AGE
-      ? numYearsInRetirement - (config.GIS_ENTITLEMENT_AGE - retirementAge)
-      : numYearsInRetirement;
+  const numYrs = numYearsCollectingGIS(retirementAge, numYearsInRetirement);
   return annualGISAmt * numYrs;
 }
 
 export {
+  annualRrsp,
   yearsInRetirement,
   annualIncomeForGisEligibilityWithRrsp,
   annualIncomeForGisEligibilityWithoutRrsp,
   monthlyGis,
   annualGIS,
+  numYearsCollectingGIS,
   totalGisInRetirement,
+  lifeExpectancy,
 };

@@ -4,6 +4,7 @@ import {
   annualIncomeForGisEligibilityWithoutRrsp,
   monthlyGis,
   totalGisInRetirement,
+  numYearsCollectingGIS,
 } from './calc-util';
 import config from '../config';
 
@@ -138,6 +139,38 @@ describe('calc-util', () => {
       );
       // Then
       expect(result).toEqual(1500);
+    });
+  });
+
+  describe('numYearsCollectingGIS', () => {
+    it('Returns numYrsInRetirement when retirement age is equal to GIS entitlement age', () => {
+      // Given
+      const numYrsInRetirement = 20;
+      const retirementAge = 65;
+      // When
+      const result = numYearsCollectingGIS(retirementAge, numYrsInRetirement);
+      // Then
+      expect(result).toEqual(20);
+    });
+
+    it('Returns numYrsInRetirement when retirement age is greater than GIS entitlement age', () => {
+      // Given
+      const numYrsInRetirement = 15;
+      const retirementAge = 70;
+      // When
+      const result = numYearsCollectingGIS(retirementAge, numYrsInRetirement);
+      // Then
+      expect(result).toEqual(15);
+    });
+
+    it('Returns difference between GIS entitlement age and retirement age when retirement age is less than GIS entitlement age', () => {
+      // Given
+      const numYrsInRetirement = 25;
+      const retirementAge = 60;
+      // When
+      const result = numYearsCollectingGIS(retirementAge, numYrsInRetirement);
+      // Then
+      expect(result).toEqual(20);
     });
   });
 });

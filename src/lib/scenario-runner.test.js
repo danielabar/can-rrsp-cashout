@@ -30,6 +30,8 @@ describe('scenario runner', () => {
         94024.79,
         1
       );
+
+      expect(result).toHaveProperty('chartText');
     });
   });
 });

@@ -3,6 +3,7 @@
 }
 
 .intro--header {
+  color: var(--brand);
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 10px;
@@ -11,8 +12,12 @@
 
 .intro--detail {
   color: var(--brand-darken-35);
-  font-size: 1.1em;
-  line-height: 1.3em;
+  font-size: 0.9em;
+  line-height: 1.4em;
+  background: var(--brand-opposite-lighten-47);
+  padding: 5px 10px;
+  border: 1px solid transparent;
+  border-radius: 5px;
 }
 
 .intro--emphasis {
@@ -22,7 +27,11 @@
 }
 
 .intro--emphasis-negative {
-  color: #721c24;
+  color: var(--alert);
+}
+
+.intro--highlight {
+  background-color: var(--highlight);
 }
 
 .intro--instruction {

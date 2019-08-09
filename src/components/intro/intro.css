@@ -1,0 +1,68 @@
+.intro {
+  margin-bottom: 15px;
+}
+
+.intro--header {
+  color: var(--brand);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.intro--detail {
+  color: var(--brand-darken-35);
+  font-size: 0.9em;
+  line-height: 1.4em;
+  background: var(--brand-opposite-lighten-47);
+  padding: 5px 10px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.intro--emphasis {
+  font-style: italic;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.intro--emphasis-negative {
+  color: var(--alert);
+}
+
+.intro--highlight {
+  background-color: var(--highlight);
+}
+
+.intro--instruction {
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.intro--list {
+  line-height: 1.5em;
+  font-size: 1.2em;
+  font-weight: 500;
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+/* .intro--list > li:before {
+  background-image: url('/check.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: '';
+  display: inline-block;
+  height: 1em;
+  margin-right: 0.5em;
+  width: 1em;
+} */
+
+.intro--list > li {
+  padding-left: 2rem;
+  background-image: url('/check.svg');
+  background-position: 0 2.5px;
+  background-size: 1.5rem 1.5rem;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import Intro from './components/intro/intro';
 import DataEntry from './components/data-entry/data-entry';
 import Scenarios from './components/scenarios/scenarios';
 import { run } from './lib/scenario-runner';
@@ -27,9 +28,7 @@ function App() {
 
   return (
     <div className="app">
-      <header className="app-header">
-        Should I cash out my RRSP before or after retirement?
-      </header>
+      <Intro />
       <DataEntry runScenarios={runScenarios} />
       {scenariosHelper()}
     </div>

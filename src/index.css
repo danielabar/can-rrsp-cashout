@@ -4,20 +4,27 @@
   --white: #fcfcfc;
 
   --brand: #1c7dd5;
+  --brand-darken-10: #1663a8;
   --brand-lighten-52: #fcfdff;
 
   --brand-darken-3: #1a75c7;
+  --brand-darken-35: #051829;
   --brand-darken-41: #04111c;
 
   --brand-saturate-15: #0a7ee7;
 
   --brand-opposite: #d5601c;
+  --brand-opposite-lighten-47: #fcede5;
+  --brand-opposite-lighten-49: #fdf3ee;
   --brand-opposite-lighten-50: #fdf7f3;
 
   --viz-cashout-before: #af8dc3;
   --viz-cashout-before-darken-30: #633f78;
   --viz-cashout-after: #7fbf7b;
   --viz-cashout-after-darken-30: #417e3d;
+
+  --alert: #721c24;
+  --highlight: #ffff00;
 }
 
 /* apply a natural box layout model to all elements, but allowing components to change */

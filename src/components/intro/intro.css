@@ -47,20 +47,9 @@
   margin-bottom: 10px;
 }
 
-/* .intro--list > li:before {
-  background-image: url('/check.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  content: '';
-  display: inline-block;
-  height: 1em;
-  margin-right: 0.5em;
-  width: 1em;
-} */
-
 .intro--list > li {
   padding-left: 2rem;
-  background-image: url('/check.svg');
+  background-image: url(./check.svg);
   background-position: 0 2.5px;
   background-size: 1.5rem 1.5rem;
   background-repeat: no-repeat;

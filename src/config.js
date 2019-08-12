@@ -41,6 +41,9 @@ const config = Object.freeze({
 
   // https://www.canada.ca/en/services/benefits/publicpensions/cpp/old-age-security/guaranteed-income-supplement/eligibility.html
   GIS_ENTITLEMENT_AGE: 65,
+
+  // https://www.canada.ca/en/employment-social-development/corporate/contact/oas.html
+  SERVICE_CANADA_CONTACT: '1-800-277-9914',
 });
 
 export default config;

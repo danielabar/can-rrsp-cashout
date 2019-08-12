@@ -1,12 +1,11 @@
 /* eslint-disable jsx-a11y/label-has-for */
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
-
 import config from '../../config';
 import {
   genderOptions,
   martialStatusOptions,
   retirementAgeOptions,
+  telLinkBuilder,
 } from '../../lib/options';
 import './data-entry.css';
 
@@ -19,10 +18,6 @@ function createSelection(opts) {
 }
 
 class DataEntry extends Component {
-  // static propTypes = {
-  //   runScenarios: PropTypes.func,
-  // };
-
   state = {
     gender: config.DEFAULT_GENDER,
     maritalStatus: config.DEFAULT_MARITAL_STATUS,
@@ -45,6 +40,20 @@ class DataEntry extends Component {
     runScenarios(this.state);
   };
 
+  reset = event => {
+    event.preventDefault();
+    const { onReset } = this.props;
+    this.setState({
+      gender: config.DEFAULT_GENDER,
+      maritalStatus: config.DEFAULT_MARITAL_STATUS,
+      rrsp: config.DEFAULT_RRSP,
+      cpp: config.DEFAULT_ANNUAL_CPP,
+      pension: config.DEFAULT_ANNUAL_PENSION,
+      retirementAge: config.DEFAULT_RETIREMENT_AGE,
+    });
+    onReset();
+  };
+
   render() {
     const {
       gender,
@@ -56,15 +65,20 @@ class DataEntry extends Component {
     } = this.state;
     return (
       <div className="data-entry">
-        <form onSubmit={this.submitInput} method="post">
+        <form
+          onSubmit={this.submitInput}
+          method="post"
+          className="data-entry--form"
+        >
           <label className="data-entry-label" htmlFor="selectGender">
             Gender
+            <span className="data-entry--hint">Used for life expectancy.</span>
             <select
               id="selectGender"
               name="selectGender"
               value={gender}
               onChange={this.update('gender')}
-              className="data-entry-input"
+              className="data-entry-input data-entry--select"
             >
               {createSelection(genderOptions)}
             </select>
@@ -72,12 +86,15 @@ class DataEntry extends Component {
 
           <label className="data-entry-label" htmlFor="selectMaritalStatus">
             Marital Status
+            <span className="data-entry--hint">
+              Only single supported for now.
+            </span>
             <select
               id="selectMaritalStatus"
               name="selectMaritalStatus"
               value={maritalStatus}
               onChange={this.update('maritalStatus')}
-              className="data-entry-input"
+              className="data-entry-input data-entry--select"
             >
               {createSelection(martialStatusOptions)}
             </select>
@@ -85,62 +102,97 @@ class DataEntry extends Component {
 
           <label className="data-entry-label" htmlFor="rrsp">
             Total RRSP
-            <input
-              id="rrsp"
-              type="number"
-              name="rrsp"
-              value={rrsp}
-              onChange={this.update('rrsp')}
-              min={config.MIN_RRSP}
-              max={config.MAX_RRSP}
-              className="data-entry-input"
-            />
+            <span className="data-entry--hint">
+              Total savings in RRSP accounts.
+            </span>
+            <div className="data-entry--input-wrapper data-entry--input-dollar">
+              <input
+                id="rrsp"
+                type="number"
+                name="rrsp"
+                value={rrsp}
+                onChange={this.update('rrsp')}
+                min={config.MIN_RRSP}
+                max={config.MAX_RRSP}
+                className="data-entry-input"
+              />
+            </div>
           </label>
 
           <label className="data-entry-label" htmlFor="cpp">
             Annual CPP Entitlement
-            <input
-              id="cpp"
-              type="number"
-              name="cpp"
-              value={cpp}
-              onChange={this.update('cpp')}
-              min={config.MIN_ANNUAL_CPP}
-              max={config.MAX_ANNUAL_CPP}
-              className="data-entry-input"
-            />
+            <span className="data-entry--hint">
+              Contact Service Canada{' '}
+              <a
+                className="data-entry--hint-link"
+                href={telLinkBuilder(config.SERVICE_CANADA_CONTACT)}
+              >
+                {config.SERVICE_CANADA_CONTACT}
+              </a>
+              .
+            </span>
+            <div className="data-entry--input-wrapper data-entry--input-dollar">
+              <input
+                id="cpp"
+                type="number"
+                name="cpp"
+                value={cpp}
+                onChange={this.update('cpp')}
+                min={config.MIN_ANNUAL_CPP}
+                max={config.MAX_ANNUAL_CPP}
+                className="data-entry-input"
+              />
+            </div>
           </label>
 
           <label className="data-entry-label" htmlFor="pension">
             Annual Pension
-            <input
-              id="pension"
-              type="number"
-              name="pension"
-              value={pension}
-              onChange={this.update('pension')}
-              min={config.MIN_ANNUAL_PENSION}
-              max={config.MAX_ANNUAL_PENSION}
-              className="data-entry-input"
-            />
+            <span className="data-entry--hint">
+              Company or private pension.
+            </span>
+            <div className="data-entry--input-wrapper data-entry--input-dollar">
+              <input
+                id="pension"
+                type="number"
+                name="pension"
+                value={pension}
+                onChange={this.update('pension')}
+                min={config.MIN_ANNUAL_PENSION}
+                max={config.MAX_ANNUAL_PENSION}
+                className="data-entry-input"
+              />
+            </div>
           </label>
 
           <label className="data-entry-label" htmlFor="selectRetirementAge">
             Retirement Age
+            <span className="data-entry--hint">Planned retirement age.</span>
             <select
               id="selectRetirementAge"
               name="selectRetirementAge"
               value={retirementAge}
               onChange={this.update('retirementAge')}
-              className="data-entry-input"
+              className="data-entry-input data-entry--select"
             >
               {createSelection(retirementAgeOptions)}
             </select>
           </label>
 
-          <button type="submit" className="data-entry-submit">
-            Compare my options
-          </button>
+          <div className="data-entry--button-container">
+            <button
+              type="submit"
+              className="data-entry--button data-entry--primary"
+            >
+              Calculate
+            </button>
+            <button
+              type="button"
+              onClick={this.reset}
+              className="data-entry--button data-entry--secondary"
+            >
+              Reset
+            </button>
+          </div>
         </form>
       </div>
     );

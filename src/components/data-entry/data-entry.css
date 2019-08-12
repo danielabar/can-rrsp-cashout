@@ -1,41 +1,117 @@
 .data-entry {
-  background-color: var(--brand-opposite-lighten-49);
   border: 1px solid transparent;
   border-radius: 5px;
   padding: 5px 10px;
 }
 
+.data-entry--form {
+  align-items: center;
+  display: grid;
+  grid-gap: 0 50px;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0 auto;
+  max-width: 65%;
+}
+
 .data-entry-label {
   display: block;
   margin-bottom: 5px;
+  position: relative;
 }
 
 .data-entry-input {
-  border-radius: 3px;
-  border-style: ridge;
-  display: inline-block;
-  font-size: 1.1rem;
-  margin-left: 5px;
-  padding: 3px 5px;
-  text-align: center;
+  border-radius: 2px;
+  border: 1px solid var(--brand-darken-35);
+  color: var(--brand-darken-35);
+  display: block;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin: 5px 0 10px;
+  padding: 5px 4px 4px;
+  text-align: right;
+  width: 100%;
 }
 
-.data-entry-submit {
+.data-entry--input-wrapper {
+  position: relative;
+}
+
+.data-entry--input-dollar:before {
+  content: '$';
+  position: absolute;
+  color: var(--brand-desaturate-75);
+  left: 15px;
+  font-size: 1rem;
+  top: 9px;
+  z-index: 1;
+}
+
+select.data-entry--select {
+  height: calc(2.25rem + 2px);
+}
+
+.data-entry--hint {
+  color: var(--brand-desaturate-75);
+  display: block;
+  font-size: 0.9em;
+  margin-top: 3px;
+}
+
+.data-entry--button-container {
+  display: flex;
+  grid-column-start: 2;
+  justify-content: space-between;
+}
+
+.data-entry--hint-link {
+  color: var(--brand-darken-21);
+  text-decoration: none;
+}
+
+.data-entry--button {
   border-radius: 3px;
-  background-color: var(--brand);
-  color: var(--white);
   cursor: pointer;
   font-size: 1.1rem;
   margin-top: 10px;
   padding: 5px 10px;
   text-transform: uppercase;
+  width: 47%;
 }
 
-.data-entry-submit:hover {
+.data-entry--primary {
+  background-color: var(--brand);
+  color: var(--white);
+}
+
+.data-entry--secondary {
+  background-color: var(--white);
+  border: 1px solid var(--brand);
+  color: var(--brand);
+}
+
+.data-entry--primary:hover {
   background-color: var(--brand-darken-3);
 }
 
-.data-entry-submit:focus,
+.data-entry--primary:focus,
+.data-entry--secondary:focus,
 .data-entry-input:focus {
   outline-color: var(--brand-opposite);
+}
+
+@media (max-width: 992px) {
+  .data-entry--form {
+    max-width: 85%;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .data-entry--form {
+    display: block;
+    max-width: 100%;
+  }
+
+  .data-entry-input {
+    margin: 5px 0 15px;
+  }
 }

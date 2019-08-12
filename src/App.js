@@ -13,6 +13,10 @@ function App() {
     setScenarios(scenarioResult);
   };
 
+  const onReset = () => {
+    setScenarios({});
+  };
+
   function scenariosHelper() {
     if (
       Object.keys(scenarios).length === 0 &&
@@ -29,7 +33,7 @@ function App() {
   return (
     <div className="app">
       <Intro />
-      <DataEntry runScenarios={runScenarios} />
+      <DataEntry runScenarios={runScenarios} onReset={onReset} />
       {scenariosHelper()}
     </div>
   );

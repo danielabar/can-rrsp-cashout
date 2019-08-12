@@ -56,7 +56,11 @@ class DataEntry extends Component {
     } = this.state;
     return (
       <div className="data-entry">
-        <form onSubmit={this.submitInput} method="post">
+        <form
+          onSubmit={this.submitInput}
+          method="post"
+          className="data-entry--form"
+        >
           <label className="data-entry-label" htmlFor="selectGender">
             Gender
             <select
@@ -139,7 +143,7 @@ class DataEntry extends Component {
           </label>
 
           <button type="submit" className="data-entry-submit">
-            Compare my options
+            Calculate
           </button>
         </form>
       </div>

@@ -5,6 +5,11 @@
   padding: 5px 10px;
 }
 
+.data-entry--form {
+  margin: 0 auto;
+  max-width: 300px;
+}
+
 .data-entry-label {
   display: block;
   margin-bottom: 5px;
@@ -13,11 +18,12 @@
 .data-entry-input {
   border-radius: 3px;
   border-style: ridge;
-  display: inline-block;
+  display: block;
   font-size: 1.1rem;
-  margin-left: 5px;
+  margin: 5px 0 15px;
   padding: 3px 5px;
-  text-align: center;
+  text-align: right;
+  width: 100%;
 }
 
 .data-entry-submit {
@@ -38,4 +44,10 @@
 .data-entry-submit:focus,
 .data-entry-input:focus {
   outline-color: var(--brand-opposite);
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .data-entry--form {
+    max-width: 100%;
+  }
 }

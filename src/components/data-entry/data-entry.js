@@ -178,16 +178,21 @@ class DataEntry extends Component {
             </select>
           </label>
 
-          <button type="submit" className="data-entry-submit">
-            Calculate
-          </button>
-          <button
-            type="button"
-            onClick={this.reset}
-            className="data-entry--secondary"
-          >
-            Reset
-          </button>
+          <div className="data-entry--button-container">
+            <button
+              type="submit"
+              className="data-entry--button data-entry--primary"
+            >
+              Calculate
+            </button>
+            <button
+              type="button"
+              onClick={this.reset}
+              className="data-entry--button data-entry--secondary"
+            >
+              Reset
+            </button>
+          </div>
         </form>
       </div>
     );

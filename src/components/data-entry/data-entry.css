@@ -57,40 +57,44 @@ select.data-entry--select {
   margin-top: 3px;
 }
 
+.data-entry--button-container {
+  display: flex;
+  grid-column-start: 2;
+  justify-content: space-between;
+}
+
 .data-entry--hint-link {
   color: var(--brand-darken-21);
   text-decoration: none;
 }
 
-.data-entry-submit {
+.data-entry--button {
   border-radius: 3px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-top: 10px;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  width: 45%;
+}
+
+.data-entry--primary {
   background-color: var(--brand);
   color: var(--white);
-  cursor: pointer;
-  font-size: 1.1rem;
-  margin-top: 10px;
-  padding: 5px 10px;
-  text-transform: uppercase;
 }
 
-/* TODO: extract common button styles */
 .data-entry--secondary {
-  border: 1px solid var(--brand);
-  border-radius: 3px;
   background-color: var(--white);
+  border: 1px solid var(--brand);
   color: var(--brand);
-  cursor: pointer;
-  font-size: 1.1rem;
-  margin-top: 10px;
-  padding: 5px 10px;
-  text-transform: uppercase;
 }
 
-.data-entry-submit:hover {
+.data-entry--primary:hover {
   background-color: var(--brand-darken-3);
 }
 
-.data-entry-submit:focus,
+.data-entry--primary:focus,
+.data-entry--secondary:focus,
 .data-entry-input:focus {
   outline-color: var(--brand-opposite);
 }

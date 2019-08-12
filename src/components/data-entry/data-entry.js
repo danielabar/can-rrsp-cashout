@@ -40,6 +40,20 @@ class DataEntry extends Component {
     runScenarios(this.state);
   };
 
+  reset = event => {
+    event.preventDefault();
+    const { onReset } = this.props;
+    this.setState({
+      gender: config.DEFAULT_GENDER,
+      maritalStatus: config.DEFAULT_MARITAL_STATUS,
+      rrsp: config.DEFAULT_RRSP,
+      cpp: config.DEFAULT_ANNUAL_CPP,
+      pension: config.DEFAULT_ANNUAL_PENSION,
+      retirementAge: config.DEFAULT_RETIREMENT_AGE,
+    });
+    onReset();
+  };
+
   render() {
     const {
       gender,
@@ -166,6 +180,13 @@ class DataEntry extends Component {
 
           <button type="submit" className="data-entry-submit">
             Calculate
+          </button>
+          <button
+            type="button"
+            onClick={this.reset}
+            className="data-entry--secondary"
+          >
+            Reset
           </button>
         </form>
       </div>

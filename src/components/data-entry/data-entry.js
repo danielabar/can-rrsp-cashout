@@ -68,7 +68,7 @@ class DataEntry extends Component {
               name="selectGender"
               value={gender}
               onChange={this.update('gender')}
-              className="data-entry-input"
+              className="data-entry-input data-entry--select"
             >
               {createSelection(genderOptions)}
             </select>
@@ -81,7 +81,7 @@ class DataEntry extends Component {
               name="selectMaritalStatus"
               value={maritalStatus}
               onChange={this.update('maritalStatus')}
-              className="data-entry-input"
+              className="data-entry-input data-entry--select"
             >
               {createSelection(martialStatusOptions)}
             </select>
@@ -136,7 +136,7 @@ class DataEntry extends Component {
               name="selectRetirementAge"
               value={retirementAge}
               onChange={this.update('retirementAge')}
-              className="data-entry-input"
+              className="data-entry-input data-entry--select"
             >
               {createSelection(retirementAgeOptions)}
             </select>

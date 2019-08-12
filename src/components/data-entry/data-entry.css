@@ -16,14 +16,20 @@
 }
 
 .data-entry-input {
-  border-radius: 3px;
-  border-style: ridge;
+  border-radius: 2px;
+  border: 1px solid var(--brand-darken-35);
+  color: var(--brand-darken-35);
   display: block;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
   margin: 5px 0 15px;
-  padding: 3px 5px;
+  padding: 5px 4px 4px;
   text-align: right;
   width: 100%;
+}
+
+select.data-entry--select {
+  height: calc(2.25rem + 2px);
 }
 
 .data-entry-submit {

@@ -1,11 +1,11 @@
 /* eslint-disable jsx-a11y/label-has-for */
 import React, { Component } from 'react';
-
 import config from '../../config';
 import {
   genderOptions,
   martialStatusOptions,
   retirementAgeOptions,
+  telLinkBuilder,
 } from '../../lib/options';
 import './data-entry.css';
 
@@ -109,8 +109,11 @@ class DataEntry extends Component {
             Annual CPP Entitlement
             <span className="data-entry--hint">
               Contact Service Canada{' '}
-              <a className="data-entry--hint-link" href="tel:1-800-277-9914">
-                1-800-277-9914
+              <a
+                className="data-entry--hint-link"
+                href={telLinkBuilder(config.SERVICE_CANADA_CONTACT)}
+              >
+                {config.SERVICE_CANADA_CONTACT}
               </a>
               .
             </span>

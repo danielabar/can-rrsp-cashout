@@ -25,6 +25,10 @@ function generateStringOptions(configKey) {
   return result;
 }
 
+function telLinkBuilder(contactTel) {
+  return `tel:${contactTel}`;
+}
+
 const genderOptions = generateStringOptions(config.GENDER);
 const martialStatusOptions = generateStringOptions(config.MARITAL_STATUS);
 const retirementAgeOptions = generateNumericOptions(
@@ -32,4 +36,9 @@ const retirementAgeOptions = generateNumericOptions(
   config.MAX_RETIREMENT_AGE
 );
 
-export { genderOptions, martialStatusOptions, retirementAgeOptions };
+export {
+  genderOptions,
+  martialStatusOptions,
+  retirementAgeOptions,
+  telLinkBuilder,
+};

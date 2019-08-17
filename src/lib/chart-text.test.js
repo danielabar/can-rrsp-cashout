@@ -36,16 +36,18 @@ describe('chart-text', () => {
       );
 
       // Then
-      expect(annualIncomeForGisEligibility).toMatch(/\$5,000\.00/); // input.cpp
-      expect(annualIncomeForGisEligibility).toMatch(/\$5,000\.00/); // input.cpp
-      expect(annualIncomeForGisEligibility).toMatch(/\$4,000\.00/); // input.pension
-      expect(annualIncomeForGisEligibility).toMatch(/\$9,000\.00/); // scenarioBefore.annualIncome
-      expect(annualIncomeForGisEligibility).toMatch(/female/); // input.gender
-      expect(annualIncomeForGisEligibility).toMatch(/85/); // female life expectancy
-      expect(annualIncomeForGisEligibility).toMatch(/20/); // scenarioBefore.numYrsInRetirement
-      expect(annualIncomeForGisEligibility).toMatch(/\$90,000\.00/); // input.rrsp
-      expect(annualIncomeForGisEligibility).toMatch(/\$4,500\.00/); // rrsp withdrawals
-      expect(annualIncomeForGisEligibility).toMatch(/\$13,500\.00/); // scenarioAfter.annualIncome
+      expect(annualIncomeForGisEligibility.explanation).toMatch(/\$5,000\.00/); // input.cpp
+      expect(annualIncomeForGisEligibility.explanation).toMatch(/\$5,000\.00/); // input.cpp
+      expect(annualIncomeForGisEligibility.explanation).toMatch(/\$4,000\.00/); // input.pension
+      expect(annualIncomeForGisEligibility.explanation).toMatch(/\$9,000\.00/); // scenarioBefore.annualIncome
+      expect(annualIncomeForGisEligibility.explanation).toMatch(/female/); // input.gender
+      expect(annualIncomeForGisEligibility.explanation).toMatch(/85/); // female life expectancy
+      expect(annualIncomeForGisEligibility.explanation).toMatch(/20/); // scenarioBefore.numYrsInRetirement
+      expect(annualIncomeForGisEligibility.explanation).toMatch(/\$90,000\.00/); // input.rrsp
+      expect(annualIncomeForGisEligibility.explanation).toMatch(/\$4,500\.00/); // rrsp withdrawals
+      expect(annualIncomeForGisEligibility.explanation).toMatch(/\$13,500\.00/); // scenarioAfter.annualIncome
+
+      expect(annualIncomeForGisEligibility.footer).toBeDefined();
     });
 
     it('generates explanatory text for Monthly GIS Entitlement chart', () => {
@@ -57,11 +59,13 @@ describe('chart-text', () => {
       );
 
       // Then
-      expect(monthlyGISEntitlement).toMatch(/\$9,000\.00/); // scenarioBefore.annualIncome
-      expect(monthlyGISEntitlement).toMatch(/\$391\.77/); // scenarioBefore.monthlyGIS
-      expect(monthlyGISEntitlement).toMatch(/\$4,500\.00/); // rrsp withdrawals
-      expect(monthlyGISEntitlement).toMatch(/\$187\.00/); // gis before/after diff
-      expect(monthlyGISEntitlement).toMatch(/\$204\.77/); // scenarioAfter.monthlyGIS
+      expect(monthlyGISEntitlement.explanation).toMatch(/\$9,000\.00/); // scenarioBefore.annualIncome
+      expect(monthlyGISEntitlement.explanation).toMatch(/\$391\.77/); // scenarioBefore.monthlyGIS
+      expect(monthlyGISEntitlement.explanation).toMatch(/\$4,500\.00/); // rrsp withdrawals
+      expect(monthlyGISEntitlement.explanation).toMatch(/\$187\.00/); // gis before/after diff
+      expect(monthlyGISEntitlement.explanation).toMatch(/\$204\.77/); // scenarioAfter.monthlyGIS
+
+      expect(monthlyGISEntitlement.footer).toBeUndefined();
     });
 
     it('generates explanatory text for Annual GIS Entitlement chart', () => {
@@ -73,9 +77,11 @@ describe('chart-text', () => {
       );
 
       // Then
-      expect(annualGISEntitlement).toMatch(/\$391\.77/); // scenarioBefore.monthlyGIS
-      expect(annualGISEntitlement).toMatch(/\$4,701\.24/); // scenarioBefore.annualGIS
-      expect(annualGISEntitlement).toMatch(/\$2,457\.24/); // scenarioAfter.annualGIS
+      expect(annualGISEntitlement.explanation).toMatch(/\$391\.77/); // scenarioBefore.monthlyGIS
+      expect(annualGISEntitlement.explanation).toMatch(/\$4,701\.24/); // scenarioBefore.annualGIS
+      expect(annualGISEntitlement.explanation).toMatch(/\$2,457\.24/); // scenarioAfter.annualGIS
+
+      expect(annualGISEntitlement.footer).toBeUndefined();
     });
 
     it('generates explanatory text for Total GIS in Retirement chart', () => {
@@ -87,14 +93,16 @@ describe('chart-text', () => {
       );
 
       // Then
-      expect(totalGISEntitlement).toMatch(/65/); // gis eligibility
-      expect(totalGISEntitlement).toMatch(/female/); // input.gender
-      expect(totalGISEntitlement).toMatch(/85/); // female life expectancy
-      expect(totalGISEntitlement).toMatch(/20/); // yrs collecting GIS
-      expect(totalGISEntitlement).toMatch(/\$4,701\.24/); // scenarioBefore.annualGIS
-      expect(totalGISEntitlement).toMatch(/\$94,024\.79/); // scenarioBefore.totalGIS
-      expect(totalGISEntitlement).toMatch(/\$49,144\.80/); // scenarioAfter.totalGIS
-      expect(totalGISEntitlement).toMatch(/\$44,879\.99/); // before/after diff in total GIS
+      expect(totalGISEntitlement.explanation).toMatch(/65/); // gis eligibility
+      expect(totalGISEntitlement.explanation).toMatch(/female/); // input.gender
+      expect(totalGISEntitlement.explanation).toMatch(/85/); // female life expectancy
+      expect(totalGISEntitlement.explanation).toMatch(/20/); // yrs collecting GIS
+      expect(totalGISEntitlement.explanation).toMatch(/\$4,701\.24/); // scenarioBefore.annualGIS
+      expect(totalGISEntitlement.explanation).toMatch(/\$94,024\.79/); // scenarioBefore.totalGIS
+      expect(totalGISEntitlement.explanation).toMatch(/\$49,144\.80/); // scenarioAfter.totalGIS
+      expect(totalGISEntitlement.explanation).toMatch(/\$44,879\.99/); // before/after diff in total GIS
+
+      expect(totalGISEntitlement.footer).toBeUndefined();
     });
   });
 });

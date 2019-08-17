@@ -43,6 +43,13 @@
   text-align: right;
 }
 
+.bar-chart--footer {
+  color: var(--brand-desaturate-70);
+  font-style: italic;
+  font-weight: 300;
+  margin-top: 10px;
+}
+
 @media (min-width: 320px) and (max-width: 480px) {
   .bar-chart {
     padding-left: 20px;

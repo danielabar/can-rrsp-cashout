@@ -20,7 +20,7 @@ function annualIncomeForGisEligibility(
   for a total of\
   <span class="chart-text--number">${formatMoney(
     scenarioBefore.annualIncome
-  )}</span>.\
+  )}</span>.<sup>*</sup>\
   <span class="chart-text--separator">&nbsp;</span>\
   If you withdraw from your RRSP <span class="chart-text--time chart-text--time-after">after</span> retiring,\
   then the withdrawals get included in your income for GIS eligibility purposes.\
@@ -137,26 +137,36 @@ function totalGISEntitlement(numericInput, scenarioBefore, scenarioAfter) {
 
 function generate(numericInput, scenarioBefore, scenarioAfter) {
   return {
-    annualIncomeForGisEligibility: annualIncomeForGisEligibility(
-      numericInput,
-      scenarioBefore,
-      scenarioAfter
-    ),
-    monthlyGISEntitlement: monthlyGISEntitlement(
-      numericInput,
-      scenarioBefore,
-      scenarioAfter
-    ),
-    annualGISEntitlement: annualGISEntitlement(
-      numericInput,
-      scenarioBefore,
-      scenarioAfter
-    ),
-    totalGISEntitlement: totalGISEntitlement(
-      numericInput,
-      scenarioBefore,
-      scenarioAfter
-    ),
+    annualIncomeForGisEligibility: {
+      explanation: annualIncomeForGisEligibility(
+        numericInput,
+        scenarioBefore,
+        scenarioAfter
+      ),
+      footer:
+        'Actual income will also include OAS (Old Age Security) but that has no effect on GIS therefore not shown.',
+    },
+    monthlyGISEntitlement: {
+      explanation: monthlyGISEntitlement(
+        numericInput,
+        scenarioBefore,
+        scenarioAfter
+      ),
+    },
+    annualGISEntitlement: {
+      explanation: annualGISEntitlement(
+        numericInput,
+        scenarioBefore,
+        scenarioAfter
+      ),
+    },
+    totalGISEntitlement: {
+      explanation: totalGISEntitlement(
+        numericInput,
+        scenarioBefore,
+        scenarioAfter
+      ),
+    },
   };
 }
 

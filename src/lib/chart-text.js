@@ -55,7 +55,7 @@ function monthlyGISEntitlement(numericInput, scenarioBefore, scenarioAfter) {
   makes you eligible for a monthly GIS benefit of\
   <span class="chart-text--number">${formatMoney(
     scenarioBefore.monthlyGIS
-  )}</span>\
+  )}</span>.<sup>*</sup>\
   <span class="chart-text--separator">&nbsp;</span>\
   If you withdraw from your RRSP <span class="chart-text--time chart-text--time-after">after</span> retiring,\
   then the\
@@ -69,7 +69,7 @@ function monthlyGISEntitlement(numericInput, scenarioBefore, scenarioAfter) {
   resulting in a lower monthly benefit of\
   <span class="chart-text--number">${formatMoney(
     scenarioAfter.monthlyGIS
-  )}</span>\
+  )}</span>.<sup>*</sup>\
   <span class="chart-text--separator">&nbsp;</span>\
   Remember when cashing out your RRSP <span class="chart-text--time chart-text--time-before">before</span> retiring,
   you still have the money (for example in a savings account), but it doesn't count as income for\
@@ -81,7 +81,7 @@ function annualGISEntitlement(numericInput, scenarioBefore, scenarioAfter) {
   return `Translating your monthly GIS benefit of\
   <span class="chart-text--number">${formatMoney(
     scenarioBefore.monthlyGIS
-  )}</span>\
+  )}</span><sup>*</sup>\
   to a yearly value,\
   cashing out your RRSP <span class="chart-text--time chart-text--time-before">before</span> retiring,\
   would result in an annual GIS benefit of\
@@ -135,6 +135,10 @@ function totalGISEntitlement(numericInput, scenarioBefore, scenarioAfter) {
   more in GIS benefits by cashing out RRSP <span class="chart-text--time chart-text--time-before">before</span> retirement.`;
 }
 
+function generateGISFooter(coverage) {
+  return `GIS amounts are effective as of ${coverage.start} to ${coverage.end}`;
+}
+
 function generate(numericInput, scenarioBefore, scenarioAfter) {
   return {
     annualIncomeForGisEligibility: {
@@ -144,7 +148,7 @@ function generate(numericInput, scenarioBefore, scenarioAfter) {
         scenarioAfter
       ),
       footer:
-        'Actual income will also include OAS (Old Age Security) but that has no effect on GIS therefore not shown.',
+        'Actual income will also include OAS (Old Age Security) but this has no effect on GIS therefore not shown.',
     },
     monthlyGISEntitlement: {
       explanation: monthlyGISEntitlement(
@@ -152,6 +156,7 @@ function generate(numericInput, scenarioBefore, scenarioAfter) {
         scenarioBefore,
         scenarioAfter
       ),
+      footer: generateGISFooter(scenarioBefore.gisCoverage),
     },
     annualGISEntitlement: {
       explanation: annualGISEntitlement(
@@ -159,6 +164,7 @@ function generate(numericInput, scenarioBefore, scenarioAfter) {
         scenarioBefore,
         scenarioAfter
       ),
+      footer: generateGISFooter(scenarioBefore.gisCoverage),
     },
     totalGISEntitlement: {
       explanation: totalGISEntitlement(
@@ -166,6 +172,7 @@ function generate(numericInput, scenarioBefore, scenarioAfter) {
         scenarioBefore,
         scenarioAfter
       ),
+      footer: generateGISFooter(scenarioBefore.gisCoverage),
     },
   };
 }

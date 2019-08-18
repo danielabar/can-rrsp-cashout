@@ -32,7 +32,9 @@ function convertMaritalStatus(maritalStatus) {
 function monthlyGis(annualIncome, maritalStatus) {
   const gisStatus = convertMaritalStatus(maritalStatus);
   const gisResult = gisLookup.find(gisStatus, annualIncome);
-  return parseFloat(gisResult.output.gis);
+  const { coverage: gisCoverage } = gisResult;
+  const amt = parseFloat(gisResult.output.gis);
+  return { amt, gisCoverage };
 }
 
 function annualGIS(monthlyGisAmt) {

@@ -15,7 +15,7 @@ function convertToNumeric(input) {
 function _calculate(numericInput, annualIncomeFunc) {
   const annualIncome = annualIncomeFunc(numericInput);
   const numYrsInRetirement = calcUtil.yearsInRetirement(numericInput);
-  const monthlyGIS = calcUtil.monthlyGis(
+  const { amt: monthlyGIS, gisCoverage } = calcUtil.monthlyGis(
     annualIncome,
     numericInput.maritalStatus
   );
@@ -31,6 +31,7 @@ function _calculate(numericInput, annualIncomeFunc) {
     annualIncome,
     monthlyGIS,
     annualGIS,
+    gisCoverage,
   };
 }
 

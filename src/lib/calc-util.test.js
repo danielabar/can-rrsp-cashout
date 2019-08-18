@@ -79,7 +79,7 @@ describe('calc-util', () => {
       const annualIncome = 12000;
       const maritalStatus = config.DEFAULT_MARITAL_STATUS;
       // When
-      const result = monthlyGis(annualIncome, maritalStatus);
+      const { amt: result } = monthlyGis(annualIncome, maritalStatus);
       // Then
       expect(result).toEqual(266.77);
     });
@@ -89,9 +89,20 @@ describe('calc-util', () => {
       const annualIncome = 17300;
       const maritalStatus = config.DEFAULT_MARITAL_STATUS;
       // When
-      const result = monthlyGis(annualIncome, maritalStatus);
+      const { amt: result } = monthlyGis(annualIncome, maritalStatus);
       // Then
       expect(result).toEqual(46.77);
+    });
+
+    it('Result includes GIS coverage period', () => {
+      // Given
+      const annualIncome = 17300;
+      const maritalStatus = config.DEFAULT_MARITAL_STATUS;
+      // When
+      const { gisCoverage } = monthlyGis(annualIncome, maritalStatus);
+      // Then
+      expect(gisCoverage.start).toEqual('2019-01-01');
+      expect(gisCoverage.end).toEqual('2019-09-30');
     });
   });
 

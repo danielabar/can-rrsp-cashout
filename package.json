@@ -6,7 +6,7 @@
   "dependencies": {
     "accounting": "0.4.1",
     "gh-pages": "2.0.1",
-    "gis-lookup": "0.0.4",
+    "gis-lookup": "0.0.5",
     "react": "^16.8.6",
     "react-app-polyfill": "1.0.0",
     "react-dom": "^16.8.6",

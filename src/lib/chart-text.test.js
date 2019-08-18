@@ -18,6 +18,7 @@ describe('chart-text', () => {
       annualIncome: 9000,
       monthlyGIS: 391.77,
       annualGIS: 4701.24,
+      gisCoverage: { start: '2019-01-01', end: '2019-09-30' },
     };
     const scenarioAfter = {
       totalGISInRetirement: 49144.8,
@@ -65,7 +66,7 @@ describe('chart-text', () => {
       expect(monthlyGISEntitlement.explanation).toMatch(/\$187\.00/); // gis before/after diff
       expect(monthlyGISEntitlement.explanation).toMatch(/\$204\.77/); // scenarioAfter.monthlyGIS
 
-      expect(monthlyGISEntitlement.footer).toBeUndefined();
+      expect(monthlyGISEntitlement.footer).toBeDefined();
     });
 
     it('generates explanatory text for Annual GIS Entitlement chart', () => {
@@ -81,7 +82,7 @@ describe('chart-text', () => {
       expect(annualGISEntitlement.explanation).toMatch(/\$4,701\.24/); // scenarioBefore.annualGIS
       expect(annualGISEntitlement.explanation).toMatch(/\$2,457\.24/); // scenarioAfter.annualGIS
 
-      expect(annualGISEntitlement.footer).toBeUndefined();
+      expect(annualGISEntitlement.footer).toBeDefined();
     });
 
     it('generates explanatory text for Total GIS in Retirement chart', () => {
@@ -102,7 +103,7 @@ describe('chart-text', () => {
       expect(totalGISEntitlement.explanation).toMatch(/\$49,144\.80/); // scenarioAfter.totalGIS
       expect(totalGISEntitlement.explanation).toMatch(/\$44,879\.99/); // before/after diff in total GIS
 
-      expect(totalGISEntitlement.footer).toBeUndefined();
+      expect(totalGISEntitlement.footer).toBeDefined();
     });
   });
 });

@@ -21,11 +21,13 @@ describe('scenario runner', () => {
       expect(result.cashOutAfter.monthlyGIS).toBeCloseTo(204.77, 2);
       expect(result.cashOutAfter.annualGIS).toBeCloseTo(2457.24, 2);
       expect(result.cashOutAfter.totalGISInRetirement).toBeCloseTo(49144.8, 1);
+      expect(result.cashOutAfter.gisCoverage).toBeDefined();
 
       expect(result.cashOutBefore.numYrsInRetirement).toEqual(20);
       expect(result.cashOutBefore.annualIncome).toBeCloseTo(9000, 0);
       expect(result.cashOutBefore.monthlyGIS).toBeCloseTo(391.77, 2);
       expect(result.cashOutBefore.annualGIS).toBeCloseTo(4701.24, 2);
+      expect(result.cashOutBefore.gisCoverage).toBeDefined();
       expect(result.cashOutBefore.totalGISInRetirement).toBeCloseTo(
         94024.79,
         1

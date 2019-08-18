@@ -3,6 +3,7 @@ import './App.css';
 import Intro from './components/intro/intro';
 import DataEntry from './components/data-entry/data-entry';
 import Scenarios from './components/scenarios/scenarios';
+import Disclaimer from './components/disclaimer/disclaimer';
 import { run } from './lib/scenario-runner';
 
 function App() {
@@ -27,7 +28,12 @@ function App() {
     if (scenarios.cashOutBefore.monthlyGIS === 0) {
       return <div className="no-gis">You are not eligible for GIS.</div>;
     }
-    return <Scenarios data={scenarios} />;
+    return (
+      <div className="scenario-disclaimer">
+        <Scenarios data={scenarios} />
+        <Disclaimer />
+      </div>
+    );
   }
 
   return (

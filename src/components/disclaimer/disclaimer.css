@@ -1,0 +1,18 @@
+.disclaimer {
+  background-color: var(--warning);
+  border: 1px solid var(--warning-border);
+  border-radius: 3px;
+  padding: 8px 10px;
+}
+
+.disclaimer--header {
+  color: var(--brand-darken-35);
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.disclaimer--body {
+  color: var(--brand-desaturate-76);
+  font-weight: 300;
+  line-height: 1.1em;
+}

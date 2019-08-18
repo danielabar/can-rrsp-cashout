@@ -23,3 +23,10 @@
   font-weight: 300;
   line-height: 1.2em;
 }
+
+.disclaimer--link {
+  color: var(--brand-darken-21);
+  display: block;
+  margin-top: 5px;
+  text-decoration: none;
+}

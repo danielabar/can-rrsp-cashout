@@ -18,6 +18,13 @@ function Disclaimer() {
         you are eligible for full Old Age Security (40 years in Canada) and will
         have no earned income after age 65. There may be GIS tops in addition
         depending on which province you live in.
+        <br />
+        <a
+          className="disclaimer--link"
+          href="https://github.com/danielabar/can-rrsp-cashout/blob/master/LICENSE"
+        >
+          Software License
+        </a>
       </p>
     </section>
   );

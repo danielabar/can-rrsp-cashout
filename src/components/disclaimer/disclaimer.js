@@ -1,10 +1,14 @@
 import React from 'react';
+import Warning from './warning';
 import './disclaimer.css';
 
 function Disclaimer() {
   return (
     <section className="disclaimer">
-      <h2 className="disclaimer--header">Disclaimer</h2>
+      <div className="disclaimer--header">
+        <Warning />
+        <h2>Disclaimer</h2>
+      </div>
       <p className="disclaimer--body">
         The calculator’s results are rough estimates and are based on the
         information that you provided. The results should not be considered

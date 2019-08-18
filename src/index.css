@@ -53,4 +53,7 @@ body {
   margin: 10px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* enable background printing https://stackoverflow.com/a/14784655/3991687 */
+  color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
 }

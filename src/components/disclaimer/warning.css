@@ -1,0 +1,5 @@
+.warning svg {
+  fill: var(--brand-darken-35);
+  height: 20px;
+  width: 20px;
+}

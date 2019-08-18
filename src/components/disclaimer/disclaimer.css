@@ -6,13 +6,20 @@
 }
 
 .disclaimer--header {
+  align-items: center;
   color: var(--brand-darken-35);
+  display: flex;
+  font-size: 1.05em;
   font-weight: 700;
   margin-bottom: 5px;
+}
+
+.disclaimer--header h2 {
+  margin-left: 3px;
 }
 
 .disclaimer--body {
   color: var(--brand-desaturate-76);
   font-weight: 300;
-  line-height: 1.1em;
+  line-height: 1.2em;
 }

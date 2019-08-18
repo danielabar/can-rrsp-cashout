@@ -16,6 +16,7 @@
 
   --brand-desaturate-70: #707981;
   --brand-desaturate-75: #76797b;
+  --brand-desaturate-76: #787979;
 
   --brand-opposite: #d5601c;
   --brand-opposite-lighten-47: #fcede5;
@@ -28,6 +29,8 @@
 
   --alert: #721c24;
   --highlight: #ffff00;
+  --warning: #fff3cd;
+  --warning-border: #ffeeba;
 }
 
 /* apply a natural box layout model to all elements, but allowing components to change */
@@ -50,4 +53,7 @@ body {
   margin: 10px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* enable background printing https://stackoverflow.com/a/14784655/3991687 */
+  color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
 }

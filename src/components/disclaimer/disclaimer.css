@@ -19,7 +19,7 @@
 }
 
 .disclaimer--body {
-  color: var(--brand-desaturate-76);
+  color: var(--brand-darken-35);
   font-weight: 300;
   line-height: 1.2em;
 }

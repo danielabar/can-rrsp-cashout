@@ -4,6 +4,7 @@ import Intro from './components/intro/intro';
 import DataEntry from './components/data-entry/data-entry';
 import Scenarios from './components/scenarios/scenarios';
 import Disclaimer from './components/disclaimer/disclaimer';
+import Tax from './components/tax/tax';
 import { run } from './lib/scenario-runner';
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
     return (
       <div className="scenario-disclaimer">
         <Scenarios data={scenarios} />
+        <Tax />
         <Disclaimer />
       </div>
     );

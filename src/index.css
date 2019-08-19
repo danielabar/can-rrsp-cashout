@@ -4,10 +4,13 @@
   --white: #fcfcfc;
 
   --brand: #1c7dd5;
-  --brand-darken-10: #1663a8;
+
+  --brand-lighten-40: #c6e0f7;
+  --brand-lighten-45: #dcecfa;
   --brand-lighten-52: #fcfdff;
 
   --brand-darken-3: #1a75c7;
+  --brand-darken-10: #1663a8;
   --brand-darken-21: #0d3b64;
   --brand-darken-35: #051829;
   --brand-darken-41: #04111c;
@@ -16,7 +19,6 @@
 
   --brand-desaturate-70: #707981;
   --brand-desaturate-75: #76797b;
-  --brand-desaturate-76: #787979;
 
   --brand-opposite: #d5601c;
   --brand-opposite-lighten-47: #fcede5;

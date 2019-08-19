@@ -1,0 +1,25 @@
+.tax {
+  background-color: var(--brand-lighten-45);
+  border: 1px solid var(--brand-lighten-40);
+  border-radius: 3px;
+  margin-bottom: 15px;
+  padding: 8px 10px;
+}
+
+.tax--header {
+  align-items: center;
+  color: var(--brand-darken-35);
+  display: flex;
+  font-size: 1.1em;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.tax--header h2 {
+  margin-left: 3px;
+}
+
+.tax--body {
+  color: var(--brand-darken-35);
+  line-height: 1.3;
+}

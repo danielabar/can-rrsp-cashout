@@ -1,0 +1,5 @@
+.tax-icon svg {
+  fill: var(--brand-darken-35);
+  height: 30px;
+  width: 30px;
+}

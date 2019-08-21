@@ -1,6 +1,7 @@
 /* eslint-disable react/no-danger */
 import React from 'react';
 import Legend from '../legend/legend';
+import Icons from '../icons/icons';
 import { barStyle, formatMoney } from '../../lib/viz-util';
 import './bar-chart.css';
 import './chart-text.css';
@@ -22,10 +23,13 @@ function footerHelper(footer) {
 }
 
 function BarChart(props) {
-  const { title, scenario1, scenario2, chartText } = props;
+  const { title, scenario1, scenario2, chartText, icon } = props;
   return (
     <div className="bar-chart">
-      <h2 className="bar-chart--title">{title}</h2>
+      <div className="bar-chart--header">
+        <img className="bar-chart--icon" src={Icons[icon]} alt="Chart icon" />
+        <h2 className="bar-chart--title">{title}</h2>
+      </div>
       <Legend />
       <div
         className="chart-text"

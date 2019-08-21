@@ -1,27 +1,29 @@
 .disclaimer {
   background-color: var(--warning);
-  border: 1px solid var(--warning-border);
-  border-radius: 3px;
-  padding: 8px 10px;
+  border-radius: 8px;
+  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  padding: 20px 30px 30px;
 }
 
 .disclaimer--header {
   align-items: center;
   color: var(--brand-darken-35);
   display: flex;
-  font-size: 1.05em;
-  font-weight: 700;
+  font-size: 1.3rem;
+  font-weight: 500;
   margin-bottom: 5px;
 }
 
 .disclaimer--header h2 {
-  margin-left: 3px;
+  margin-left: 5px;
 }
 
 .disclaimer--body {
   color: var(--brand-darken-35);
+  font-size: 1.05rem;
   font-weight: 300;
-  line-height: 1.2em;
+  line-height: 1.4;
 }
 
 .disclaimer--link {

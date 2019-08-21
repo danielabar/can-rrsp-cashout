@@ -13,12 +13,14 @@ function Scenarios(props) {
           scenario1={cashOutBefore.annualIncome}
           scenario2={cashOutAfter.annualIncome}
           chartText={chartText.annualIncomeForGisEligibility}
+          icon="incomeIcon"
         />
         <BarChart
           title="Monthly GIS Entitlement"
           scenario1={cashOutBefore.monthlyGIS}
           scenario2={cashOutAfter.monthlyGIS}
           chartText={chartText.monthlyGISEntitlement}
+          icon="monthlyGisIcon"
         />
         <BarChart
           title="Annual GIS Entitlement"

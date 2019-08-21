@@ -136,7 +136,7 @@ function totalGISEntitlement(numericInput, scenarioBefore, scenarioAfter) {
 }
 
 function generateGISFooter(coverage) {
-  return `GIS amounts are effective as of ${coverage.start} to ${coverage.end}`;
+  return `GIS amounts effective from ${coverage.start} to ${coverage.end}.`;
 }
 
 function generate(numericInput, scenarioBefore, scenarioAfter) {

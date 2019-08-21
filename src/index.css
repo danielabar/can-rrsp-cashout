@@ -32,7 +32,6 @@
   --alert: #721c24;
   --highlight: #ffff00;
   --warning: #fff3cd;
-  --warning-border: #ffeeba;
 }
 
 /* apply a natural box layout model to all elements, but allowing components to change */

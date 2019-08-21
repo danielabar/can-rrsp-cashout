@@ -1,11 +1,9 @@
 .tax {
   background-color: var(--brand-lighten-45);
-  /* border: 1px solid var(--brand-lighten-40); */
   border-radius: 8px;
   box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
     0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
   margin-bottom: 15px;
-  /* padding: 8px 10px; */
   padding: 20px 30px 30px;
 }
 
@@ -13,7 +11,7 @@
   align-items: center;
   color: var(--brand-darken-35);
   display: flex;
-  font-size: 1.3em;
+  font-size: 1.3rem;
   font-weight: 500;
   margin-bottom: 5px;
 }

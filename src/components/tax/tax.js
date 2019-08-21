@@ -7,7 +7,7 @@ function Tax() {
     <section className="tax">
       <div className="tax--header">
         <TaxIcon />
-        <h2>What about Taxes?</h2>
+        <h2>What about taxes?</h2>
       </div>
       <p className="tax--body">
         The impact of receiving RRSPs while on GIS is a loss of least 50% of its

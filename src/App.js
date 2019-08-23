@@ -5,7 +5,9 @@ import DataEntry from './components/data-entry/data-entry';
 import Scenarios from './components/scenarios/scenarios';
 import Disclaimer from './components/disclaimer/disclaimer';
 import Tax from './components/tax/tax';
+import Links from './components/links/links';
 import { run } from './lib/scenario-runner';
+import config from './config';
 
 function App() {
   const [scenarios, setScenarios] = useState({});
@@ -34,6 +36,7 @@ function App() {
         <Scenarios data={scenarios} />
         <Tax />
         <Disclaimer />
+        <Links learnMoreLinks={config.LEARN_MORE_LINKS} />
       </div>
     );
   }

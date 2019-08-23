@@ -44,6 +44,36 @@ const config = Object.freeze({
 
   // https://www.canada.ca/en/employment-social-development/corporate/contact/oas.html
   SERVICE_CANADA_CONTACT: '1-800-277-9914',
+
+  LEARN_MORE_LINKS: [
+    {
+      linkTitle:
+        'The upside-down world of financial planning for low-income Canadians',
+      linkUrl:
+        'https://www.stitcher.com/podcast/preet-banerjee/mostly-money-mostly-canadian/e/59296571',
+      linkBody:
+        'Listen to the episode of Mostly Money podcast that inspired this project.',
+      linkIcon: 'listen',
+    },
+    {
+      linkTitle:
+        'The upside-down world of financial planning for low-income Canadians',
+      linkUrl:
+        'https://www.stitcher.com/podcast/preet-banerjee/mostly-money-mostly-canadian/e/59296571',
+      linkBody:
+        'Listen to the episode of Mostly Money podcast that inspired this project.',
+      linkIcon: 'listen',
+    },
+    {
+      linkTitle:
+        'The upside-down world of financial planning for low-income Canadians',
+      linkUrl:
+        'https://www.stitcher.com/podcast/preet-banerjee/mostly-money-mostly-canadian/e/59296571',
+      linkBody:
+        'Listen to the episode of Mostly Money podcast that inspired this project.',
+      linkIcon: 'listen',
+    },
+  ],
 });
 
 export default config;

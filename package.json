@@ -1,6 +1,6 @@
 {
   "name": "can-rrsp-cashout",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "private": true,
   "homepage": "https://danielabar.github.io/can-rrsp-cashout",
   "dependencies": {

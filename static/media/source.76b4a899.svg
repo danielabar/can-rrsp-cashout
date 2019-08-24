@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <g fill="#be5619">
+    <path
+      d="M65.75,4.25H14.852v91.5h70.297V23.648H65.75V4.25z M75.125,53.984c0,13.854-11.271,25.125-25.125,25.125  c-13.854,0-25.125-11.271-25.125-25.125S36.146,28.86,50,28.86C63.854,28.86,75.125,40.131,75.125,53.984z" />
+    <path
+      d="M26.875,53.984c0,12.751,10.374,23.125,23.125,23.125s23.125-10.374,23.125-23.125S62.751,30.86,50,30.86  S26.875,41.233,26.875,53.984z M43.293,62.367l-8.563-8.383l8.564-8.381l1.398,1.43l-7.103,6.952l7.104,6.953L43.293,62.367z   M55.308,47.033l1.398-1.43l8.564,8.381l-8.564,8.381l-1.398-1.43l7.104-6.951L55.308,47.033z M52.982,43.502l-4,21.335  l-1.966-0.369l4-21.334L52.982,43.502z" />
+    <polygon points="67.75,21.648 83.734,21.648 67.75,5.664 " />
+  <!-- <text x="0" y="115" fill="#000000" font-size="5px"
+    font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">Created by Srinivas
+    Agra</text>
+  <text x="0" y="120" fill="#000000" font-size="5px" font-weight="bold"
+    font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">from the Noun Project</text> -->
+  </g>
+</svg>

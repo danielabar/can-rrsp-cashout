@@ -6,6 +6,8 @@ import listen from './listen.svg';
 import choice from './choice.svg';
 import question from './question.svg';
 import policy from './policy.svg';
+import bug from './bug.svg';
+import source from './source.svg';
 
 export default {
   incomeIcon,
@@ -16,4 +18,6 @@ export default {
   choice,
   question,
   policy,
+  bug,
+  source,
 };

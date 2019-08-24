@@ -12,12 +12,6 @@
 
 .links--grid {
   display: grid;
-  grid-gap: 20px 10px;
+  grid-gap: 20px 15px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
-
-/* @media (min-width: 320px) and (max-width: 480px) {
-  .links {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  }
-} */

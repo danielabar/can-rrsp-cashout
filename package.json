@@ -1,8 +1,8 @@
 {
   "name": "can-rrsp-cashout",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "private": true,
-  "homepage": "http://www.rrspgiscalculator.site",
+  "homepage": ".",
   "dependencies": {
     "accounting": "0.4.1",
     "gh-pages": "2.0.1",

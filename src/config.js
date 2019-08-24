@@ -44,6 +44,51 @@ const config = Object.freeze({
 
   // https://www.canada.ca/en/employment-social-development/corporate/contact/oas.html
   SERVICE_CANADA_CONTACT: '1-800-277-9914',
+
+  LEARN_MORE_LINKS: [
+    {
+      linkTitle:
+        'The upside-down world of financial planning for low-income Canadians',
+      linkUrl:
+        'https://www.stitcher.com/podcast/preet-banerjee/mostly-money-mostly-canadian/e/59296571',
+      linkBody:
+        'Listen to the episode of Mostly Money podcast that inspired this project.',
+      linkIcon: 'listen',
+    },
+    {
+      linkTitle: 'TFSA or RRSP',
+      linkUrl:
+        'https://globalnews.ca/news/5146318/rrsp-tfsa-early-withdrawal-gis/',
+      linkBody:
+        'Learn how a TFSA can be a better choice than an RRSP when retiring on a low income.',
+      linkIcon: 'choice',
+    },
+    {
+      linkTitle: 'Open Policy Ontario',
+      linkUrl: 'https://openpolicyontario.com',
+      linkBody: 'Learn more about retiring on a low income in Canada.',
+      linkIcon: 'policy',
+    },
+    {
+      linkTitle: 'Questions?',
+      linkUrl: 'https://openpolicyontario.com/contact/',
+      linkBody: 'Have a question about something you see here?',
+      linkIcon: 'question',
+    },
+    {
+      linkTitle: 'Issues or Bugs',
+      linkUrl: 'https://github.com/danielabar/can-rrsp-cashout/issues',
+      linkBody: 'Report a bug or request an enhancement.',
+      linkIcon: 'bug',
+    },
+    {
+      linkTitle: 'View Project Source',
+      linkUrl: 'https://github.com/danielabar/can-rrsp-cashout',
+      linkBody:
+        'See the source code, tests and documentation for this project.',
+      linkIcon: 'source',
+    },
+  ],
 });
 
 export default config;

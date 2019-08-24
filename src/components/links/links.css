@@ -1,0 +1,17 @@
+.links {
+  margin-top: 20px;
+}
+
+.links--header {
+  color: var(--brand-desaturate-75);
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+  margin-top: 25px;
+}
+
+.links--grid {
+  display: grid;
+  grid-gap: 20px 15px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}

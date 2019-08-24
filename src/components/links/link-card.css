@@ -1,0 +1,23 @@
+.link-card {
+  color: var(--brand-darken-21);
+  display: flex;
+  text-decoration: none;
+}
+
+.link-card--icon {
+  flex: 0 0 auto;
+  height: 50px;
+  width: 50px;
+}
+
+.link-card--details {
+  margin-left: 5px;
+}
+
+.link-card--title {
+  font-weight: 700;
+}
+
+.link-card--body {
+  font-weight: 300;
+}

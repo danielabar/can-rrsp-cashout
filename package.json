@@ -1,8 +1,8 @@
 {
   "name": "can-rrsp-cashout",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "private": true,
-  "homepage": "https://danielabar.github.io/can-rrsp-cashout",
+  "homepage": "http://www.rrspgiscalculator.site",
   "dependencies": {
     "accounting": "0.4.1",
     "gh-pages": "2.0.1",

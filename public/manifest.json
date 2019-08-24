@@ -1,6 +1,6 @@
 {
-  "short_name": "Canada RRSP Cashout",
-  "name": "Canada RRSP Cashout",
+  "short_name": "RRSP vs GIS",
+  "name": "RRSP vs GIS Calculator",
   "icons": [
     {
       "src": "favicon.ico",

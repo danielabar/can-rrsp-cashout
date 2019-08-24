@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <g fill="#be5619">
+    <path
+      d="M47,58v-4H34V19.5l16,4v6.569c-3.945,0.493-7,3.852-7,7.931c0,4.418,3.582,8,8,8s8-3.582,8-8c0-4.079-3.055-7.438-7-7.931   V24l1-4l-19-4.75V9.445C35.191,8.752,36,7.477,36,6c0-2.209-1.791-4-4-4s-4,1.791-4,4c0,1.477,0.809,2.752,2,3.445v4.805L13,10   l-1,4l1,0.25v5.819C9.055,20.562,6,23.921,6,28c0,4.418,3.582,8,8,8s8-3.582,8-8c0-4.079-3.055-7.438-7-7.931V14.75l15,3.75V54H17   v4H2v4h60v-4H47z M53.152,33.47l1.695,1.06l-5,8c-0.18,0.288-0.493,0.465-0.833,0.47c-0.005,0-0.01,0-0.015,0   c-0.334,0-0.646-0.167-0.832-0.445l-2-3l1.664-1.109l1.141,1.711L53.152,33.47z M17.293,23.293l1.414,1.414L15.414,28l3.293,3.293   l-1.414,1.414L14,29.414l-3.293,3.293l-1.414-1.414L12.586,28l-3.293-3.293l1.414-1.414L14,26.586L17.293,23.293z" />
+    <g>
+      <circle cx="5" cy="52" r="2" />
+    </g>
+    <circle cx="12" cy="44" r="4" />
+    <circle cx="47" cy="10" r="4" />
+    <circle cx="59" cy="5" r="3" />
+  </g>
+  <!-- <text x="0" y="79" fill="#000000" font-size="5px" font-weight="bold"
+    font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">Created by Template</text>
+  <text x="0"
+    y="84" fill="#000000" font-size="5px" font-weight="bold"
+    font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">from the Noun Project</text> -->
+</svg>

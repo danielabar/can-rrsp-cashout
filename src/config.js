@@ -56,22 +56,24 @@ const config = Object.freeze({
       linkIcon: 'listen',
     },
     {
-      linkTitle:
-        'The upside-down world of financial planning for low-income Canadians',
+      linkTitle: 'TFSA or RRSP',
       linkUrl:
-        'https://www.stitcher.com/podcast/preet-banerjee/mostly-money-mostly-canadian/e/59296571',
+        'https://globalnews.ca/news/5146318/rrsp-tfsa-early-withdrawal-gis/',
       linkBody:
-        'Listen to the episode of Mostly Money podcast that inspired this project.',
-      linkIcon: 'listen',
+        'Learn how a TFSA (Tax Free Savings Account) can be a better choice than an RRSP (Registered Retirement Savings Plan) when retiring on a low income.',
+      linkIcon: 'choice',
     },
     {
-      linkTitle:
-        'The upside-down world of financial planning for low-income Canadians',
-      linkUrl:
-        'https://www.stitcher.com/podcast/preet-banerjee/mostly-money-mostly-canadian/e/59296571',
-      linkBody:
-        'Listen to the episode of Mostly Money podcast that inspired this project.',
-      linkIcon: 'listen',
+      linkTitle: 'Open Policy Ontario',
+      linkUrl: 'https://openpolicyontario.com',
+      linkBody: 'Learn more about retiring on a low income in Canada.',
+      linkIcon: 'policy',
+    },
+    {
+      linkTitle: 'Questions?',
+      linkUrl: 'https://openpolicyontario.com/contact/',
+      linkBody: 'Have a question about something you see here?',
+      linkIcon: 'question',
     },
   ],
 });

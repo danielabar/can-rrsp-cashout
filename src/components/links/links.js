@@ -16,7 +16,12 @@ function buildLinkCards(learnMoreLinks) {
 
 function Links(props) {
   const { learnMoreLinks } = props;
-  return <section className="links">{buildLinkCards(learnMoreLinks)}</section>;
+  return (
+    <section className="links">
+      <h2 className="links--header">Learn more</h2>
+      <div className="links--grid">{buildLinkCards(learnMoreLinks)}</div>
+    </section>
+  );
 }
 
 export default Links;

@@ -34,7 +34,7 @@ function App() {
     }
     return (
       <div>
-        <Summary percentageDiff={scenarios.percentageDiff} />
+        <Summary percentageDecrease={scenarios.percentageDecrease} />
         <Scenarios data={scenarios} />
         <Tax />
         <Disclaimer />

@@ -5,6 +5,7 @@ import {
   monthlyGis,
   totalGisInRetirement,
   numYearsCollectingGIS,
+  percentageDecrease,
 } from './calc-util';
 import config from '../config';
 
@@ -182,6 +183,48 @@ describe('calc-util', () => {
       const result = numYearsCollectingGIS(retirementAge, numYrsInRetirement);
       // Then
       expect(result).toEqual(20);
+    });
+  });
+
+  describe('percentageDecrease', () => {
+    it('calculates percentage decrease between larger and smaller number rounded to zero decimal places', () => {
+      // Given
+      const origNum = 391.77;
+      const newNum = 204.77;
+      // When
+      const result = percentageDecrease(origNum, newNum);
+      // Then
+      expect(result).toEqual(48);
+    });
+
+    it('returns 0 when original number and new number are the same', () => {
+      // Given
+      const origNum = 5;
+      const newNum = 5;
+      // When
+      const result = percentageDecrease(origNum, newNum);
+      // Then
+      expect(result).toEqual(0);
+    });
+
+    it('returns N/A when original number is less than new number', () => {
+      // Given
+      const origNum = 5;
+      const newNum = 10;
+      // When
+      const result = percentageDecrease(origNum, newNum);
+      // Then
+      expect(result).toEqual('N/A');
+    });
+
+    it('returns N/A when original number is 0', () => {
+      // Given
+      const origNum = 0;
+      const newNum = -5;
+      // When
+      const result = percentageDecrease(origNum, newNum);
+      // Then
+      expect(result).toEqual('N/A');
     });
   });
 });

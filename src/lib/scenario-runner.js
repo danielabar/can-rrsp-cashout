@@ -48,12 +48,15 @@ function run(input) {
   const cashOutBefore = calculateCashOutBeforeRetirement(numericInput);
   const cashOutAfter = calculateCashOutAfterRetirement(numericInput);
   const chartText = generate(numericInput, cashOutBefore, cashOutAfter);
-  const percentageDiff = 67;
+  const percentageDecrease = calcUtil.percentageDecrease(
+    cashOutBefore.monthlyGIS,
+    cashOutAfter.monthlyGIS
+  );
   return {
     cashOutBefore,
     cashOutAfter,
     chartText,
-    percentageDiff,
+    percentageDecrease,
   };
 }
 

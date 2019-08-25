@@ -72,7 +72,7 @@ function monthlyGISEntitlement(numericInput, scenarioBefore, scenarioAfter) {
   )}</span>.<sup>*</sup>\
   <span class="chart-text--separator">&nbsp;</span>\
   Remember when cashing out your RRSP <span class="chart-text--time chart-text--time-before">before</span> retiring,
-  you still have the money (for example in a savings account), but it doesn't count as income for\
+  you still have the money (for example in a tax free savings account), but it doesn't count as income for\
   GIS eligibility purposes.
   `;
 }

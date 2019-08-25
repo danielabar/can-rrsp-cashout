@@ -2,7 +2,7 @@ import React from 'react';
 import './summary.css';
 
 function Summary(props) {
-  const { percentageDiff } = props;
+  const { percentageDecrease } = props;
   return (
     <section className="summary">
       <header className="summary--header">
@@ -10,7 +10,7 @@ function Summary(props) {
         by
       </header>
       <div className="summary--diff-container">
-        <div className="summary--diff">{percentageDiff}%</div>
+        <div className="summary--diff">{percentageDecrease}%</div>
       </div>
       <header className="summary--header">
         How does this work? Read on for explanation...

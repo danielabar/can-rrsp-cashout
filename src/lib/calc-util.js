@@ -56,6 +56,16 @@ function totalGisInRetirement(
   return annualGISAmt * numYrs;
 }
 
+// https://www.investopedia.com/terms/p/percentage-change.asp
+function percentageDecrease(origNum, newNum) {
+  if (origNum === 0 || origNum < newNum) {
+    return 'N/A';
+  }
+  const decrease = origNum - newNum;
+  const perDecrease = (decrease / origNum) * 100;
+  return Math.round(perDecrease);
+}
+
 export {
   annualRrsp,
   yearsInRetirement,
@@ -66,4 +76,5 @@ export {
   numYearsCollectingGIS,
   totalGisInRetirement,
   lifeExpectancy,
+  percentageDecrease,
 };

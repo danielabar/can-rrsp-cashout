@@ -47,10 +47,15 @@ function run(input) {
   const numericInput = convertToNumeric(input);
   const cashOutBefore = calculateCashOutBeforeRetirement(numericInput);
   const cashOutAfter = calculateCashOutAfterRetirement(numericInput);
-  const chartText = generate(numericInput, cashOutBefore, cashOutAfter);
   const percentageDecrease = calcUtil.percentageDecrease(
     cashOutBefore.monthlyGIS,
     cashOutAfter.monthlyGIS
+  );
+  const chartText = generate(
+    numericInput,
+    cashOutBefore,
+    cashOutAfter,
+    percentageDecrease
   );
   return {
     cashOutBefore,

@@ -66,7 +66,8 @@ const config = Object.freeze({
     {
       linkTitle: 'Open Policy Ontario',
       linkUrl: 'https://openpolicyontario.com',
-      linkBody: 'Learn more about retiring on a low income in Canada.',
+      linkBody:
+        'Website belonging to John Stapleton, a social policy expert with a special interest in retirement on a low income and income security programs in Canada.',
       linkIcon: 'policy',
     },
     {

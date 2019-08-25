@@ -39,14 +39,19 @@ function annualIncomeForGisEligibility(
   <span class="chart-text--number">${formatMoney(
     annualRrsp(numericInput)
   )}</span>,\
-  to your income for a total of\
+  to your income per year for a total of\
   <span class="chart-text--number">${formatMoney(
     scenarioAfter.annualIncome
   )}</span>.\
   `;
 }
 
-function monthlyGISEntitlement(numericInput, scenarioBefore, scenarioAfter) {
+function monthlyGISEntitlement(
+  numericInput,
+  scenarioBefore,
+  scenarioAfter,
+  percentageDecrease
+) {
   return `If you cash out your RRSP <span class="chart-text--time chart-text--time-before">before</span> retiring,\
   then your income of\
   <span class="chart-text--number">${formatMoney(
@@ -69,10 +74,11 @@ function monthlyGISEntitlement(numericInput, scenarioBefore, scenarioAfter) {
   resulting in a lower monthly benefit of\
   <span class="chart-text--number">${formatMoney(
     scenarioAfter.monthlyGIS
-  )}</span>.<sup>*</sup>\
+  )}</span>, which represents a decrease of\
+  <span class="chart-text--basic">${percentageDecrease}%</span>.<sup>*</sup>\
   <span class="chart-text--separator">&nbsp;</span>\
   Remember when cashing out your RRSP <span class="chart-text--time chart-text--time-before">before</span> retiring,
-  you still have the money (for example in a savings account), but it doesn't count as income for\
+  you still have the money (for example in a tax free savings account), but it doesn't count as income for\
   GIS eligibility purposes.
   `;
 }
@@ -139,7 +145,12 @@ function generateGISFooter(coverage) {
   return `GIS amounts effective from ${coverage.start} to ${coverage.end}.`;
 }
 
-function generate(numericInput, scenarioBefore, scenarioAfter) {
+function generate(
+  numericInput,
+  scenarioBefore,
+  scenarioAfter,
+  percentageDecrease
+) {
   return {
     annualIncomeForGisEligibility: {
       explanation: annualIncomeForGisEligibility(
@@ -154,7 +165,8 @@ function generate(numericInput, scenarioBefore, scenarioAfter) {
       explanation: monthlyGISEntitlement(
         numericInput,
         scenarioBefore,
-        scenarioAfter
+        scenarioAfter,
+        percentageDecrease
       ),
       footer: generateGISFooter(scenarioBefore.gisCoverage),
     },

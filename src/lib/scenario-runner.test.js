@@ -33,6 +33,7 @@ describe('scenario runner', () => {
         1
       );
 
+      expect(result.percentageDecrease).toEqual(48);
       expect(result).toHaveProperty('chartText');
     });
   });

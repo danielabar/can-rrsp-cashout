@@ -27,6 +27,7 @@ describe('chart-text', () => {
       monthlyGIS: 204.77,
       annualGIS: 2457.24,
     };
+    const percentageDecrease = 48;
 
     it('generates explanatory text for Annual Income for GIS Eligibility chart', () => {
       // When
@@ -56,7 +57,8 @@ describe('chart-text', () => {
       const { monthlyGISEntitlement } = generate(
         numericInput,
         scenarioBefore,
-        scenarioAfter
+        scenarioAfter,
+        percentageDecrease
       );
 
       // Then
@@ -65,6 +67,7 @@ describe('chart-text', () => {
       expect(monthlyGISEntitlement.explanation).toMatch(/\$4,500\.00/); // rrsp withdrawals
       expect(monthlyGISEntitlement.explanation).toMatch(/\$187\.00/); // gis before/after diff
       expect(monthlyGISEntitlement.explanation).toMatch(/\$204\.77/); // scenarioAfter.monthlyGIS
+      expect(monthlyGISEntitlement.explanation).toMatch(/48%/); // percentage decrease in monthly GIS benefit
 
       expect(monthlyGISEntitlement.footer).toBeDefined();
     });

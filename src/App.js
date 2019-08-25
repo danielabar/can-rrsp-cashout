@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Intro from './components/intro/intro';
 import DataEntry from './components/data-entry/data-entry';
+import Summary from './components/summary/summary';
 import Scenarios from './components/scenarios/scenarios';
 import Disclaimer from './components/disclaimer/disclaimer';
 import Tax from './components/tax/tax';
@@ -32,7 +33,8 @@ function App() {
       return <div className="no-gis">You are not eligible for GIS.</div>;
     }
     return (
-      <div className="scenario-disclaimer">
+      <div>
+        <Summary percentageDecrease={scenarios.percentageDecrease} />
         <Scenarios data={scenarios} />
         <Tax />
         <Disclaimer />

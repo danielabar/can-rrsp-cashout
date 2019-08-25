@@ -1,0 +1,33 @@
+.summary {
+  margin-top: 25px;
+}
+
+.summary--header {
+  align-items: center;
+  color: var(--brand-darken-35);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.summary--diff-container {
+  align-items: center;
+  border: 10px solid var(--alert2);
+  border-radius: 50%;
+  display: flex;
+  height: 200px;
+  justify-content: center;
+  margin: 20px auto;
+  width: 200px;
+}
+
+.summary--diff {
+  color: var(--alert2);
+  font-size: 5rem;
+  text-shadow: 1px 0px 1px #cccccc, 0px 1px 1px #eeeeee, 2px 1px 1px #cccccc,
+    1px 2px 1px #eeeeee, 3px 2px 1px #cccccc, 2px 3px 1px #eeeeee,
+    4px 3px 1px #cccccc, 3px 4px 1px #eeeeee, 5px 4px 1px #cccccc,
+    4px 5px 1px #eeeeee, 6px 5px 1px #cccccc, 5px 6px 1px #eeeeee,
+    7px 6px 1px #cccccc;
+}

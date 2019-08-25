@@ -48,10 +48,12 @@ function run(input) {
   const cashOutBefore = calculateCashOutBeforeRetirement(numericInput);
   const cashOutAfter = calculateCashOutAfterRetirement(numericInput);
   const chartText = generate(numericInput, cashOutBefore, cashOutAfter);
+  const percentageDiff = 67;
   return {
     cashOutBefore,
     cashOutAfter,
     chartText,
+    percentageDiff,
   };
 }
 

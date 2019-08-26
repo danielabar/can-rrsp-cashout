@@ -17,7 +17,7 @@ function Intro() {
         <span className="intro--emphasis intro--emphasis-negative">reduce</span>{' '}
         the amount of GIS (Guaranteed Income Supplement) you&apos;re entitled
         to. Use this calculator to find out if you could be eligible for{' '}
-        <span className="intro--highlight">more GIS</span> by cashing our your
+        <span className="intro--highlight">more GIS</span> by cashing out your
         RRSP before retiring.
       </section>
     </div>

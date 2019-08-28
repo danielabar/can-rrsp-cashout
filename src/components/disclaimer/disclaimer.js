@@ -16,8 +16,9 @@ function Disclaimer() {
         as reported on the income tax form. The calculations here assume that
         all sources of income not shown here are zero. It is also assumed that
         you are eligible for full Old Age Security (40 years in Canada) and will
-        have no earned income after age 65. There may be GIS tops in addition
-        depending on which province you live in.
+        have no earned income after age 65. There may be addition GIS
+        (&quot;top-ups&quot;) that are paid by some provinces; they are
+        automatic once you get the federal GIS.
         <br />
         <a
           className="disclaimer--link"

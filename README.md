@@ -6,22 +6,23 @@
 
 This project was inspired by an episode of the Mostly Money podcast on [The upside-down world of financial planning for low-income Canadians](https://www.stitcher.com/podcast/preet-banerjee/mostly-money-mostly-canadian/e/59296571).
 
+## Development
 
-## Dev Notes
-
-- Bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-- [Enhanced](https://medium.com/quick-code/how-to-integrate-eslint-prettier-in-react-6efbd206d5c4) create-react-app with prettier and eslint
-- VS Code users - disable Beautify plugin for this project workspace
-
-### TODO
-- [Internationalization](https://medium.freecodecamp.org/setting-up-internationalization-in-react-from-start-to-finish-6cb94a7af725)
-- Consider adding postcss and [postcss-custom-properties](https://github.com/postcss/postcss-custom-properties) to use native css variables with fallback support for IE
-- Try [css form design](https://www.sanwebe.com/2014/08/css-html-forms-designs)
-- [Style select](https://css-tricks.com/styling-a-select-like-its-2019/)
-- Validate inputs onblur
-- More specific validation: Retirement age must be > current age
-- [Format numeric input thousands separator](https://www.npmjs.com/package/react-number-format)
-- Info icons next to each field with explanatory text, [gov uk guidelines](https://ux.stackexchange.com/questions/111412/forms-use-visible-input-hint-next-to-field-or-hidden-hint-behind-info-icon)
+1. Install the Node.js version as specified in [.nvmrc](.nvmrc) file in root of this project. The recommended way to install Node is with [nvm](https://github.com/nvm-sh/nvm) (Mac, Linux) or [nvm-windows](https://github.com/coreybutler/nvm-windows) (Windows).
+2. From project root, install the dependencies (only needed once or whenever dependencies change):
+   ```bash
+   $ npm install
+   ```
+3. Install [editorconfig](https://editorconfig.org/) plugin for whatever editor/IDE you're using.
+4. Install [prettier](https://prettier.io/) plugin for whatever editor/IDE you're using (VS Code users - disable Beautify plugin if you have itfor this project workspace)
+5. Start a development server - this will open a new browser tab at [http://localhost:3000](http://localhost:3000)
+   ```bash
+   $ npm start
+   ```
+6. Open another terminal tab and run tests, keep this tab open during development, the tests will re-run whenever any related files are modified:
+  ```bash
+  $ npm test
+  ```
 
 ## Available Scripts
 

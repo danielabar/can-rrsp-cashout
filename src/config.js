@@ -36,7 +36,7 @@ const config = Object.freeze({
   MAX_ANNUAL_PENSION: 100000,
 
   DEFAULT_RETIREMENT_AGE: 65,
-  MIN_RETIREMENT_AGE: 55,
+  MIN_RETIREMENT_AGE: 60,
   MAX_RETIREMENT_AGE: 70,
 
   // https://www.canada.ca/en/services/benefits/publicpensions/cpp/old-age-security/guaranteed-income-supplement/eligibility.html

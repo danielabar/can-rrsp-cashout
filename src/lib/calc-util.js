@@ -26,6 +26,9 @@ function convertMaritalStatus(maritalStatus) {
   if (maritalStatus === config.DEFAULT_MARITAL_STATUS) {
     result = gisLookup.STATUS.SINGLE;
   }
+  if (maritalStatus === 'couple') {
+    result = gisLookup.STATUS.PARTNER_OAS;
+  }
   return result;
 }
 

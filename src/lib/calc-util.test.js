@@ -95,6 +95,26 @@ describe('calc-util', () => {
       expect(result).toEqual(46.77);
     });
 
+    it('Uses gis-lookup to find monthly GIS amount for a couple with low-ish combined annual income', () => {
+      // Given
+      const annualIncome = 12000;
+      const maritalStatus = 'couple';
+      // When
+      const { amt: result } = monthlyGis(annualIncome, maritalStatus);
+      // Then
+      expect(result).toEqual(256.35);
+    });
+
+    it('Uses gis-lookup to find monthly GIS amount for a couple with high-ish combined annual income', () => {
+      // Given
+      const annualIncome = 17300;
+      const maritalStatus = 'couple';
+      // When
+      const { amt: result } = monthlyGis(annualIncome, maritalStatus);
+      // Then
+      expect(result).toEqual(146.35);
+    });
+
     it('Result includes GIS coverage period', () => {
       // Given
       const annualIncome = 17300;

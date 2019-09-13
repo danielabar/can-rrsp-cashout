@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-for */
 import React, { Component } from 'react';
 import config from '../../config';
+import { generateLabel } from '../../lib/form-text';
 import {
   genderOptions,
   martialStatusOptions,
@@ -87,7 +88,7 @@ class DataEntry extends Component {
           <label className="data-entry-label" htmlFor="selectMaritalStatus">
             Marital Status
             <span className="data-entry--hint">
-              Only single supported for now.
+              Used for GIS determination.
             </span>
             <select
               id="selectMaritalStatus"
@@ -101,7 +102,7 @@ class DataEntry extends Component {
           </label>
 
           <label className="data-entry-label" htmlFor="rrsp">
-            Total RRSP
+            {generateLabel('Total RRSP', maritalStatus)}
             <span className="data-entry--hint">
               Total savings in RRSP accounts.
             </span>
@@ -120,7 +121,7 @@ class DataEntry extends Component {
           </label>
 
           <label className="data-entry-label" htmlFor="cpp">
-            Annual CPP Entitlement
+            {generateLabel('Annual CPP Entitlement', maritalStatus)}
             <span className="data-entry--hint">
               Contact Service Canada{' '}
               <a
@@ -146,7 +147,7 @@ class DataEntry extends Component {
           </label>
 
           <label className="data-entry-label" htmlFor="pension">
-            Annual Pension
+            {generateLabel('Annual Pension', maritalStatus)}
             <span className="data-entry--hint">
               Company or private pension.
             </span>

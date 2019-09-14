@@ -102,7 +102,7 @@ describe('calc-util', () => {
       // When
       const { amt: result } = monthlyGis(annualIncome, maritalStatus);
       // Then
-      expect(result).toEqual(256.35);
+      expect(result).toEqual(512.7); // 256.35 * 2 = 512.7
     });
 
     it('Uses gis-lookup to find monthly GIS amount for a couple with high-ish combined annual income', () => {
@@ -112,7 +112,7 @@ describe('calc-util', () => {
       // When
       const { amt: result } = monthlyGis(annualIncome, maritalStatus);
       // Then
-      expect(result).toEqual(146.35);
+      expect(result).toEqual(292.7); // 146.35 * 2 = 292.7
     });
 
     it('Result includes GIS coverage period', () => {

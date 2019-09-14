@@ -36,7 +36,10 @@ function monthlyGis(annualIncome, maritalStatus) {
   const gisStatus = convertMaritalStatus(maritalStatus);
   const gisResult = gisLookup.find(gisStatus, annualIncome);
   const { coverage: gisCoverage } = gisResult;
-  const amt = parseFloat(gisResult.output.gis);
+  const amt =
+    maritalStatus === 'single'
+      ? parseFloat(gisResult.output.gis)
+      : parseFloat(gisResult.output.gis) * 2;
   return { amt, gisCoverage };
 }
 

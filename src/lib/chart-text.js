@@ -141,8 +141,14 @@ function totalGISEntitlement(numericInput, scenarioBefore, scenarioAfter) {
   more in GIS benefits by cashing out RRSP <span class="chart-text--time chart-text--time-before">before</span> retirement.`;
 }
 
-function generateGISFooter(coverage) {
-  return `GIS amounts effective from ${coverage.start} to ${coverage.end}.`;
+function generateGISFooter(coverage, maritalStatus) {
+  const coveragePeriod = `GIS amounts effective from ${coverage.start} to ${
+    coverage.end
+  }.`;
+  const couplesNote = `For couples this is the sum of the GIS benefit received by each partner.`;
+  return maritalStatus === 'single'
+    ? coveragePeriod
+    : `${coveragePeriod} ${couplesNote}`;
 }
 
 function generate(
@@ -168,7 +174,10 @@ function generate(
         scenarioAfter,
         percentageDecrease
       ),
-      footer: generateGISFooter(scenarioBefore.gisCoverage),
+      footer: generateGISFooter(
+        scenarioBefore.gisCoverage,
+        numericInput.maritalStatus
+      ),
     },
     annualGISEntitlement: {
       explanation: annualGISEntitlement(
@@ -176,7 +185,10 @@ function generate(
         scenarioBefore,
         scenarioAfter
       ),
-      footer: generateGISFooter(scenarioBefore.gisCoverage),
+      footer: generateGISFooter(
+        scenarioBefore.gisCoverage,
+        numericInput.maritalStatus
+      ),
     },
     totalGISEntitlement: {
       explanation: totalGISEntitlement(
@@ -184,7 +196,10 @@ function generate(
         scenarioBefore,
         scenarioAfter
       ),
-      footer: generateGISFooter(scenarioBefore.gisCoverage),
+      footer: generateGISFooter(
+        scenarioBefore.gisCoverage,
+        numericInput.maritalStatus
+      ),
     },
   };
 }

@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import config from '../../config';
 import { generateLabel } from '../../lib/form-text';
 import {
-  genderOptions,
   martialStatusOptions,
   retirementAgeOptions,
   telLinkBuilder,
@@ -20,7 +19,6 @@ function createSelection(opts) {
 
 class DataEntry extends Component {
   state = {
-    gender: config.DEFAULT_GENDER,
     maritalStatus: config.DEFAULT_MARITAL_STATUS,
     rrsp: config.DEFAULT_RRSP,
     cpp: config.DEFAULT_ANNUAL_CPP,
@@ -45,7 +43,6 @@ class DataEntry extends Component {
     event.preventDefault();
     const { onReset } = this.props;
     this.setState({
-      gender: config.DEFAULT_GENDER,
       maritalStatus: config.DEFAULT_MARITAL_STATUS,
       rrsp: config.DEFAULT_RRSP,
       cpp: config.DEFAULT_ANNUAL_CPP,
@@ -56,14 +53,7 @@ class DataEntry extends Component {
   };
 
   render() {
-    const {
-      gender,
-      maritalStatus,
-      rrsp,
-      cpp,
-      pension,
-      retirementAge,
-    } = this.state;
+    const { maritalStatus, rrsp, cpp, pension, retirementAge } = this.state;
     return (
       <div className="data-entry">
         <form
@@ -71,20 +61,6 @@ class DataEntry extends Component {
           method="post"
           className="data-entry--form"
         >
-          <label className="data-entry-label" htmlFor="selectGender">
-            Gender
-            <span className="data-entry--hint">Used for life expectancy.</span>
-            <select
-              id="selectGender"
-              name="selectGender"
-              value={gender}
-              onChange={this.update('gender')}
-              className="data-entry-input data-entry--select"
-            >
-              {createSelection(genderOptions)}
-            </select>
-          </label>
-
           <label className="data-entry-label" htmlFor="selectMaritalStatus">
             Marital Status
             <span className="data-entry--hint">

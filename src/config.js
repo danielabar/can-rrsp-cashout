@@ -1,10 +1,6 @@
 const config = Object.freeze({
   // https://www.worldlifeexpectancy.com/canada-life-expectancy
-  DEFAULT_GENDER: 'female',
-  GENDER: [
-    { key: 'male', value: 'male', lifeExpectancy: 81 },
-    { key: 'female', value: 'female', lifeExpectancy: 85 },
-  ],
+  LIFE_EXPECTANCY: 85,
 
   DEFAULT_MARITAL_STATUS: 'single',
   MARITAL_STATUS: [

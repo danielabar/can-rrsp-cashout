@@ -6,7 +6,6 @@ describe('scenario runner', () => {
     it('runs scenarios for cashing our rrsp before and after retirement for single', () => {
       // Given
       const input = {
-        gender: config.DEFAULT_GENDER,
         maritalStatus: config.DEFAULT_MARITAL_STATUS,
         rrsp: 90000,
         cpp: 4000,
@@ -40,7 +39,6 @@ describe('scenario runner', () => {
     it('runs scenarios for cashing our rrsp before and after retirement for couple', () => {
       // Given
       const input = {
-        gender: config.DEFAULT_GENDER,
         maritalStatus: 'couple',
         rrsp: 90000,
         cpp: 4000,

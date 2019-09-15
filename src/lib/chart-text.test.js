@@ -9,7 +9,6 @@ describe('chart-text', () => {
       pension: 4000,
       retirementAge: 65,
       rrsp: 90000,
-      gender: config.DEFAULT_GENDER,
       maritalStatus: config.DEFAULT_MARITAL_STATUS,
     };
     const numericInputCouple = {
@@ -17,7 +16,6 @@ describe('chart-text', () => {
       pension: 4000,
       retirementAge: 65,
       rrsp: 90000,
-      gender: config.DEFAULT_GENDER,
       maritalStatus: 'couple',
     };
     const scenarioBefore = {
@@ -50,8 +48,7 @@ describe('chart-text', () => {
       expect(annualIncomeForGisEligibility.explanation).toMatch(/\$5,000\.00/); // input.cpp
       expect(annualIncomeForGisEligibility.explanation).toMatch(/\$4,000\.00/); // input.pension
       expect(annualIncomeForGisEligibility.explanation).toMatch(/\$9,000\.00/); // scenarioBefore.annualIncome
-      expect(annualIncomeForGisEligibility.explanation).toMatch(/female/); // input.gender
-      expect(annualIncomeForGisEligibility.explanation).toMatch(/85/); // female life expectancy
+      expect(annualIncomeForGisEligibility.explanation).toMatch(/85/); // life expectancy
       expect(annualIncomeForGisEligibility.explanation).toMatch(/20/); // scenarioBefore.numYrsInRetirement
       expect(annualIncomeForGisEligibility.explanation).toMatch(/\$90,000\.00/); // input.rrsp
       expect(annualIncomeForGisEligibility.explanation).toMatch(/\$4,500\.00/); // rrsp withdrawals
@@ -130,8 +127,7 @@ describe('chart-text', () => {
 
       // Then
       expect(totalGISEntitlement.explanation).toMatch(/65/); // gis eligibility
-      expect(totalGISEntitlement.explanation).toMatch(/female/); // input.gender
-      expect(totalGISEntitlement.explanation).toMatch(/85/); // female life expectancy
+      expect(totalGISEntitlement.explanation).toMatch(/85/); // life expectancy
       expect(totalGISEntitlement.explanation).toMatch(/20/); // yrs collecting GIS
       expect(totalGISEntitlement.explanation).toMatch(/\$4,701\.24/); // scenarioBefore.annualGIS
       expect(totalGISEntitlement.explanation).toMatch(/\$94,024\.79/); // scenarioBefore.totalGIS

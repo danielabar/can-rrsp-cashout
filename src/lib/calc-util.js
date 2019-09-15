@@ -1,12 +1,12 @@
 import gisLookup from 'gis-lookup';
 import config from '../config';
 
-function lifeExpectancy(gender) {
-  return config.GENDER.find(el => el.key === gender).lifeExpectancy;
+function lifeExpectancy() {
+  return config.LIFE_EXPECTANCY;
 }
 
 function yearsInRetirement(input) {
-  return lifeExpectancy(input.gender) - input.retirementAge;
+  return lifeExpectancy() - input.retirementAge;
 }
 
 function annualRrsp(input) {

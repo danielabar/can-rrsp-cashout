@@ -24,10 +24,8 @@ function annualIncomeForGisEligibility(
   <span class="chart-text--separator">&nbsp;</span>\
   If you withdraw from your RRSP <span class="chart-text--time chart-text--time-after">after</span> retiring,\
   then the withdrawals get included in your income for GIS eligibility purposes.\
-  Given Canadian\
-  <span class="chart-text--number">${numericInput.gender}</span>\
-  life expectancy of\
-  <span class="chart-text--basic">${lifeExpectancy(numericInput.gender)}</span>\
+  Assuming life expectancy of\
+  <span class="chart-text--basic">${lifeExpectancy()}</span>\
   and your retirement age of\
   <span class="chart-text--number">${numericInput.retirementAge}</span>,\
   you will have an estimated\
@@ -105,10 +103,8 @@ function annualGISEntitlement(numericInput, scenarioBefore, scenarioAfter) {
 function totalGISEntitlement(numericInput, scenarioBefore, scenarioAfter) {
   return `You're eligible to start receiving GIS at age\
   <span class="chart-text--basic">${config.GIS_ENTITLEMENT_AGE}</span>.\
-  Given Canadian\
-  <span class="chart-text--number">${numericInput.gender}</span>\
-  life expectancy of\
-  <span class="chart-text--basic">${lifeExpectancy(numericInput.gender)}</span>\
+  Assuming life expectancy of\
+  <span class="chart-text--basic">${lifeExpectancy()}</span>\
   and your retirement age of\
   <span class="chart-text--number">${numericInput.retirementAge}</span>,\
   you will have an estimated\

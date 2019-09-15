@@ -67,6 +67,7 @@
   font-weight: bold;
   padding: 30px;
   text-align: center;
+  transition: color 0.3s ease;
 }
 
 .data-entry--input-wrapper {

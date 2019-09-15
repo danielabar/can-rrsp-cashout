@@ -52,8 +52,8 @@
 }
 
 .data-entry--radio:checked + .data-entry--radio-box {
-  color: var(--brand-darken-35);
-  border: 1.5px solid var(--brand-darken-35);
+  color: var(--brand-darken-30);
+  border: 1.5px solid var(--brand-darken-30);
 }
 
 .data-entry--radio-box {
@@ -67,7 +67,7 @@
   font-weight: bold;
   padding: 30px;
   text-align: center;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
 }
 
 .data-entry--input-wrapper {

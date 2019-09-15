@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import config from '../../config';
 import { generateLabel } from '../../lib/form-text';
 import {
-  martialStatusOptions,
+  // martialStatusOptions,
   retirementAgeOptions,
   telLinkBuilder,
 } from '../../lib/options';
@@ -30,6 +30,13 @@ class DataEntry extends Component {
     evt.preventDefault();
     this.setState({
       [field]: evt.target.value,
+    });
+  };
+
+  // Required for radio buttons to display state change as user clicks
+  handleMaritalStatusChange = changeEvent => {
+    this.setState({
+      maritalStatus: changeEvent.target.value,
     });
   };
 
@@ -61,21 +68,40 @@ class DataEntry extends Component {
           method="post"
           className="data-entry--form"
         >
-          <label className="data-entry-label" htmlFor="selectMaritalStatus">
-            Marital Status
+          <div className="data-entry--marital">
+            <div className="data-entry--heading">Select marital status</div>
             <span className="data-entry--hint">
               Used for GIS determination.
             </span>
-            <select
-              id="selectMaritalStatus"
-              name="selectMaritalStatus"
-              value={maritalStatus}
-              onChange={this.update('maritalStatus')}
-              className="data-entry-input data-entry--select"
-            >
-              {createSelection(martialStatusOptions)}
-            </select>
-          </label>
+            <div className="data-entry--radio-options">
+              <label htmlFor="radioMaritalStatusSingle">
+                <input
+                  id="radioMaritalStatusSingle"
+                  type="radio"
+                  value="single"
+                  checked={maritalStatus === 'single'}
+                  onChange={this.handleMaritalStatusChange}
+                  className="data-entry--radio"
+                />
+                <div className="data-entry--radio-box">
+                  <span>Single, Widowed, or Divorced</span>
+                </div>
+              </label>
+              <label htmlFor="radioMaritalStatusCouple">
+                <input
+                  id="radioMaritalStatusCouple"
+                  type="radio"
+                  value="couple"
+                  checked={maritalStatus === 'couple'}
+                  onChange={this.handleMaritalStatusChange}
+                  className="data-entry--radio"
+                />
+                <div className="data-entry--radio-box">
+                  <span>Married or Common law</span>
+                </div>
+              </label>
+            </div>
+          </div>
 
           <label className="data-entry-label" htmlFor="rrsp">
             {generateLabel('Total RRSP', maritalStatus)}

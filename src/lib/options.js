@@ -18,7 +18,6 @@ function generateStringOptions(configKey) {
     result.push({
       key: ck.key,
       value: ck.value,
-      // TODO i18n
       label: ck.label || ck.value,
     });
   });
@@ -29,10 +28,10 @@ function telLinkBuilder(contactTel) {
   return `tel:${contactTel}`;
 }
 
-const martialStatusOptions = generateStringOptions(config.MARITAL_STATUS);
+const maritalStatusOptions = generateStringOptions(config.MARITAL_STATUS);
 const retirementAgeOptions = generateNumericOptions(
   config.MIN_RETIREMENT_AGE,
   config.MAX_RETIREMENT_AGE
 );
 
-export { martialStatusOptions, retirementAgeOptions, telLinkBuilder };
+export { maritalStatusOptions, retirementAgeOptions, telLinkBuilder };

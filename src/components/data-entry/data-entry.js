@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import config from '../../config';
 import { generateLabel } from '../../lib/form-text';
 import {
-  // martialStatusOptions,
+  maritalStatusOptions,
   retirementAgeOptions,
   telLinkBuilder,
 } from '../../lib/options';
@@ -14,6 +14,24 @@ function createSelection(opts) {
     <option key={opt.key} value={opt.value}>
       {opt.label}
     </option>
+  ));
+}
+
+function createRadioButtons(opts, maritalStatus, changeHandler) {
+  return opts.map(opt => (
+    <label key={opt.key} htmlFor={`radioMaritalStatus${opt.value}`}>
+      <input
+        id={`radioMaritalStatus${opt.value}`}
+        type="radio"
+        value={opt.value}
+        checked={maritalStatus === opt.value}
+        onChange={changeHandler}
+        className="data-entry--radio"
+      />
+      <div className="data-entry--radio-box">
+        <span>{opt.label}</span>
+      </div>
+    </label>
   ));
 }
 
@@ -74,32 +92,11 @@ class DataEntry extends Component {
               Used for GIS determination.
             </span>
             <div className="data-entry--radio-options">
-              <label htmlFor="radioMaritalStatusSingle">
-                <input
-                  id="radioMaritalStatusSingle"
-                  type="radio"
-                  value="single"
-                  checked={maritalStatus === 'single'}
-                  onChange={this.handleMaritalStatusChange}
-                  className="data-entry--radio"
-                />
-                <div className="data-entry--radio-box">
-                  <span>Single, Widowed, or Divorced</span>
-                </div>
-              </label>
-              <label htmlFor="radioMaritalStatusCouple">
-                <input
-                  id="radioMaritalStatusCouple"
-                  type="radio"
-                  value="couple"
-                  checked={maritalStatus === 'couple'}
-                  onChange={this.handleMaritalStatusChange}
-                  className="data-entry--radio"
-                />
-                <div className="data-entry--radio-box">
-                  <span>Married or Common law</span>
-                </div>
-              </label>
+              {createRadioButtons(
+                maritalStatusOptions,
+                maritalStatus,
+                this.handleMaritalStatusChange
+              )}
             </div>
           </div>
 

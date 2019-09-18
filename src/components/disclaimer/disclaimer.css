@@ -28,7 +28,12 @@
 
 .disclaimer--link {
   color: var(--brand-darken-21);
-  display: block;
+  display: inline-block;
   margin-top: 5px;
   text-decoration: none;
+}
+
+.disclaimer--link-sep {
+  display: inline-block;
+  margin: 0 5px;
 }

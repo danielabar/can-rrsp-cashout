@@ -4,7 +4,7 @@ import './intro.css';
 function Intro() {
   return (
     <div className="intro">
-      <header className="intro--header">RRSP vs GIS Calculator</header>
+      <header className="intro--header">RRSP GIS Calculator</header>
       <ul className="intro--list">
         <li>Are you Canadian?</li>
         <li>Low income?</li>

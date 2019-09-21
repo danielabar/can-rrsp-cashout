@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Intro from './components/intro/intro';
 import DataEntry from './components/data-entry/data-entry';
+import Placeholder from './components/placeholder/placeholder';
 import Summary from './components/summary/summary';
 import Scenarios from './components/scenarios/scenarios';
 import Disclaimer from './components/disclaimer/disclaimer';
@@ -27,7 +28,7 @@ function App() {
       Object.keys(scenarios).length === 0 &&
       scenarios.constructor === Object
     ) {
-      return <div className="empty" />;
+      return <Placeholder />;
     }
     if (scenarios.cashOutBefore.monthlyGIS === 0) {
       return <div className="no-gis">You are not eligible for GIS.</div>;
@@ -37,8 +38,6 @@ function App() {
         <Summary percentageDecrease={scenarios.percentageDecrease} />
         <Scenarios data={scenarios} />
         <Tax />
-        <Disclaimer />
-        <Links learnMoreLinks={config.LEARN_MORE_LINKS} />
       </div>
     );
   }
@@ -48,6 +47,8 @@ function App() {
       <Intro />
       <DataEntry runScenarios={runScenarios} onReset={onReset} />
       {scenariosHelper()}
+      <Disclaimer />
+      <Links learnMoreLinks={config.LEARN_MORE_LINKS} />
     </div>
   );
 }

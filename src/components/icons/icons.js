@@ -8,6 +8,7 @@ import question from './question.svg';
 import policy from './policy.svg';
 import bug from './bug.svg';
 import source from './source.svg';
+import treeswing from './treeswing.svg';
 
 export default {
   incomeIcon,
@@ -20,4 +21,5 @@ export default {
   policy,
   bug,
   source,
+  treeswing,
 };

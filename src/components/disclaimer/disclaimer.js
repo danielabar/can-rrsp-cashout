@@ -35,6 +35,13 @@ function Disclaimer() {
         >
           Actuarial Studies
         </a>
+        <span className="disclaimer--link-sep">|</span>
+        <a
+          className="disclaimer--link"
+          href="https://github.com/danielabar/can-rrsp-cashout/blob/master/icon-attributions.md"
+        >
+          Icon Attributions
+        </a>
       </p>
     </section>
   );

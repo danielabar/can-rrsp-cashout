@@ -19,7 +19,11 @@ function createSelection(opts) {
 
 function createRadioButtons(opts, maritalStatus, changeHandler) {
   return opts.map(opt => (
-    <label key={opt.key} htmlFor={`radioMaritalStatus${opt.value}`}>
+    <label
+      key={opt.key}
+      className="data-entry--radio-label"
+      htmlFor={`radioMaritalStatus${opt.value}`}
+    >
       <input
         id={`radioMaritalStatus${opt.value}`}
         type="radio"

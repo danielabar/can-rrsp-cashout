@@ -153,4 +153,17 @@ select.data-entry--select {
   .data-entry-input {
     margin: 5px 0 15px;
   }
+
+  .data-entry--radio-options {
+    justify-content: space-around;
+  }
+
+  .data-entry--radio-box {
+    font-size: 0.9rem;
+    padding: 20px;
+  }
+
+  .data-entry--radio-label {
+    flex: 0 0 170px;
+  }
 }

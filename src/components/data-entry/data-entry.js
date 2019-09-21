@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/label-has-for */
 import React, { Component } from 'react';
 import config from '../../config';
+import { generateLabel } from '../../lib/form-text';
 import {
-  genderOptions,
-  martialStatusOptions,
+  maritalStatusOptions,
   retirementAgeOptions,
   telLinkBuilder,
 } from '../../lib/options';
@@ -17,9 +17,30 @@ function createSelection(opts) {
   ));
 }
 
+function createRadioButtons(opts, maritalStatus, changeHandler) {
+  return opts.map(opt => (
+    <label
+      key={opt.key}
+      className="data-entry--radio-label"
+      htmlFor={`radioMaritalStatus${opt.value}`}
+    >
+      <input
+        id={`radioMaritalStatus${opt.value}`}
+        type="radio"
+        value={opt.value}
+        checked={maritalStatus === opt.value}
+        onChange={changeHandler}
+        className="data-entry--radio"
+      />
+      <div className="data-entry--radio-box">
+        <span>{opt.label}</span>
+      </div>
+    </label>
+  ));
+}
+
 class DataEntry extends Component {
   state = {
-    gender: config.DEFAULT_GENDER,
     maritalStatus: config.DEFAULT_MARITAL_STATUS,
     rrsp: config.DEFAULT_RRSP,
     cpp: config.DEFAULT_ANNUAL_CPP,
@@ -34,6 +55,13 @@ class DataEntry extends Component {
     });
   };
 
+  // Required for radio buttons to display state change as user clicks
+  handleMaritalStatusChange = changeEvent => {
+    this.setState({
+      maritalStatus: changeEvent.target.value,
+    });
+  };
+
   submitInput = event => {
     event.preventDefault();
     const { runScenarios } = this.props;
@@ -44,7 +72,6 @@ class DataEntry extends Component {
     event.preventDefault();
     const { onReset } = this.props;
     this.setState({
-      gender: config.DEFAULT_GENDER,
       maritalStatus: config.DEFAULT_MARITAL_STATUS,
       rrsp: config.DEFAULT_RRSP,
       cpp: config.DEFAULT_ANNUAL_CPP,
@@ -55,14 +82,7 @@ class DataEntry extends Component {
   };
 
   render() {
-    const {
-      gender,
-      maritalStatus,
-      rrsp,
-      cpp,
-      pension,
-      retirementAge,
-    } = this.state;
+    const { maritalStatus, rrsp, cpp, pension, retirementAge } = this.state;
     return (
       <div className="data-entry">
         <form
@@ -70,38 +90,22 @@ class DataEntry extends Component {
           method="post"
           className="data-entry--form"
         >
-          <label className="data-entry-label" htmlFor="selectGender">
-            Gender
-            <span className="data-entry--hint">Used for life expectancy.</span>
-            <select
-              id="selectGender"
-              name="selectGender"
-              value={gender}
-              onChange={this.update('gender')}
-              className="data-entry-input data-entry--select"
-            >
-              {createSelection(genderOptions)}
-            </select>
-          </label>
-
-          <label className="data-entry-label" htmlFor="selectMaritalStatus">
-            Marital Status
+          <div className="data-entry--marital">
+            <div className="data-entry--heading">Select marital status</div>
             <span className="data-entry--hint">
-              Only single supported for now.
+              Used for GIS determination.
             </span>
-            <select
-              id="selectMaritalStatus"
-              name="selectMaritalStatus"
-              value={maritalStatus}
-              onChange={this.update('maritalStatus')}
-              className="data-entry-input data-entry--select"
-            >
-              {createSelection(martialStatusOptions)}
-            </select>
-          </label>
+            <div className="data-entry--radio-options">
+              {createRadioButtons(
+                maritalStatusOptions,
+                maritalStatus,
+                this.handleMaritalStatusChange
+              )}
+            </div>
+          </div>
 
           <label className="data-entry-label" htmlFor="rrsp">
-            Total RRSP
+            {generateLabel('Total RRSP', maritalStatus)}
             <span className="data-entry--hint">
               Total savings in RRSP accounts.
             </span>
@@ -120,7 +124,7 @@ class DataEntry extends Component {
           </label>
 
           <label className="data-entry-label" htmlFor="cpp">
-            Annual CPP Entitlement
+            {generateLabel('Annual CPP Entitlement', maritalStatus)}
             <span className="data-entry--hint">
               Contact Service Canada{' '}
               <a
@@ -146,7 +150,7 @@ class DataEntry extends Component {
           </label>
 
           <label className="data-entry-label" htmlFor="pension">
-            Annual Pension
+            {generateLabel('Annual Pension', maritalStatus)}
             <span className="data-entry--hint">
               Company or private pension.
             </span>

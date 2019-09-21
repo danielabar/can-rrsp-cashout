@@ -9,16 +9,11 @@ import {
 } from './calc-util';
 import config from '../config';
 
-// test('adding works sanely with simple decimals', () => {
-//   expect(0.2 + 0.1).toBeCloseTo(0.3, 5);
-// });
-
 describe('calc-util', () => {
   describe('yearsInRetirement', () => {
-    it('Returns difference between life expectancy for female and retirement age', () => {
+    it('Returns difference between life expectancy and retirement age', () => {
       // Given
       const input = {
-        gender: 'female',
         retirementAge: 67,
       };
       // When
@@ -26,25 +21,12 @@ describe('calc-util', () => {
       // Then
       expect(result).toEqual(18); // 85 - 67
     });
-
-    it('Returns difference between life expectancy for male and retirement age', () => {
-      // Given
-      const input = {
-        gender: 'male',
-        retirementAge: 67,
-      };
-      // When
-      const result = yearsInRetirement(input);
-      // Then
-      expect(result).toEqual(14); // 81 - 67
-    });
   });
 
   describe('annualIncomeForGisEligibilityWithRrsp', () => {
     it('Returns sum of cpp, pension and rrsp evenly divided over retirement years', () => {
       // Given
       const input = {
-        gender: 'female',
         retirementAge: 65,
         cpp: 9000,
         pension: 0,
@@ -61,7 +43,6 @@ describe('calc-util', () => {
     it('Returns sum of cpp and pension ', () => {
       // Given
       const input = {
-        gender: 'female',
         retirementAge: 65,
         cpp: 9000,
         pension: 0,
@@ -93,6 +74,26 @@ describe('calc-util', () => {
       const { amt: result } = monthlyGis(annualIncome, maritalStatus);
       // Then
       expect(result).toEqual(46.77);
+    });
+
+    it('Uses gis-lookup to find monthly GIS amount for a couple with low-ish combined annual income', () => {
+      // Given
+      const annualIncome = 12000;
+      const maritalStatus = 'couple';
+      // When
+      const { amt: result } = monthlyGis(annualIncome, maritalStatus);
+      // Then
+      expect(result).toEqual(512.7); // 256.35 * 2 = 512.7
+    });
+
+    it('Uses gis-lookup to find monthly GIS amount for a couple with high-ish combined annual income', () => {
+      // Given
+      const annualIncome = 17300;
+      const maritalStatus = 'couple';
+      // When
+      const { amt: result } = monthlyGis(annualIncome, maritalStatus);
+      // Then
+      expect(result).toEqual(292.7); // 146.35 * 2 = 292.7
     });
 
     it('Result includes GIS coverage period', () => {

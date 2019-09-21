@@ -1,26 +1,11 @@
 const config = Object.freeze({
   // https://www.worldlifeexpectancy.com/canada-life-expectancy
-  DEFAULT_GENDER: 'female',
-  GENDER: [
-    { key: 'male', value: 'male', lifeExpectancy: 81 },
-    { key: 'female', value: 'female', lifeExpectancy: 85 },
-  ],
+  LIFE_EXPECTANCY: 85,
 
-  // Only single supported for now
   DEFAULT_MARITAL_STATUS: 'single',
   MARITAL_STATUS: [
-    { key: 'single', value: 'single', label: 'Single' },
-    // {
-    //   key: 'partner_oas',
-    //   value: 'partner_oas',
-    //   label: 'Spouse/common-law partner of someone who receives an OAS Pension',
-    // },
-    // {
-    //   key: 'partner_oas',
-    //   value: 'partner_oas',
-    //   label:
-    //     'Spouse/common-law partner of someone who does not receive an OAS Pension',
-    // },
+    { key: 'single', value: 'single', label: 'Single, widowed or divorced' },
+    { key: 'couple', value: 'couple', label: 'Married or common law' },
   ],
 
   DEFAULT_RRSP: 90000,

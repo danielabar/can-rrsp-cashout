@@ -16,15 +16,24 @@ function Disclaimer() {
         as reported on the income tax form. The calculations here assume that
         all sources of income not shown here are zero. It is also assumed that
         you are eligible for full Old Age Security (40 years in Canada) and will
-        have no earned income after age 65. There may be addition GIS
-        (&quot;top-ups&quot;) that are paid by some provinces; they are
-        automatic once you get the federal GIS.
+        have no earned income after age 65. For couples, it is assumed that both
+        are receiving GIS. There may be addition GIS (&quot;top-ups&quot;) that
+        are paid by some provinces; they are automatic once you get the federal
+        GIS. A life expectancy of 85 is assumed which is the average value for
+        someone who has reached age 65.
         <br />
         <a
           className="disclaimer--link"
           href="https://github.com/danielabar/can-rrsp-cashout/blob/master/LICENSE"
         >
           Software License
+        </a>
+        <span className="disclaimer--link-sep">|</span>
+        <a
+          className="disclaimer--link"
+          href="http://www.osfi-bsif.gc.ca/Eng/oca-bac/as-ea/Pages/default.aspx"
+        >
+          Actuarial Studies
         </a>
       </p>
     </section>

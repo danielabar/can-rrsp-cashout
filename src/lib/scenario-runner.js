@@ -7,7 +7,6 @@ function convertToNumeric(input) {
     pension: parseInt(input.pension, 10),
     retirementAge: parseInt(input.retirementAge, 10),
     rrsp: parseInt(input.rrsp, 10),
-    gender: input.gender,
     maritalStatus: input.maritalStatus,
   };
 }

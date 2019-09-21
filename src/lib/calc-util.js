@@ -1,12 +1,12 @@
 import gisLookup from 'gis-lookup';
 import config from '../config';
 
-function lifeExpectancy(gender) {
-  return config.GENDER.find(el => el.key === gender).lifeExpectancy;
+function lifeExpectancy() {
+  return config.LIFE_EXPECTANCY;
 }
 
 function yearsInRetirement(input) {
-  return lifeExpectancy(input.gender) - input.retirementAge;
+  return lifeExpectancy() - input.retirementAge;
 }
 
 function annualRrsp(input) {
@@ -26,6 +26,9 @@ function convertMaritalStatus(maritalStatus) {
   if (maritalStatus === config.DEFAULT_MARITAL_STATUS) {
     result = gisLookup.STATUS.SINGLE;
   }
+  if (maritalStatus === 'couple') {
+    result = gisLookup.STATUS.PARTNER_OAS;
+  }
   return result;
 }
 
@@ -33,7 +36,10 @@ function monthlyGis(annualIncome, maritalStatus) {
   const gisStatus = convertMaritalStatus(maritalStatus);
   const gisResult = gisLookup.find(gisStatus, annualIncome);
   const { coverage: gisCoverage } = gisResult;
-  const amt = parseFloat(gisResult.output.gis);
+  const amt =
+    maritalStatus === 'single'
+      ? parseFloat(gisResult.output.gis)
+      : parseFloat(gisResult.output.gis) * 2;
   return { amt, gisCoverage };
 }
 

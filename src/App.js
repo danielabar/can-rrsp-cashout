@@ -8,6 +8,7 @@ import Scenarios from './components/scenarios/scenarios';
 import Disclaimer from './components/disclaimer/disclaimer';
 import Tax from './components/tax/tax';
 import Links from './components/links/links';
+import Developer from './components/developer/developer';
 import { run } from './lib/scenario-runner';
 import config from './config';
 
@@ -49,6 +50,7 @@ function App() {
       {scenariosHelper()}
       <Disclaimer />
       <Links learnMoreLinks={config.LEARN_MORE_LINKS} />
+      <Developer />
     </div>
   );
 }

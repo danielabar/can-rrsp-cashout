@@ -1,0 +1,12 @@
+.developer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.developer--link {
+  color: var(--brand-darken-21);
+  display: inline-block;
+  font-weight: 600;
+  margin: 0 4px;
+  text-decoration: none;
+}

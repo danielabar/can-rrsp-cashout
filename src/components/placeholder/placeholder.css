@@ -1,0 +1,18 @@
+.placeholder {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.placeholder--image {
+  opacity: 0.4;
+  width: 50%;
+}
+
+.placeholder--text {
+  color: #545c6e;
+  font-weight: 400;
+  text-align: center;
+}

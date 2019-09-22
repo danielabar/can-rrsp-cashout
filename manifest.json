@@ -1,6 +1,6 @@
 {
-  "short_name": "RRSP vs GIS",
-  "name": "RRSP vs GIS Calculator",
+  "short_name": "RRSP GIS Calculator",
+  "name": "RRSP GIS Calculator",
   "icons": [
     {
       "src": "favicon.ico",
@@ -10,11 +10,6 @@
     {
       "src": "android-chrome-192x192.png",
       "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "android-chrome-512x512.png",
-      "sizes": "512x512",
       "type": "image/png"
     }
   ],

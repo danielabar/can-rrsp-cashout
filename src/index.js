@@ -2,10 +2,19 @@ import 'react-app-polyfill/ie9';
 import 'react-app-polyfill/stable';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import * as Sentry from '@sentry/browser';
 import './reset.css';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+
+Sentry.init({
+  dsn: 'https://4f5ec5e39afa4eac949530989b0ad5b2@sentry.io/1757716',
+  environment: process.env.REACT_APP_SENTRY_ENV,
+});
+
+// eslint-disable-next-line no-console
+console.log(`=== Sentry initialized for: ${process.env.REACT_APP_SENTRY_ENV}`);
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

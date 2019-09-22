@@ -4,6 +4,7 @@
   "private": true,
   "homepage": ".",
   "dependencies": {
+    "@sentry/browser": "5.6.3",
     "accounting": "0.4.1",
     "gh-pages": "2.0.1",
     "gis-lookup": "0.0.5",

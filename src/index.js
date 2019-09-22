@@ -13,6 +13,9 @@ Sentry.init({
   environment: process.env.REACT_APP_SENTRY_ENV,
 });
 
+// eslint-disable-next-line no-console
+console.log(`=== Sentry initialized for: ${process.env.REACT_APP_SENTRY_ENV}`);
+
 ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

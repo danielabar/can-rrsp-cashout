@@ -27,7 +27,7 @@ This project was inspired by an episode of the Mostly Money podcast on [The upsi
 ### Supported by BrowserStack
 Thanks to [BrowserStack](https://browserstack.com/) for their support of this open-source project.
 
-<img src="doc-images/browserstack-logo.svg" alt="Browserstack logo" width="150"/>
+<img src="https://rrspgiscalculator.site/browserstack-logo.svg" alt="Browserstack logo" width="150"/>
 
 ## Available Scripts
 

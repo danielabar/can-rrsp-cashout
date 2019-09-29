@@ -27,7 +27,7 @@ This project was inspired by an episode of the Mostly Money podcast on [The upsi
 ### Supported by BrowserStack
 Thanks to [BrowserStack](https://browserstack.com/) for their support of this open-source project.
 
-<img src="doc-images/browserstack-logo.svg" width="150">
+<img src="https://cdn.rawgit.com/danielabar/can-rrsp-cashout/master/browserstack-logo.svg" width="150">
 
 ## Available Scripts
 

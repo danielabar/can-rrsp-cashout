@@ -24,6 +24,11 @@ This project was inspired by an episode of the Mostly Money podcast on [The upsi
   $ npm test
   ```
 
+### Supported by BrowserStack
+Thanks to [BrowserStack](https://browserstack.com/) for their support of this open-source project.
+
+<img src="https://cdn.rawgit.com/danielabar/can-rrsp-cashout/master/browserstack-logo.svg" width="150">
+
 ## Available Scripts
 
 In the project directory, you can run:

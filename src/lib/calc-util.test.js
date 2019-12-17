@@ -6,6 +6,7 @@ import {
   totalGisInRetirement,
   numYearsCollectingGIS,
   percentageDecrease,
+  roundNearestWhole,
 } from './calc-util';
 import config from '../config';
 
@@ -226,6 +227,28 @@ describe('calc-util', () => {
       const result = percentageDecrease(origNum, newNum);
       // Then
       expect(result).toEqual('N/A');
+    });
+  });
+
+  describe('roundNearestWhole', () => {
+    it('Rounds 391.77 to 400', () => {
+      // Given
+      const inputNum = 391.77;
+      const precision = 100;
+      // When
+      const result = roundNearestWhole(inputNum, precision);
+      // Then
+      expect(result).toEqual(400);
+    });
+
+    it('Rounds 204.77 to 200', () => {
+      // Given
+      const inputNum = 204.77;
+      const precision = 100;
+      // When
+      const result = roundNearestWhole(inputNum, precision);
+      // Then
+      expect(result).toEqual(200);
     });
   });
 });

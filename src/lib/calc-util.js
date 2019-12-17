@@ -72,6 +72,38 @@ function percentageDecrease(origNum, newNum) {
   return Math.round(perDecrease);
 }
 
+/*!
+ * Round to the nearest whole number
+ * (c) 2019 Chris Ferdinandi, MIT License, https://gomakethings.com
+ * @param  {Number|String} num       The numer to round
+ * @param  {Number}        precision The whole number to round to (ex. 10, 100, 1000)
+ * @param  {String}        method    The rounding method (up, down, or auto - defaults to auto) [optional]
+ * @return {String}                  The rounded number
+ */
+function roundNearestWhole(inputNum, precision, method) {
+  // Convert string numbers to a float
+  const num = parseFloat(inputNum);
+
+  // If there's no rounding precision, return the number
+  if (!precision) return num.toLocaleString();
+
+  // Possible methods and their values
+  const methods = {
+    auto: 'round',
+    up: 'ceil',
+    down: 'floor',
+  };
+
+  // Get the method function
+  let fn = methods[method];
+  if (!fn) {
+    fn = 'round';
+  }
+
+  // Do math!
+  return Math[fn](num / precision) * precision;
+}
+
 export {
   annualRrsp,
   yearsInRetirement,
@@ -83,4 +115,5 @@ export {
   totalGisInRetirement,
   lifeExpectancy,
   percentageDecrease,
+  roundNearestWhole,
 };

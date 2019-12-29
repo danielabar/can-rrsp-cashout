@@ -18,6 +18,10 @@ function _calculate(numericInput, annualIncomeFunc) {
     annualIncome,
     numericInput.maritalStatus
   );
+  // eslint-disable-next-line no-console
+  console.log(
+    `=== Annual income: ${annualIncome}, monthly GIS precision: ${monthlyGISPrecise}`
+  );
   const monthlyGIS = calcUtil.roundGIS(monthlyGISPrecise, 100);
   const annualGIS = calcUtil.annualGIS(monthlyGIS);
   const totalGISInRetirement = calcUtil.totalGisInRetirement(

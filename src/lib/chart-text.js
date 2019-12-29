@@ -138,9 +138,9 @@ function totalGISEntitlement(numericInput, scenarioBefore, scenarioAfter) {
 }
 
 function generateGISFooter(coverage, maritalStatus) {
-  const coveragePeriod = `GIS amounts effective from ${coverage.start} to ${
-    coverage.end
-  }.`;
+  const coveragePeriod = `GIS amounts are approximate, effective from ${
+    coverage.start
+  } to ${coverage.end}.`;
   const couplesNote = `For couples this is the sum of the GIS benefit received by each partner.`;
   return maritalStatus === 'single'
     ? coveragePeriod

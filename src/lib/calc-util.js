@@ -72,6 +72,16 @@ function percentageDecrease(origNum, newNum) {
   return Math.round(perDecrease);
 }
 
+function roundGIS(inputNum) {
+  if (inputNum < 10) {
+    return roundNearestWhole(inputNum, 1);
+  }
+  if (inputNum < 100) {
+    return roundNearestWhole(inputNum, 10);
+  }
+  return roundNearestWhole(inputNum, 100);
+}
+
 /*!
  * Round to the nearest whole number
  * (c) 2019 Chris Ferdinandi, MIT License, https://gomakethings.com
@@ -116,4 +126,5 @@ export {
   lifeExpectancy,
   percentageDecrease,
   roundNearestWhole,
+  roundGIS,
 };

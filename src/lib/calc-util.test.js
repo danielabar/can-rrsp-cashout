@@ -7,6 +7,7 @@ import {
   numYearsCollectingGIS,
   percentageDecrease,
   roundNearestWhole,
+  roundGIS,
 } from './calc-util';
 import config from '../config';
 
@@ -241,12 +242,41 @@ describe('calc-util', () => {
       expect(result).toEqual(400);
     });
 
-    it('Rounds 204.77 to 200', () => {
+    it('Rounds 58.77 to 60', () => {
       // Given
-      const inputNum = 204.77;
-      const precision = 100;
+      const inputNum = 58.77;
+      const precision = 10;
       // When
       const result = roundNearestWhole(inputNum, precision);
+      // Then
+      expect(result).toEqual(60);
+    });
+  });
+
+  describe('roundGIS', () => {
+    it('Rounds small numbers to 1 precision', () => {
+      // Given
+      const inputNum = 0.77;
+      // When
+      const result = roundGIS(inputNum);
+      // Then
+      expect(result).toEqual(1);
+    });
+
+    it('Rounds numbers under 100 to 10 precision', () => {
+      // Given
+      const inputNum = 50.77;
+      // When
+      const result = roundGIS(inputNum);
+      // Then
+      expect(result).toEqual(50);
+    });
+
+    it('Rounds numbers above 1000 to 10 precision', () => {
+      // Given
+      const inputNum = 150.77;
+      // When
+      const result = roundGIS(inputNum);
       // Then
       expect(result).toEqual(200);
     });

@@ -77,6 +77,9 @@ describe('chart-text', () => {
       expect(monthlyGISEntitlement.footer).toMatch(/2019-01-01/);
       expect(monthlyGISEntitlement.footer).toMatch(/2019-09-30/);
       expect(monthlyGISEntitlement.footer).not.toMatch(/couple/);
+      expect(monthlyGISEntitlement.footer).not.toMatch(
+        /may not add up exactly/
+      );
     });
 
     it('generates explanatory text for Monthly GIS Entitlement chart for couple', () => {
@@ -99,6 +102,9 @@ describe('chart-text', () => {
       expect(monthlyGISEntitlement.footer).toMatch(/2019-01-01/);
       expect(monthlyGISEntitlement.footer).toMatch(/2019-09-30/);
       expect(monthlyGISEntitlement.footer).toMatch(/couple/);
+      expect(monthlyGISEntitlement.footer).not.toMatch(
+        /may not add up exactly/
+      );
     });
 
     it('generates explanatory text for Annual GIS Entitlement chart', () => {
@@ -110,11 +116,10 @@ describe('chart-text', () => {
       );
 
       // Then
-      expect(annualGISEntitlement.explanation).toMatch(/\$391\.77/); // scenarioBefore.monthlyGIS
       expect(annualGISEntitlement.explanation).toMatch(/\$4,701\.24/); // scenarioBefore.annualGIS
       expect(annualGISEntitlement.explanation).toMatch(/\$2,457\.24/); // scenarioAfter.annualGIS
 
-      expect(annualGISEntitlement.footer).toBeDefined();
+      expect(annualGISEntitlement.footer).toMatch(/may not add up exactly/);
     });
 
     it('generates explanatory text for Total GIS in Retirement chart', () => {
@@ -134,7 +139,7 @@ describe('chart-text', () => {
       expect(totalGISEntitlement.explanation).toMatch(/\$49,144\.80/); // scenarioAfter.totalGIS
       expect(totalGISEntitlement.explanation).toMatch(/\$44,879\.99/); // before/after diff in total GIS
 
-      expect(totalGISEntitlement.footer).toBeDefined();
+      expect(totalGISEntitlement.footer).toMatch(/may not add up exactly/);
     });
   });
 });

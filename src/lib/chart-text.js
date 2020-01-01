@@ -82,22 +82,17 @@ function monthlyGISEntitlement(
 }
 
 function annualGISEntitlement(numericInput, scenarioBefore, scenarioAfter) {
-  return `Translating your monthly GIS benefit of\
-  <span class="chart-text--number">${formatMoney(
-    scenarioBefore.monthlyGIS
-  )}</span><sup>*</sup>\
-  to a yearly value,\
-  cashing out your RRSP <span class="chart-text--time chart-text--time-before">before</span> retiring,\
-  would result in an annual GIS benefit of\
+  return `Cashing out your RRSP <span class="chart-text--time chart-text--time-before">before</span> retiring,\
+  would result in an approximate annual GIS benefit of\
   <span class="chart-text--number">${formatMoney(
     scenarioBefore.annualGIS
-  )}</span>.\
+  )}</span>.<sup>*</sup>\
   <span class="chart-text--separator">&nbsp;</span>\
   Cashing out your RRSP <span class="chart-text--time chart-text--time-after">after</span> retirement,\
   would result in a lower annual GIS benefit of\
   <span class="chart-text--number">${formatMoney(
     scenarioAfter.annualGIS
-  )}</span>.`;
+  )}</span>.<sup>*</sup>`;
 }
 
 function totalGISEntitlement(numericInput, scenarioBefore, scenarioAfter) {
@@ -121,26 +116,29 @@ function totalGISEntitlement(numericInput, scenarioBefore, scenarioAfter) {
   results in an total GIS benefit of\
   <span class="chart-text--number">${formatMoney(
     scenarioBefore.totalGISInRetirement
-  )}</span>\
+  )}</span><sup>*</sup>\
   during retirement,\
   when the RRSP is cashed out <span class="chart-text--time chart-text--time-before">before</span> beginning retirement.\
   <span class="chart-text--separator">&nbsp;</span>\
   If the RRSP is cashed out <span class="chart-text--time chart-text--time-after">after</span> retirement, total benefit would be\
   <span class="chart-text--number">${formatMoney(
     scenarioAfter.totalGISInRetirement
-  )}</span>.\
+  )}</span>.<sup>*</sup>\
   <span class="chart-text--separator">&nbsp;</span>\
   This means you could have\
   <span class="chart-text--number">${formatMoney(
     scenarioBefore.totalGISInRetirement - scenarioAfter.totalGISInRetirement
-  )}</span>\
+  )}</span><sup>*</sup>\
   more in GIS benefits by cashing out RRSP <span class="chart-text--time chart-text--time-before">before</span> retirement.`;
 }
 
-function generateGISFooter(coverage, maritalStatus) {
-  const coveragePeriod = `GIS amounts are approximate, effective from ${
-    coverage.start
-  } to ${coverage.end}.`;
+function generateGISFooter(coverage, maritalStatus, additive = false) {
+  const firstPhrase = additive
+    ? 'GIS amounts are approximate and may not add up exactly due to rounding'
+    : 'GIS amounts are approximate';
+  const coveragePeriod = `${firstPhrase}, effective from ${coverage.start} to ${
+    coverage.end
+  }.`;
   const couplesNote = `For couples this is the sum of the GIS benefit received by each partner.`;
   return maritalStatus === 'single'
     ? coveragePeriod
@@ -183,7 +181,8 @@ function generate(
       ),
       footer: generateGISFooter(
         scenarioBefore.gisCoverage,
-        numericInput.maritalStatus
+        numericInput.maritalStatus,
+        true
       ),
     },
     totalGISEntitlement: {
@@ -194,7 +193,8 @@ function generate(
       ),
       footer: generateGISFooter(
         scenarioBefore.gisCoverage,
-        numericInput.maritalStatus
+        numericInput.maritalStatus,
+        true
       ),
     },
   };

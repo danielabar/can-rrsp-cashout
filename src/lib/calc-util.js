@@ -72,14 +72,11 @@ function percentageDecrease(origNum, newNum) {
   return Math.round(perDecrease);
 }
 
-function roundGIS(inputNum) {
+function roundByScale(inputNum) {
   if (inputNum < 10) {
     return roundNearestWhole(inputNum, 1);
   }
-  if (inputNum < 100) {
-    return roundNearestWhole(inputNum, 10);
-  }
-  return roundNearestWhole(inputNum, 100);
+  return roundNearestWhole(inputNum, 10);
 }
 
 /*!
@@ -126,5 +123,5 @@ export {
   lifeExpectancy,
   percentageDecrease,
   roundNearestWhole,
-  roundGIS,
+  roundByScale,
 };

@@ -11,30 +11,36 @@ function convertToNumeric(input) {
   };
 }
 
+function _log(monthlyGIS, annualGIS, totalGIS) {
+  // prettier-ignore
+  // eslint-disable-next-line no-console
+  console.log(`
+  === monthlyGIS: precise = ${monthlyGIS}, rounded = ${calcUtil.roundByScale(monthlyGIS)}
+  === annualGIS: precise = ${annualGIS}, rounded = ${calcUtil.roundByScale(annualGIS)}
+  === totalGIS: precise = ${totalGIS}, rounded = ${calcUtil.roundByScale(totalGIS)}
+  `);
+}
+
 function _calculate(numericInput, annualIncomeFunc) {
   const annualIncome = annualIncomeFunc(numericInput);
   const numYrsInRetirement = calcUtil.yearsInRetirement(numericInput);
-  const { amt: monthlyGISPrecise, gisCoverage } = calcUtil.monthlyGis(
+  const { amt: monthlyGIS, gisCoverage } = calcUtil.monthlyGis(
     annualIncome,
     numericInput.maritalStatus
   );
-  // eslint-disable-next-line no-console
-  console.log(
-    `=== Annual income: ${annualIncome}, monthly GIS precision: ${monthlyGISPrecise}`
-  );
-  const monthlyGIS = calcUtil.roundGIS(monthlyGISPrecise, 100);
   const annualGIS = calcUtil.annualGIS(monthlyGIS);
   const totalGISInRetirement = calcUtil.totalGisInRetirement(
     annualGIS,
     numYrsInRetirement,
     numericInput.retirementAge
   );
+  _log(monthlyGIS, annualGIS, totalGISInRetirement);
   return {
-    totalGISInRetirement,
+    totalGISInRetirement: calcUtil.roundByScale(totalGISInRetirement),
     numYrsInRetirement,
     annualIncome,
-    monthlyGIS,
-    annualGIS,
+    monthlyGIS: calcUtil.roundByScale(monthlyGIS),
+    annualGIS: calcUtil.roundByScale(annualGIS),
     gisCoverage,
   };
 }

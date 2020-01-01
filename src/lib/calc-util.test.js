@@ -6,8 +6,7 @@ import {
   totalGisInRetirement,
   numYearsCollectingGIS,
   percentageDecrease,
-  roundNearestWhole,
-  roundGIS,
+  roundByScale,
 } from './calc-util';
 import config from '../config';
 
@@ -231,54 +230,18 @@ describe('calc-util', () => {
     });
   });
 
-  describe('roundNearestWhole', () => {
-    it('Rounds 391.77 to 400', () => {
-      // Given
-      const inputNum = 391.77;
-      const precision = 100;
-      // When
-      const result = roundNearestWhole(inputNum, precision);
-      // Then
-      expect(result).toEqual(400);
+  describe('roundByScale', () => {
+    it('Rounds numbers less than 10 to 1 precision', () => {
+      expect(roundByScale(0.77)).toEqual(1);
+      expect(roundByScale(5.37)).toEqual(5);
+      expect(roundByScale(8.05)).toEqual(8);
+      expect(roundByScale(9.99)).toEqual(10);
     });
 
-    it('Rounds 58.77 to 60', () => {
-      // Given
-      const inputNum = 58.77;
-      const precision = 10;
-      // When
-      const result = roundNearestWhole(inputNum, precision);
-      // Then
-      expect(result).toEqual(60);
-    });
-  });
-
-  describe('roundGIS', () => {
-    it('Rounds small numbers to 1 precision', () => {
-      // Given
-      const inputNum = 0.77;
-      // When
-      const result = roundGIS(inputNum);
-      // Then
-      expect(result).toEqual(1);
-    });
-
-    it('Rounds numbers under 100 to 10 precision', () => {
-      // Given
-      const inputNum = 50.77;
-      // When
-      const result = roundGIS(inputNum);
-      // Then
-      expect(result).toEqual(50);
-    });
-
-    it('Rounds numbers above 1000 to 10 precision', () => {
-      // Given
-      const inputNum = 150.77;
-      // When
-      const result = roundGIS(inputNum);
-      // Then
-      expect(result).toEqual(200);
+    it('Rounds numbers greater than 10  to 10 precision', () => {
+      expect(roundByScale(10.05)).toEqual(10);
+      expect(roundByScale(100.89)).toEqual(100);
+      expect(roundByScale(5545.89)).toEqual(5550);
     });
   });
 });

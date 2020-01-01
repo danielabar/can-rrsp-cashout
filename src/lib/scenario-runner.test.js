@@ -18,18 +18,18 @@ describe('scenario runner', () => {
       expect(result.cashOutAfter.numYrsInRetirement).toEqual(20);
       expect(result.cashOutAfter.annualIncome).toBeCloseTo(13500, 0);
       expect(result.cashOutAfter.monthlyGIS).toEqual(200);
-      expect(result.cashOutAfter.annualGIS).toEqual(2400);
-      expect(result.cashOutAfter.totalGISInRetirement).toEqual(48000);
+      expect(result.cashOutAfter.annualGIS).toEqual(2460);
+      expect(result.cashOutAfter.totalGISInRetirement).toEqual(49140);
       expect(result.cashOutAfter.gisCoverage).toBeDefined();
 
       expect(result.cashOutBefore.numYrsInRetirement).toEqual(20);
       expect(result.cashOutBefore.annualIncome).toBeCloseTo(9000, 0);
-      expect(result.cashOutBefore.monthlyGIS).toEqual(400);
-      expect(result.cashOutBefore.annualGIS).toEqual(4800);
+      expect(result.cashOutBefore.monthlyGIS).toEqual(390);
+      expect(result.cashOutBefore.annualGIS).toEqual(4700);
       expect(result.cashOutBefore.gisCoverage).toBeDefined();
-      expect(result.cashOutBefore.totalGISInRetirement).toEqual(96000);
+      expect(result.cashOutBefore.totalGISInRetirement).toEqual(94020);
 
-      expect(result.percentageDecrease).toEqual(50);
+      expect(result.percentageDecrease).toEqual(49);
       expect(result).toHaveProperty('chartText');
     });
 
@@ -47,19 +47,19 @@ describe('scenario runner', () => {
       // Then
       expect(result.cashOutAfter.numYrsInRetirement).toEqual(20);
       expect(result.cashOutAfter.annualIncome).toBeCloseTo(13500, 0);
-      expect(result.cashOutAfter.monthlyGIS).toEqual(500);
-      expect(result.cashOutAfter.annualGIS).toEqual(6000);
+      expect(result.cashOutAfter.monthlyGIS).toEqual(450);
+      expect(result.cashOutAfter.annualGIS).toEqual(5410);
       expect(result.cashOutAfter.gisCoverage).toBeDefined();
-      expect(result.cashOutAfter.totalGISInRetirement).toEqual(120000);
+      expect(result.cashOutAfter.totalGISInRetirement).toEqual(108170);
 
       expect(result.cashOutBefore.numYrsInRetirement).toEqual(20);
       expect(result.cashOutBefore.annualIncome).toBeCloseTo(9000, 0);
-      expect(result.cashOutBefore.monthlyGIS).toEqual(600);
-      expect(result.cashOutBefore.annualGIS).toEqual(7200);
-      expect(result.cashOutBefore.totalGISInRetirement).toEqual(144000);
+      expect(result.cashOutBefore.monthlyGIS).toEqual(640);
+      expect(result.cashOutBefore.annualGIS).toEqual(7660);
+      expect(result.cashOutBefore.totalGISInRetirement).toEqual(153290);
       expect(result.cashOutBefore.gisCoverage).toBeDefined();
 
-      expect(result.percentageDecrease).toEqual(17);
+      expect(result.percentageDecrease).toEqual(30);
       expect(result).toHaveProperty('chartText');
     });
   });

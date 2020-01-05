@@ -17,22 +17,19 @@ describe('scenario runner', () => {
       // Then
       expect(result.cashOutAfter.numYrsInRetirement).toEqual(20);
       expect(result.cashOutAfter.annualIncome).toBeCloseTo(13500, 0);
-      expect(result.cashOutAfter.monthlyGIS).toBeCloseTo(204.77, 2);
-      expect(result.cashOutAfter.annualGIS).toBeCloseTo(2457.24, 2);
-      expect(result.cashOutAfter.totalGISInRetirement).toBeCloseTo(49144.8, 1);
+      expect(result.cashOutAfter.monthlyGIS).toBeCloseTo(212.44, 2);
+      expect(result.cashOutAfter.annualGIS).toBeCloseTo(2549.28, 2);
+      expect(result.cashOutAfter.totalGISInRetirement).toBeCloseTo(50985.6, 1);
       expect(result.cashOutAfter.gisCoverage).toBeDefined();
 
       expect(result.cashOutBefore.numYrsInRetirement).toEqual(20);
       expect(result.cashOutBefore.annualIncome).toBeCloseTo(9000, 0);
-      expect(result.cashOutBefore.monthlyGIS).toBeCloseTo(391.77, 2);
-      expect(result.cashOutBefore.annualGIS).toBeCloseTo(4701.24, 2);
+      expect(result.cashOutBefore.monthlyGIS).toBeCloseTo(399.44, 2);
+      expect(result.cashOutBefore.annualGIS).toBeCloseTo(4793.28, 2);
       expect(result.cashOutBefore.gisCoverage).toBeDefined();
-      expect(result.cashOutBefore.totalGISInRetirement).toBeCloseTo(
-        94024.79,
-        1
-      );
+      expect(result.cashOutBefore.totalGISInRetirement).toBeCloseTo(95865.6, 1);
 
-      expect(result.percentageDecrease).toEqual(48);
+      expect(result.percentageDecrease).toEqual(47);
       expect(result).toHaveProperty('chartText');
     });
 
@@ -50,16 +47,19 @@ describe('scenario runner', () => {
       // Then
       expect(result.cashOutAfter.numYrsInRetirement).toEqual(20);
       expect(result.cashOutAfter.annualIncome).toBeCloseTo(13500, 0);
-      expect(result.cashOutAfter.monthlyGIS).toBeCloseTo(450.7, 2);
-      expect(result.cashOutAfter.annualGIS).toBeCloseTo(5408.4, 2);
+      expect(result.cashOutAfter.monthlyGIS).toBeCloseTo(460.82, 2);
+      expect(result.cashOutAfter.annualGIS).toBeCloseTo(5529.84, 2);
       expect(result.cashOutAfter.gisCoverage).toBeDefined();
-      expect(result.cashOutAfter.totalGISInRetirement).toBeCloseTo(108168, 1);
+      expect(result.cashOutAfter.totalGISInRetirement).toBeCloseTo(110596.8, 1);
 
       expect(result.cashOutBefore.numYrsInRetirement).toEqual(20);
       expect(result.cashOutBefore.annualIncome).toBeCloseTo(9000, 0);
-      expect(result.cashOutBefore.monthlyGIS).toBeCloseTo(638.7, 2);
-      expect(result.cashOutBefore.annualGIS).toBeCloseTo(7664.4, 2);
-      expect(result.cashOutBefore.totalGISInRetirement).toBeCloseTo(153288, 1);
+      expect(result.cashOutBefore.monthlyGIS).toBeCloseTo(648.82, 2);
+      expect(result.cashOutBefore.annualGIS).toBeCloseTo(7785.84, 2);
+      expect(result.cashOutBefore.totalGISInRetirement).toBeCloseTo(
+        155716.8,
+        1
+      );
       expect(result.cashOutBefore.gisCoverage).toBeDefined();
 
       expect(result.percentageDecrease).toEqual(29);

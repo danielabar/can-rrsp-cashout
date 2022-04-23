@@ -15,21 +15,31 @@ describe('scenario runner', () => {
       // When
       const result = run(input);
       // Then
-      expect(result.cashOutAfter.numYrsInRetirement).toEqual(20);
-      expect(result.cashOutAfter.annualIncome).toBeCloseTo(13500, 0);
-      expect(result.cashOutAfter.monthlyGIS).toBeCloseTo(212.44, 2);
-      expect(result.cashOutAfter.annualGIS).toBeCloseTo(2549.28, 2);
-      expect(result.cashOutAfter.totalGISInRetirement).toBeCloseTo(50985.6, 1);
-      expect(result.cashOutAfter.gisCoverage).toBeDefined();
+      expect(result.cashOutAfter).toEqual({
+        totalGISInRetirement: 61629.600000000006,
+        numYrsInRetirement: 20,
+        annualIncome: 13500,
+        monthlyGIS: 256.79,
+        annualGIS: 3081.4800000000005,
+        gisCoverage: {
+          start: '2022-01-01',
+          end: '2022-06-30',
+        },
+      });
 
-      expect(result.cashOutBefore.numYrsInRetirement).toEqual(20);
-      expect(result.cashOutBefore.annualIncome).toBeCloseTo(9000, 0);
-      expect(result.cashOutBefore.monthlyGIS).toBeCloseTo(399.44, 2);
-      expect(result.cashOutBefore.annualGIS).toBeCloseTo(4793.28, 2);
-      expect(result.cashOutBefore.gisCoverage).toBeDefined();
-      expect(result.cashOutBefore.totalGISInRetirement).toBeCloseTo(95865.6, 1);
+      expect(result.cashOutBefore).toEqual({
+        totalGISInRetirement: 107726.4,
+        numYrsInRetirement: 20,
+        annualIncome: 9000,
+        monthlyGIS: 448.86,
+        annualGIS: 5386.32,
+        gisCoverage: {
+          start: '2022-01-01',
+          end: '2022-06-30',
+        },
+      });
 
-      expect(result.percentageDecrease).toEqual(47);
+      expect(result.percentageDecrease).toEqual(43);
       expect(result).toHaveProperty('chartText');
     });
 
@@ -45,24 +55,31 @@ describe('scenario runner', () => {
       // When
       const result = run(input);
       // Then
-      expect(result.cashOutAfter.numYrsInRetirement).toEqual(20);
-      expect(result.cashOutAfter.annualIncome).toBeCloseTo(13500, 0);
-      expect(result.cashOutAfter.monthlyGIS).toBeCloseTo(460.82, 2);
-      expect(result.cashOutAfter.annualGIS).toBeCloseTo(5529.84, 2);
-      expect(result.cashOutAfter.gisCoverage).toBeDefined();
-      expect(result.cashOutAfter.totalGISInRetirement).toBeCloseTo(110596.8, 1);
+      expect(result.cashOutAfter).toEqual({
+        totalGISInRetirement: 124646.4,
+        numYrsInRetirement: 20,
+        annualIncome: 13500,
+        monthlyGIS: 519.36,
+        annualGIS: 6232.32,
+        gisCoverage: {
+          start: '2022-01-01',
+          end: '2022-06-30',
+        },
+      });
 
-      expect(result.cashOutBefore.numYrsInRetirement).toEqual(20);
-      expect(result.cashOutBefore.annualIncome).toBeCloseTo(9000, 0);
-      expect(result.cashOutBefore.monthlyGIS).toBeCloseTo(648.82, 2);
-      expect(result.cashOutBefore.annualGIS).toBeCloseTo(7785.84, 2);
-      expect(result.cashOutBefore.totalGISInRetirement).toBeCloseTo(
-        155716.8,
-        1
-      );
-      expect(result.cashOutBefore.gisCoverage).toBeDefined();
+      expect(result.cashOutBefore).toEqual({
+        totalGISInRetirement: 169766.4,
+        numYrsInRetirement: 20,
+        annualIncome: 9000,
+        monthlyGIS: 707.36,
+        annualGIS: 8488.32,
+        gisCoverage: {
+          start: '2022-01-01',
+          end: '2022-06-30',
+        },
+      });
 
-      expect(result.percentageDecrease).toEqual(29);
+      expect(result.percentageDecrease).toEqual(27);
       expect(result).toHaveProperty('chartText');
     });
   });

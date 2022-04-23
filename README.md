@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/danielabar/can-rrsp-cashout.svg?style=svg)](https://circleci.com/gh/danielabar/can-rrsp-cashout)
 
-> Calculator for low income Canadians approaching retirment age to understand whether (and by how much) they would be better off cashing out their RRSPs before 65 based on GIS eligibility and income.
+> Calculator for low income Canadians approaching retirement age to understand whether (and by how much) they would be better off cashing out their RRSPs before 65 based on GIS eligibility and income.
 
 This project was inspired by an episode of the Mostly Money podcast on [The upside-down world of financial planning for low-income Canadians](https://www.stitcher.com/podcast/preet-banerjee/mostly-money-mostly-canadian/e/59296571).
 
@@ -14,7 +14,7 @@ This project was inspired by an episode of the Mostly Money podcast on [The upsi
    $ npm install
    ```
 3. Install [editorconfig](https://editorconfig.org/) plugin for whatever editor/IDE you're using.
-4. Install [prettier](https://prettier.io/) plugin for whatever editor/IDE you're using (VS Code users - disable Beautify plugin if you have itfor this project workspace)
+4. Install [prettier](https://prettier.io/) plugin for whatever editor/IDE you're using (VS Code users - disable Beautify plugin if you have it for this project workspace)
 5. Start a development server - this will open a new browser tab at [http://localhost:3000](http://localhost:3000)
    ```bash
    $ npm start

@@ -63,7 +63,7 @@ describe('calc-util', () => {
       // When
       const { amt: result } = monthlyGis(annualIncome, maritalStatus);
       // Then
-      expect(result).toEqual(274.44);
+      expect(result).toEqual(318.79);
     });
 
     it('Uses gis-lookup to find monthly GIS amount for single person with high-ish annual income', () => {
@@ -73,7 +73,7 @@ describe('calc-util', () => {
       // When
       const { amt: result } = monthlyGis(annualIncome, maritalStatus);
       // Then
-      expect(result).toEqual(54.44);
+      expect(result).toEqual(98.79);
     });
 
     it('Uses gis-lookup to find monthly GIS amount for a couple with low-ish combined annual income', () => {
@@ -83,7 +83,7 @@ describe('calc-util', () => {
       // When
       const { amt: result } = monthlyGis(annualIncome, maritalStatus);
       // Then
-      expect(result).toEqual(522.82);
+      expect(result).toEqual(581.36);
     });
 
     it('Uses gis-lookup to find monthly GIS amount for a couple with high-ish combined annual income', () => {
@@ -93,7 +93,7 @@ describe('calc-util', () => {
       // When
       const { amt: result } = monthlyGis(annualIncome, maritalStatus);
       // Then
-      expect(result).toEqual(302.82);
+      expect(result).toEqual(361.36);
     });
 
     it('Result includes GIS coverage period', () => {
@@ -103,8 +103,8 @@ describe('calc-util', () => {
       // When
       const { gisCoverage } = monthlyGis(annualIncome, maritalStatus);
       // Then
-      expect(gisCoverage.start).toEqual('2020-01-01');
-      expect(gisCoverage.end).toEqual('2020-03-31');
+      expect(gisCoverage.start).toEqual('2022-01-01');
+      expect(gisCoverage.end).toEqual('2022-06-30');
     });
   });
 

@@ -6,10 +6,10 @@ function Developer() {
     <section className="developer">
       <h5 className="developer--header">
         Built by
-        <a href="https://github.com/danielabar" className="developer--link">
+        <a href="https://danielabaron.me" className="developer--link">
           Daniela Baron
         </a>
-        &copy; 2019
+        &copy; 2022
       </h5>
     </section>
   );
